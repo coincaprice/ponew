@@ -139,10 +139,10 @@ export const en: HomeDictionary = {
     subtitle: 'Feedback collected from verified account holders.',
     ratingLabel: 'average rating',
     items: [
-      { name: 'Vinod M.', country: 'India', flag: 'in', date: '2025-11-26', text: 'Pocket Option is beginner-friendly with a clean interface. The demo account, low minimum deposit and access to forex, stocks and crypto make it easy to start. Copy trading is a great bonus.' },
-      { name: 'Oluwaseyi O.', country: 'Nigeria', flag: 'ng', date: '2026-02-24', text: 'Deposits and withdrawals are the easiest I have used. Support answered in minutes and execution is fast. Highly recommended for anyone looking for a reliable platform.' },
-      { name: 'James W.', country: 'United Kingdom', flag: 'gb', date: '2026-03-05', text: 'Great platform with a helpful support team. The demo account is perfect to practise before trading real funds. Charts and indicators are better than I expected.' },
-      { name: 'Michael T.', country: 'South Africa', flag: 'za', date: '2026-02-18', text: 'Amazing tools for beginners, the demo account is a life saver. Fast withdrawals and a very intuitive interface. The social trading feature is a real plus.' },
+      { name: 'Vinod M.', country: 'India', flag: 'in', date: '2026-08-14', text: 'Pocket Option is beginner-friendly with a clean interface. The demo account, low minimum deposit and access to forex, stocks and crypto make it easy to start. Copy trading is a great bonus.' },
+      { name: 'Oluwaseyi O.', country: 'Nigeria', flag: 'ng', date: '2026-09-02', text: 'Deposits and withdrawals are the easiest I have used. Support answered in minutes and execution is fast. Highly recommended for anyone looking for a reliable platform.' },
+      { name: 'James W.', country: 'United Kingdom', flag: 'gb', date: '2026-09-19', text: 'Great platform with a helpful support team. The demo account is perfect to practise before trading real funds. Charts and indicators are better than I expected.' },
+      { name: 'Michael T.', country: 'South Africa', flag: 'za', date: '2026-08-27', text: 'Amazing tools for beginners, the demo account is a life saver. Fast withdrawals and a very intuitive interface. The social trading feature is a real plus.' },
     ],
   },
   faq: {

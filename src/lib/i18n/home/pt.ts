@@ -139,10 +139,10 @@ export const pt: HomeDictionary = {
     subtitle: 'Opiniões coletadas de titulares de conta verificados.',
     ratingLabel: 'avaliação média',
     items: [
-      { name: 'Vinod M.', country: 'Índia', flag: 'in', date: '2025-11-26', text: 'A Pocket Option é amigável para iniciantes, com interface limpa. Conta demo, depósito mínimo baixo e acesso a forex, ações e cripto facilitam o começo. O copy trading é um ótimo bônus.' },
-      { name: 'Oluwaseyi O.', country: 'Nigéria', flag: 'ng', date: '2026-02-24', text: 'Depósitos e saques são os mais fáceis que já usei. O suporte respondeu em minutos e a execução é rápida. Recomendo a quem procura uma plataforma confiável.' },
-      { name: 'James W.', country: 'Reino Unido', flag: 'gb', date: '2026-03-05', text: 'Ótima plataforma com equipe de suporte prestativa. A conta demo é perfeita para praticar antes de usar dinheiro real. Gráficos e indicadores melhores do que eu esperava.' },
-      { name: 'Michael T.', country: 'África do Sul', flag: 'za', date: '2026-02-18', text: 'Ferramentas incríveis para iniciantes, a conta demo salva vidas. Saques rápidos e interface muito intuitiva. O social trading é um diferencial real.' },
+      { name: 'Vinod M.', country: 'Índia', flag: 'in', date: '2026-08-14', text: 'A Pocket Option é amigável para iniciantes, com interface limpa. Conta demo, depósito mínimo baixo e acesso a forex, ações e cripto facilitam o começo. O copy trading é um ótimo bônus.' },
+      { name: 'Oluwaseyi O.', country: 'Nigéria', flag: 'ng', date: '2026-09-02', text: 'Depósitos e saques são os mais fáceis que já usei. O suporte respondeu em minutos e a execução é rápida. Recomendo a quem procura uma plataforma confiável.' },
+      { name: 'James W.', country: 'Reino Unido', flag: 'gb', date: '2026-09-19', text: 'Ótima plataforma com equipe de suporte prestativa. A conta demo é perfeita para praticar antes de usar dinheiro real. Gráficos e indicadores melhores do que eu esperava.' },
+      { name: 'Michael T.', country: 'África do Sul', flag: 'za', date: '2026-08-27', text: 'Ferramentas incríveis para iniciantes, a conta demo salva vidas. Saques rápidos e interface muito intuitiva. O social trading é um diferencial real.' },
     ],
   },
   faq: {

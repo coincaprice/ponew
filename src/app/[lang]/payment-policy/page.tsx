@@ -48,7 +48,7 @@ type LangContent = {
 const CONTENT: Record<string, LangContent> = {
   pt: {
     pageTitle: 'Política de Pagamento', home: 'Início', page: 'Política de Pagamento',
-    updated: 'Última atualização: 17 de março de 2026', contentsLabel: 'Conteúdo',
+    updated: 'Última atualização: 26 de setembro de 2026', contentsLabel: 'Conteúdo',
     sections: [
       {
         num: '1', title: 'Responsabilidade Financeira Geral',
@@ -128,7 +128,7 @@ const CONTENT: Record<string, LangContent> = {
 
   es: {
     pageTitle: 'Política de Pagos', home: 'Inicio', page: 'Política de Pagos',
-    updated: 'Última actualización: 17 de marzo de 2026', contentsLabel: 'Contenido',
+    updated: 'Última actualización: 26 de septiembre de 2026', contentsLabel: 'Contenido',
     sections: [
       {
         num: '1', title: 'Responsabilidad Financiera General',
@@ -208,7 +208,7 @@ const CONTENT: Record<string, LangContent> = {
 
   ru: {
     pageTitle: 'Политика платежей', home: 'Главная', page: 'Политика платежей',
-    updated: 'Последнее обновление: 17 марта 2026 г.', contentsLabel: 'Содержание',
+    updated: 'Последнее обновление: 26 сентября 2026 г.', contentsLabel: 'Содержание',
     sections: [
       {
         num: '1', title: 'Общая финансовая ответственность',
@@ -288,7 +288,7 @@ const CONTENT: Record<string, LangContent> = {
 
   id: {
     pageTitle: 'Kebijakan Pembayaran', home: 'Beranda', page: 'Kebijakan Pembayaran',
-    updated: 'Terakhir diperbarui: 17 Maret 2026', contentsLabel: 'Daftar Isi',
+    updated: 'Terakhir diperbarui: 26 September 2026', contentsLabel: 'Daftar Isi',
     sections: [
       {
         num: '1', title: 'Tanggung Jawab Keuangan Umum',

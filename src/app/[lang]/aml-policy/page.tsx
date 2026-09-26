@@ -50,7 +50,7 @@ const CONTENT: Record<string, LangContent> = {
     pageTitle: 'Política Anti-Lavagem de Dinheiro (AML) e',
     pageSubtitle: 'Conheça o Seu Cliente (KYC)',
     home: 'Início', page: 'Política AML e KYC',
-    updated: 'Última atualização: 17 de março de 2026', contentsLabel: 'Conteúdo',
+    updated: 'Última atualização: 26 de setembro de 2026', contentsLabel: 'Conteúdo',
     sections: [
       {
         num: '1', title: 'Declaração de Política',
@@ -120,7 +120,7 @@ const CONTENT: Record<string, LangContent> = {
     pageTitle: 'Política contra el Lavado de Dinero (AML) y',
     pageSubtitle: 'Conozca a su Cliente (KYC)',
     home: 'Inicio', page: 'Política AML y KYC',
-    updated: 'Última actualización: 17 de marzo de 2026', contentsLabel: 'Contenido',
+    updated: 'Última actualización: 26 de septiembre de 2026', contentsLabel: 'Contenido',
     sections: [
       {
         num: '1', title: 'Declaración de Política',
@@ -190,7 +190,7 @@ const CONTENT: Record<string, LangContent> = {
     pageTitle: 'Политика противодействия отмыванию денег (AML) и',
     pageSubtitle: 'Знай своего клиента (KYC)',
     home: 'Главная', page: 'Политика AML и KYC',
-    updated: 'Последнее обновление: 17 марта 2026 г.', contentsLabel: 'Содержание',
+    updated: 'Последнее обновление: 26 сентября 2026 г.', contentsLabel: 'Содержание',
     sections: [
       {
         num: '1', title: 'Положения политики',
@@ -260,7 +260,7 @@ const CONTENT: Record<string, LangContent> = {
     pageTitle: 'Kebijakan Anti-Pencucian Uang (AML) dan',
     pageSubtitle: 'Kenali Pelanggan Anda (KYC)',
     home: 'Beranda', page: 'Kebijakan AML & KYC',
-    updated: 'Terakhir diperbarui: 17 Maret 2026', contentsLabel: 'Daftar Isi',
+    updated: 'Terakhir diperbarui: 26 September 2026', contentsLabel: 'Daftar Isi',
     sections: [
       {
         num: '1', title: 'Pernyataan Kebijakan',

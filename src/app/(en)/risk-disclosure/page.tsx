@@ -38,7 +38,7 @@ export default function RiskDisclosure() {
             <span style={{ color: 'rgba(255,255,255,0.85)' }}>Risk Disclosure</span>
           </div>
           <h1 style={{ fontSize: 'clamp(24px, 4vw, 48px)', fontWeight: 800, color: '#fff' }}>Risk Disclosure</h1>
-          <p style={{ color: 'rgba(255,255,255,0.6)', marginTop: 12, fontSize: 15 }}>Last updated: March 17, 2026</p>
+          <p style={{ color: 'rgba(255,255,255,0.6)', marginTop: 12, fontSize: 15 }}>Last updated: September 26, 2026</p>
         </div>
       </section>
       <section style={{ background: '#fff', padding: '64px 0' }}>

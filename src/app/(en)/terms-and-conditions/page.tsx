@@ -136,7 +136,7 @@ export default function TermsAndConditions() {
       breadcrumbHome="Home"
       breadcrumbPage="Terms and Conditions"
       title="Public Offer Agreement"
-      updated="Last updated: March 17, 2026"
+      updated="Last updated: September 26, 2026"
       tocItems={[
         { num: 'def', title: 'Terms & Definitions', href: '#definitions' },
         ...sections.map(s => ({ num: s.num, title: s.title })),

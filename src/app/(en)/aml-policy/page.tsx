@@ -94,7 +94,7 @@ export default function AMLPolicy() {
       breadcrumbHome="Home"
       breadcrumbPage="AML & KYC Policy"
       title={<>Anti-Money Laundering (AML) &amp;<br />Know Your Customer (KYC) Policy</>}
-      updated="Last updated: March 17, 2026"
+      updated="Last updated: September 26, 2026"
       tocItems={sections.map(s => ({ num: s.num, title: s.title }))}
     >
       {sections.map(s => (

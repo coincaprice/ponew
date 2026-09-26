@@ -50,7 +50,7 @@ type LangContent = {
 const CONTENT: Record<string, LangContent> = {
   pt: {
     title: 'Acordo de Oferta Pública', home: 'Início', page: 'Termos e Condições',
-    updated: 'Última atualização: 17 de março de 2026',
+    updated: 'Última atualização: 26 de setembro de 2026',
     preamble: 'O Cliente afirma automaticamente a plena aceitação deste Acordo ao registar um Perfil de Cliente no website da Empresa. O Acordo permanece válido até ser rescindido por qualquer das partes, de acordo com as disposições aqui estabelecidas.',
     contentsLabel: 'Conteúdo', definitionsTitle: 'Termos e Definições',
     companyNote: 'Detalhes da empresa: Toda a atividade de corretagem neste website é fornecida pela FX Trading LLC, registada na República da Costa Rica. A FX Trading LLC não presta serviços a residentes dos países EEA, EUA, Israel, Reino Unido, Filipinas, Japão e Brasil.',
@@ -149,7 +149,7 @@ const CONTENT: Record<string, LangContent> = {
 
   es: {
     title: 'Acuerdo de Oferta Pública', home: 'Inicio', page: 'Términos y Condiciones',
-    updated: 'Última actualización: 17 de marzo de 2026',
+    updated: 'Última actualización: 26 de septiembre de 2026',
     preamble: 'El Cliente afirma automáticamente la plena aceptación de este Acuerdo al registrar un Perfil de Cliente en el sitio web de la Empresa. El Acuerdo permanece vigente hasta que sea rescindido por cualquiera de las partes, de conformidad con las disposiciones aquí establecidas.',
     contentsLabel: 'Contenido', definitionsTitle: 'Términos y Definiciones',
     companyNote: 'Datos de la empresa: Toda la actividad de corretaje en este sitio web es proporcionada por FX Trading LLC, registrada en la República de Costa Rica. FX Trading LLC no presta servicios a residentes de los países de la EEA, EE.UU., Israel, Reino Unido, Filipinas, Japón y Brasil.',
@@ -247,7 +247,7 @@ const CONTENT: Record<string, LangContent> = {
 
   ru: {
     title: 'Договор публичной оферты', home: 'Главная', page: 'Условия использования',
-    updated: 'Последнее обновление: 17 марта 2026 г.',
+    updated: 'Последнее обновление: 26 сентября 2026 г.',
     preamble: 'Клиент автоматически подтверждает полное принятие настоящего Соглашения путём регистрации Профиля Клиента на официальном сайте Компании. Соглашение остаётся в силе до его расторжения любой из сторон в соответствии с положениями, изложенными в настоящем документе.',
     contentsLabel: 'Содержание', definitionsTitle: 'Термины и определения',
     companyNote: 'Реквизиты компании: Вся брокерская деятельность на этом сайте осуществляется компанией FX Trading LLC, зарегистрированной в Республике Коста-Рика. FX Trading LLC не оказывает услуги резидентам стран ЕЭЗ, США, Израиля, Великобритании, Филиппин, Японии и Бразилии.',
@@ -346,7 +346,7 @@ const CONTENT: Record<string, LangContent> = {
 
   id: {
     title: 'Perjanjian Penawaran Publik', home: 'Beranda', page: 'Syarat dan Ketentuan',
-    updated: 'Terakhir diperbarui: 17 Maret 2026',
+    updated: 'Terakhir diperbarui: 26 September 2026',
     preamble: 'Klien secara otomatis menyatakan penerimaan penuh atas Perjanjian ini dengan mendaftarkan Profil Klien di situs web Perusahaan. Perjanjian tetap berlaku hingga diakhiri oleh salah satu pihak sesuai dengan ketentuan yang diatur di sini.',
     contentsLabel: 'Daftar Isi', definitionsTitle: 'Istilah dan Definisi',
     companyNote: 'Detail perusahaan: Seluruh aktivitas pialang di situs web ini disediakan oleh FX Trading LLC, yang terdaftar di Republik Kosta Rika. FX Trading LLC tidak memberikan layanan kepada penduduk negara-negara EEA, AS, Israel, Inggris, Filipina, Jepang, dan Brasil.',

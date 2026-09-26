@@ -49,7 +49,7 @@ type LangContent = {
 const CONTENT: Record<string, LangContent> = {
   pt: {
     pageTitle: 'Política de Privacidade', home: 'Início', page: 'Política de Privacidade',
-    updated: 'Última atualização: 17 de março de 2026',
+    updated: 'Última atualização: 26 de setembro de 2026',
     contentsLabel: 'Conteúdo',
     sections: [
       {
@@ -142,7 +142,7 @@ const CONTENT: Record<string, LangContent> = {
 
   es: {
     pageTitle: 'Política de Privacidad', home: 'Inicio', page: 'Política de Privacidad',
-    updated: 'Última actualización: 17 de marzo de 2026',
+    updated: 'Última actualización: 26 de septiembre de 2026',
     contentsLabel: 'Contenido',
     sections: [
       {
@@ -235,7 +235,7 @@ const CONTENT: Record<string, LangContent> = {
 
   ru: {
     pageTitle: 'Политика конфиденциальности', home: 'Главная', page: 'Политика конфиденциальности',
-    updated: 'Последнее обновление: 17 марта 2026 г.',
+    updated: 'Последнее обновление: 26 сентября 2026 г.',
     contentsLabel: 'Содержание',
     sections: [
       {
@@ -328,7 +328,7 @@ const CONTENT: Record<string, LangContent> = {
 
   id: {
     pageTitle: 'Kebijakan Privasi', home: 'Beranda', page: 'Kebijakan Privasi',
-    updated: 'Terakhir diperbarui: 17 Maret 2026',
+    updated: 'Terakhir diperbarui: 26 September 2026',
     contentsLabel: 'Daftar Isi',
     sections: [
       {

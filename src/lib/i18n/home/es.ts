@@ -139,10 +139,10 @@ export const es: HomeDictionary = {
     subtitle: 'Opiniones recogidas de titulares de cuenta verificados.',
     ratingLabel: 'valoración media',
     items: [
-      { name: 'Vinod M.', country: 'India', flag: 'in', date: '2025-11-26', text: 'Pocket Option es fácil para principiantes, con una interfaz limpia. La cuenta demo, el depósito mínimo bajo y el acceso a forex, acciones y cripto facilitan empezar. El copy trading es un gran extra.' },
-      { name: 'Oluwaseyi O.', country: 'Nigeria', flag: 'ng', date: '2026-02-24', text: 'Los depósitos y retiros son los más sencillos que he usado. El soporte respondió en minutos y la ejecución es rápida. Muy recomendable para quien busca una plataforma fiable.' },
-      { name: 'James W.', country: 'Reino Unido', flag: 'gb', date: '2026-03-05', text: 'Gran plataforma con un equipo de soporte muy atento. La cuenta demo es perfecta para practicar antes de usar fondos reales. Los gráficos e indicadores son mejores de lo que esperaba.' },
-      { name: 'Michael T.', country: 'Sudáfrica', flag: 'za', date: '2026-02-18', text: 'Herramientas increíbles para principiantes, la cuenta demo es un salvavidas. Retiros rápidos e interfaz muy intuitiva. El social trading es un plus real.' },
+      { name: 'Vinod M.', country: 'India', flag: 'in', date: '2026-08-14', text: 'Pocket Option es fácil para principiantes, con una interfaz limpia. La cuenta demo, el depósito mínimo bajo y el acceso a forex, acciones y cripto facilitan empezar. El copy trading es un gran extra.' },
+      { name: 'Oluwaseyi O.', country: 'Nigeria', flag: 'ng', date: '2026-09-02', text: 'Los depósitos y retiros son los más sencillos que he usado. El soporte respondió en minutos y la ejecución es rápida. Muy recomendable para quien busca una plataforma fiable.' },
+      { name: 'James W.', country: 'Reino Unido', flag: 'gb', date: '2026-09-19', text: 'Gran plataforma con un equipo de soporte muy atento. La cuenta demo es perfecta para practicar antes de usar fondos reales. Los gráficos e indicadores son mejores de lo que esperaba.' },
+      { name: 'Michael T.', country: 'Sudáfrica', flag: 'za', date: '2026-08-27', text: 'Herramientas increíbles para principiantes, la cuenta demo es un salvavidas. Retiros rápidos e interfaz muy intuitiva. El social trading es un plus real.' },
     ],
   },
   faq: {

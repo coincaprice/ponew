@@ -139,10 +139,10 @@ export const id: HomeDictionary = {
     subtitle: 'Umpan balik dari pemilik akun terverifikasi.',
     ratingLabel: 'rating rata-rata',
     items: [
-      { name: 'Vinod M.', country: 'India', flag: 'in', date: '2025-11-26', text: 'Pocket Option ramah pemula dengan antarmuka yang bersih. Akun demo, deposit minimum rendah, dan akses ke forex, saham, serta kripto membuatnya mudah dimulai. Copy trading adalah bonus besar.' },
-      { name: 'Oluwaseyi O.', country: 'Nigeria', flag: 'ng', date: '2026-02-24', text: 'Deposit dan penarikan paling mudah yang pernah saya pakai. Support menjawab dalam hitungan menit dan eksekusinya cepat. Sangat direkomendasikan bagi yang mencari platform andal.' },
-      { name: 'James W.', country: 'Inggris', flag: 'gb', date: '2026-03-05', text: 'Platform bagus dengan tim support yang membantu. Akun demo sempurna untuk berlatih sebelum pakai dana nyata. Chart dan indikatornya lebih baik dari yang saya kira.' },
-      { name: 'Michael T.', country: 'Afrika Selatan', flag: 'za', date: '2026-02-18', text: 'Alat yang luar biasa untuk pemula, akun demonya sangat membantu. Penarikan cepat dan antarmuka sangat intuitif. Fitur social trading benar-benar nilai tambah.' },
+      { name: 'Vinod M.', country: 'India', flag: 'in', date: '2026-08-14', text: 'Pocket Option ramah pemula dengan antarmuka yang bersih. Akun demo, deposit minimum rendah, dan akses ke forex, saham, serta kripto membuatnya mudah dimulai. Copy trading adalah bonus besar.' },
+      { name: 'Oluwaseyi O.', country: 'Nigeria', flag: 'ng', date: '2026-09-02', text: 'Deposit dan penarikan paling mudah yang pernah saya pakai. Support menjawab dalam hitungan menit dan eksekusinya cepat. Sangat direkomendasikan bagi yang mencari platform andal.' },
+      { name: 'James W.', country: 'Inggris', flag: 'gb', date: '2026-09-19', text: 'Platform bagus dengan tim support yang membantu. Akun demo sempurna untuk berlatih sebelum pakai dana nyata. Chart dan indikatornya lebih baik dari yang saya kira.' },
+      { name: 'Michael T.', country: 'Afrika Selatan', flag: 'za', date: '2026-08-27', text: 'Alat yang luar biasa untuk pemula, akun demonya sangat membantu. Penarikan cepat dan antarmuka sangat intuitif. Fitur social trading benar-benar nilai tambah.' },
     ],
   },
   faq: {
