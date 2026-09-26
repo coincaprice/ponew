@@ -11,6 +11,8 @@ import {
   BarChart3, Gem, TrendingUp,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { IconBadge } from '@/components/ui/IconBadge';
+import { SectionHead } from '@/components/ui/SectionHead';
 import { REGISTER_URL, LOGIN_URL, AFFILIATE_REL } from '@/config/links';
 import { getLocalePath, isLocale } from '@/lib/i18n/config';
 import { getHomeDictionary } from '@/lib/i18n/home';
@@ -38,29 +40,6 @@ function CountUpNumber({ target, prefix = '', suffix = '', duration = 1800, acti
   }, [active, target, duration]);
   const fmt = (n: number) => (n >= 1000 ? `${Math.floor(n / 1000)} ${String(n % 1000).padStart(3, '0')}` : String(n));
   return <>{prefix}{fmt(count)}{suffix}</>;
-}
-
-function IconBadge({ icon: Icon, size = 64 }: { icon: LucideIcon; size?: number }) {
-  const inner = Math.round(size / 2);
-  return (
-    <div className="flex items-center justify-center rounded-full" style={{ width: size, height: size, background: '#EEF3FA' }}>
-      <Icon style={{ width: inner, height: inner, color: BRAND }} strokeWidth={1.75} fill={BRAND} fillOpacity={0.18} />
-    </div>
-  );
-}
-
-function SectionHead({ eyebrow, title, subtitle, align = 'center', dark = false, as = 'h2' }: {
-  eyebrow: string; title: string; subtitle?: string; align?: 'center' | 'left'; dark?: boolean; as?: 'h2' | 'h3';
-}) {
-  const Tag = as;
-  const alignCls = align === 'center' ? 'text-center items-center mx-auto' : 'text-center md:text-left items-center md:items-start';
-  return (
-    <div className={`flex flex-col ${alignCls} max-w-[760px] mb-12 md:mb-16`}>
-      <span className={`eyebrow ${dark ? 'eyebrow-dark' : ''} mb-5`}>{eyebrow}</span>
-      <Tag className={`font-heading font-bold leading-[1.15] text-[28px] md:text-[38px] lg:text-[44px] ${dark ? 'text-white' : 'text-[#080F20]'}`}>{title}</Tag>
-      {subtitle && <p className={`mt-4 text-[16px] md:text-[17px] leading-relaxed ${dark ? 'text-white/65' : 'text-[#5A6A85]'}`}>{subtitle}</p>}
-    </div>
-  );
 }
 
 export function HomePage({ lang = 'en' }: { lang?: string }) {
