@@ -13,9 +13,6 @@ export type Dictionary = {
   drawer: {
     menu: string;
     language: string;
-    minDeposit: string;
-    payout: string;
-    demo: string;
     tagline: string;
   };
   hero: {
@@ -50,9 +47,6 @@ const en: Dictionary = {
   drawer: {
     menu: 'Menu',
     language: 'Language',
-    minDeposit: 'Min. deposit',
-    payout: 'Payout up to',
-    demo: 'Free demo',
     tagline: 'Trade 100+ assets on Pocket Option from just $5.',
   },
   hero: {
@@ -87,9 +81,6 @@ const pt: Dictionary = {
   drawer: {
     menu: 'Menu',
     language: 'Idioma',
-    minDeposit: 'Depósito mín.',
-    payout: 'Payout até',
-    demo: 'Demo grátis',
     tagline: 'Negocie 100+ ativos na Pocket Option a partir de $5.',
   },
   hero: {
@@ -124,9 +115,6 @@ const es: Dictionary = {
   drawer: {
     menu: 'Menú',
     language: 'Idioma',
-    minDeposit: 'Depósito mín.',
-    payout: 'Pago hasta',
-    demo: 'Demo gratis',
     tagline: 'Opera 100+ activos en Pocket Option desde solo $5.',
   },
   hero: {
@@ -161,9 +149,6 @@ const ru: Dictionary = {
   drawer: {
     menu: 'Меню',
     language: 'Язык',
-    minDeposit: 'Мин. депозит',
-    payout: 'Выплата до',
-    demo: 'Бесплатное демо',
     tagline: 'Торгуйте 100+ активами на Pocket Option от $5.',
   },
   hero: {
@@ -198,9 +183,6 @@ const id: Dictionary = {
   drawer: {
     menu: 'Menu',
     language: 'Bahasa',
-    minDeposit: 'Deposit min.',
-    payout: 'Payout hingga',
-    demo: 'Demo gratis',
     tagline: 'Trading 100+ aset di Pocket Option mulai dari $5.',
   },
   hero: {

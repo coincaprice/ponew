@@ -38,6 +38,7 @@ export function Header({ lang = 'en' }: Props) {
   const locale = lang as Locale;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [mobileLangOpen, setMobileLangOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
@@ -211,19 +212,6 @@ export function Header({ lang = 'en' }: Props) {
             </button>
           </div>
 
-          <div className="relative mx-5 grid shrink-0 grid-cols-3 divide-x divide-white/[0.08] rounded-2xl border border-white/[0.08] bg-white/[0.04]">
-            {[
-              { v: '$5', l: t.drawer.minDeposit },
-              { v: '92%', l: t.drawer.payout },
-              { v: '$50k', l: t.drawer.demo },
-            ].map(({ v, l }) => (
-              <div key={l} className="px-2 py-3 text-center">
-                <div className="font-heading text-[17px] font-extrabold leading-none tracking-tight text-white">{v}</div>
-                <div className="mt-1.5 text-[10.5px] font-semibold uppercase tracking-[0.06em] leading-tight text-white/45">{l}</div>
-              </div>
-            ))}
-          </div>
-
           <nav className="relative flex-1 overflow-y-auto px-3 pt-4 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div className="mb-2 px-3 font-heading text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/35">{t.drawer.menu}</div>
             <ul className="space-y-0.5">
@@ -252,23 +240,35 @@ export function Header({ lang = 'en' }: Props) {
             </ul>
 
             <div className="mt-5 mb-2 px-3 font-heading text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/35">{t.drawer.language}</div>
-            <div className="grid grid-cols-2 gap-1.5 px-1">
-              {LOCALES.map(({ code, country }) => {
-                const active = code === locale;
-                return (
-                  <a
-                    key={code}
-                    href={buildLangUrl(code)}
-                    onClick={() => setMobileOpen(false)}
-                    aria-current={active ? 'true' : undefined}
-                    className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 text-[13.5px] font-semibold transition-colors ${active ? 'border-[#0099FA]/50 bg-[#0099FA]/15 text-white' : 'border-white/[0.07] bg-white/[0.03] text-white/65 hover:bg-white/[0.07] hover:text-white'}`}
-                  >
-                    <FlagImg country={country} size={18} />
-                    <span className="truncate">{localeNames[code]}</span>
-                    {active && <span className="ml-auto h-1.5 w-1.5 shrink-0 rounded-full bg-[#0099FA] shadow-[0_0_8px_#0099FA]" />}
-                  </a>
-                );
-              })}
+            <div className={`mx-1 overflow-hidden rounded-xl border transition-colors ${mobileLangOpen ? 'border-[#0099FA]/40 bg-white/[0.05]' : 'border-white/[0.08] bg-white/[0.03]'}`}>
+              <button
+                type="button"
+                onClick={() => setMobileLangOpen(o => !o)}
+                aria-expanded={mobileLangOpen}
+                className="flex w-full items-center gap-3 px-3.5 py-3 text-left"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.04]">
+                  <FlagImg country={LOCALES.find(l => l.code === locale)?.country ?? 'gb'} size={20} />
+                </span>
+                <span className="flex-1 font-heading text-[15px] font-semibold text-white/90">{localeNames[locale]}</span>
+                <ChevronDown className={`h-4 w-4 text-white/40 transition-transform duration-300 ${mobileLangOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${mobileLangOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                <ul className="min-h-0 overflow-hidden">
+                  {LOCALES.filter(l => l.code !== locale).map(({ code, country }) => (
+                    <li key={code} className="border-t border-white/[0.06]">
+                      <a
+                        href={buildLangUrl(code)}
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center gap-3 px-3.5 py-2.5 text-[14px] font-semibold text-white/65 transition-colors hover:bg-white/[0.06] hover:text-white"
+                      >
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center"><FlagImg country={country} size={18} /></span>
+                        {localeNames[code]}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </nav>
 
