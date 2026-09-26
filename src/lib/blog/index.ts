@@ -2,10 +2,21 @@ import type { Locale } from '@/lib/i18n/config';
 import type { BlogDictionary, BlogPost } from './types';
 import { howToTradeOnPocketOption } from './posts/how-to-trade-on-pocket-option';
 import { pocketOptionWithdrawal } from './posts/pocket-option-withdrawal';
+import { pocketOptionDeposit } from './posts/pocket-option-deposit';
+import { pocketOptionDemoAccount } from './posts/pocket-option-demo-account';
+import { pocketOptionIndicators } from './posts/pocket-option-indicators';
+import { pocketOptionRiskManagement } from './posts/pocket-option-risk-management';
+import { pocketOptionMobileApp } from './posts/pocket-option-mobile-app';
 
-export const blogPosts: BlogPost[] = [pocketOptionWithdrawal, howToTradeOnPocketOption].sort(
-  (a, b) => (a.publishedAt < b.publishedAt ? 1 : -1),
-);
+export const blogPosts: BlogPost[] = [
+  pocketOptionMobileApp,
+  pocketOptionRiskManagement,
+  pocketOptionIndicators,
+  pocketOptionDemoAccount,
+  pocketOptionDeposit,
+  pocketOptionWithdrawal,
+  howToTradeOnPocketOption,
+].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find(p => p.slug === slug);

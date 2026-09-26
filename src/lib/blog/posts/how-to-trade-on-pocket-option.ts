@@ -19,7 +19,7 @@ export const howToTradeOnPocketOption: BlogPost = {
         'Learn how to trade on Pocket Option: choose an asset, set the expiration time and trade amount, read the payout, place Up/Down trades and manage risk. Beginner tutorial with screenshots and FAQ.',
       excerpt:
         'Everything a first-time trader needs to place a trade on the pocketoption terminal: assets, expiration, amount, payout, indicators and the mistakes to avoid.',
-      coverAlt: 'Pocket Option trading terminal open on a smartphone',
+      coverAlt: 'Trader analysing charts in the Pocket Option trading terminal on a desktop monitor',
       keyTakeaways: [
         'A Pocket Option trade has four inputs: asset, expiration time, amount and direction (Up or Down).',
         'The payout percentage is shown before you click — it is what you receive on a correct forecast, not a guarantee.',
@@ -84,7 +84,7 @@ export const howToTradeOnPocketOption: BlogPost = {
         'Aprenda como operar na Pocket Option: escolha o ativo, defina o tempo de expiração e o valor, leia o payout, abra operações Para cima/Para baixo e gerencie o risco. Tutorial para iniciantes com imagens e FAQ.',
       excerpt:
         'Tudo o que um trader iniciante precisa para abrir a primeira operação no terminal pocketoption: ativos, expiração, valor, payout, indicadores e os erros a evitar.',
-      coverAlt: 'Terminal de trading da Pocket Option aberto em um smartphone',
+      coverAlt: 'Trader analisando gráficos no terminal de trading da Pocket Option em um monitor',
       keyTakeaways: [
         'Uma operação na Pocket Option tem quatro entradas: ativo, tempo de expiração, valor e direção (Para cima ou Para baixo).',
         'O payout aparece antes do clique — é o que você recebe em uma previsão correta, não uma garantia.',
@@ -149,7 +149,7 @@ export const howToTradeOnPocketOption: BlogPost = {
         'Aprende cómo operar en Pocket Option: elige el activo, define el tiempo de expiración y el importe, lee el payout, abre operaciones Arriba/Abajo y gestiona el riesgo. Tutorial para principiantes con imágenes y FAQ.',
       excerpt:
         'Todo lo que un trader principiante necesita para abrir su primera operación en el terminal pocketoption: activos, expiración, importe, payout, indicadores y los errores que debe evitar.',
-      coverAlt: 'Terminal de trading de Pocket Option abierto en un smartphone',
+      coverAlt: 'Trader analizando gráficos en el terminal de trading de Pocket Option en un monitor',
       keyTakeaways: [
         'Una operación en Pocket Option tiene cuatro datos: activo, tiempo de expiración, importe y dirección (Arriba o Abajo).',
         'El payout se muestra antes de hacer clic: es lo que recibes con un pronóstico correcto, no una garantía.',
@@ -214,7 +214,7 @@ export const howToTradeOnPocketOption: BlogPost = {
         'Узнайте, как торговать на Pocket Option: выбор актива, время экспирации и сумма сделки, чтение выплаты, сделки Вверх/Вниз и управление риском. Обучающая статья для новичков с изображениями и FAQ.',
       excerpt:
         'Всё, что нужно начинающему трейдеру для первой сделки в терминале pocketoption: активы, экспирация, сумма, выплата, индикаторы и ошибки, которых стоит избегать.',
-      coverAlt: 'Торговый терминал Pocket Option, открытый на смартфоне',
+      coverAlt: 'Трейдер анализирует графики в торговом терминале Pocket Option на мониторе',
       keyTakeaways: [
         'У сделки на Pocket Option четыре параметра: актив, время экспирации, сумма и направление (Вверх или Вниз).',
         'Процент выплаты виден до нажатия — это то, что вы получите при верном прогнозе, а не гарантия.',
@@ -279,7 +279,7 @@ export const howToTradeOnPocketOption: BlogPost = {
         'Pelajari cara trading di Pocket Option: pilih aset, atur waktu kedaluwarsa dan jumlah trade, baca payout, buka trade Naik/Turun, dan kelola risiko. Tutorial pemula dengan gambar dan FAQ.',
       excerpt:
         'Semua yang dibutuhkan trader pemula untuk membuka trade pertama di terminal pocketoption: aset, kedaluwarsa, jumlah, payout, indikator, dan kesalahan yang harus dihindari.',
-      coverAlt: 'Terminal trading Pocket Option terbuka di smartphone',
+      coverAlt: 'Trader menganalisis grafik di terminal trading Pocket Option pada monitor desktop',
       keyTakeaways: [
         'Sebuah trade di Pocket Option punya empat input: aset, waktu kedaluwarsa, jumlah, dan arah (Naik atau Turun).',
         'Persentase payout terlihat sebelum Anda klik — itu yang Anda terima saat prediksi benar, bukan jaminan.',
