@@ -2,10 +2,13 @@ import { LegalShell } from '@/components/legal/LegalShell';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
 
+const title = 'Terms and Conditions | Pocket Option';
+const description = 'Read the Pocket Option Terms and Conditions. Learn the rules governing the use of our trading platform, accounts, deposits, withdrawals, and dispute resolution.';
+
 export const metadata: Metadata = {
-  title: 'Terms and Conditions | Pocket Option',
-  description: 'Read the Pocket Option Terms and Conditions. Learn the rules governing the use of our trading platform, accounts, deposits, withdrawals, and dispute resolution.',
-  ...buildSeoMeta('en', 'terms-and-conditions'),
+  title: { absolute: title },
+  description,
+  ...buildSeoMeta('en', 'terms-and-conditions', { title, description }),
 };
 
 const definitions = [

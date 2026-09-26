@@ -3,10 +3,13 @@ import { Footer } from '@/components/layout/Footer';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
 
+const title = 'Risk Disclosure | Pocket Option';
+const description = 'Risk disclosure statement for Pocket Option traders. Trading binary options and financial instruments carries significant risk. Read before you invest.';
+
 export const metadata: Metadata = {
-  title: 'Risk Disclosure | Pocket Option',
-  description: 'Risk disclosure statement for Pocket Option traders. Trading binary options and financial instruments carries significant risk. Read before you invest.',
-  ...buildSeoMeta('en', 'risk-disclosure'),
+  title: { absolute: title },
+  description,
+  ...buildSeoMeta('en', 'risk-disclosure', { title, description }),
 };
 
 const sections = [

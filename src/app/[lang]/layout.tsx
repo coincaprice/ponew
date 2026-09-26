@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { Analytics } from '@/components/layout/Analytics';
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 import { fontVariables } from '@/styles/fonts';
-import { locales, isNonEnLocale } from '@/lib/i18n/config';
+import { locales, isNonEnLocale, localeHreflang } from '@/lib/i18n/config';
 import { getDictionary } from '@/lib/i18n/dictionaries';
 import { buildBaseMetadata } from '@/lib/i18n/seo';
 
@@ -30,7 +30,7 @@ export default async function LangLayout({ children, params }: Props) {
   if (!isNonEnLocale(lang)) notFound();
 
   return (
-    <html lang={lang} className={fontVariables}>
+    <html lang={localeHreflang[lang]} className={fontVariables}>
       <body>
         {children}
         <OrganizationJsonLd />

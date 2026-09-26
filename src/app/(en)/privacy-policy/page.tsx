@@ -2,10 +2,13 @@ import { LegalShell } from '@/components/legal/LegalShell';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
 
+const title = 'Privacy Policy | Pocket Option';
+const description = 'Read the Pocket Option Privacy Policy. Learn how we collect, use, and protect your personal data when you use our trading platform.';
+
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Pocket Option',
-  description: 'Read the Pocket Option Privacy Policy. Learn how we collect, use, and protect your personal data when you use our trading platform.',
-  ...buildSeoMeta('en', 'privacy-policy'),
+  title: { absolute: title },
+  description,
+  ...buildSeoMeta('en', 'privacy-policy', { title, description }),
 };
 
 const sections = [

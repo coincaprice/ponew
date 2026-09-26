@@ -2,10 +2,13 @@ import { LegalShell } from '@/components/legal/LegalShell';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
 
+const title = 'AML & KYC Policy | Pocket Option';
+const description = 'Read the Pocket Option Anti-Money Laundering (AML) and Know Your Customer (KYC) Policy. Learn how we prevent financial crime and verify client identities.';
+
 export const metadata: Metadata = {
-  title: 'AML & KYC Policy | Pocket Option',
-  description: 'Read the Pocket Option Anti-Money Laundering (AML) and Know Your Customer (KYC) Policy. Learn how we prevent financial crime and verify client identities.',
-  ...buildSeoMeta('en', 'aml-policy'),
+  title: { absolute: title },
+  description,
+  ...buildSeoMeta('en', 'aml-policy', { title, description }),
 };
 
 type Section = { num: string; title: string; paragraphs: string[]; bullets?: string[] };

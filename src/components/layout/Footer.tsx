@@ -60,9 +60,7 @@ export function Footer({ lang = 'en' }: Props) {
             <AlertTriangle className="h-4 w-4 text-[#f5b942]" />
             {t.footer.riskWarning}
           </div>
-          <p className="text-[13px] leading-[1.75] text-white/55">
-            Investing in financial products involves risks. Past performance does not guarantee future returns, and values may fluctuate due to market conditions and changes in underlying assets. Any forecasts or illustrations are for reference only and are not guarantees. This website does not constitute an invitation or recommendation to invest. Before investing, seek advice from financial, legal, and tax professionals, and assess whether the product suits your goals, risk tolerance, and circumstances.
-          </p>
+          <p className="text-[13px] leading-[1.75] text-white/55">{t.footer.riskText}</p>
           <a href={lp('risk-disclosure')} className="mt-3 inline-block text-[13px] font-semibold text-[#5fb8ff] underline-offset-4 hover:underline">
             {t.footer.riskDisclosure}
           </a>
@@ -72,8 +70,8 @@ export function Footer({ lang = 'en' }: Props) {
           <p>{t.footer.copyright1}</p>
           <p>{t.footer.copyright2}</p>
           <p>{t.footer.copyright3}</p>
-          <p>All brokerage activity on this website provided by FX Trading LLC.</p>
-          <p>* The minimum investment amount varies by region and payment method.</p>
+          <p>{t.footer.brokerage}</p>
+          <p>{t.footer.minInvestNote}</p>
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.08] pt-7">

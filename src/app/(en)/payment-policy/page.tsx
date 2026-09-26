@@ -2,10 +2,13 @@ import { LegalShell } from '@/components/legal/LegalShell';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
 
+const title = 'Payment Policy | Pocket Option';
+const description = 'Read the Pocket Option Payment Policy. Learn about deposits, withdrawals, processing times, verification requirements, and one-click payment terms.';
+
 export const metadata: Metadata = {
-  title: 'Payment Policy | Pocket Option',
-  description: 'Read the Pocket Option Payment Policy. Learn about deposits, withdrawals, processing times, verification requirements, and one-click payment terms.',
-  ...buildSeoMeta('en', 'payment-policy'),
+  title: { absolute: title },
+  description,
+  ...buildSeoMeta('en', 'payment-policy', { title, description }),
 };
 
 const sections = [

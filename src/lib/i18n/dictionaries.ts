@@ -96,6 +96,9 @@ export type Dictionary = {
   footer: {
     tagline: string;
     riskWarning: string;
+    riskText: string;
+    brokerage: string;
+    minInvestNote: string;
     riskDisclosure: string;
     copyright1: string;
     copyright2: string;
@@ -205,6 +208,9 @@ const en: Dictionary = {
   footer: {
     tagline: 'The most user-friendly trading platform',
     riskWarning: 'RISK WARNING:',
+    riskText: 'Investing in financial products involves risks. Past performance does not guarantee future returns, and values may fluctuate due to market conditions and changes in underlying assets. Any forecasts or illustrations are for reference only and are not guarantees. This website does not constitute an invitation or recommendation to invest. Before investing, seek advice from financial, legal, and tax professionals, and assess whether the product suits your goals, risk tolerance, and circumstances.',
+    brokerage: 'All brokerage activity on this website provided by FX Trading LLC.',
+    minInvestNote: '* The minimum investment amount varies by region and payment method.',
     riskDisclosure: 'Risk Disclosure',
     copyright1: 'All materials and services provided on this site are subject to copyright and belong to "FX Trading LLC". Any use of materials of this website must be approved by an official representative of "FX Trading LLC", and contain a link to the original resource. Any third-party companies of "Online broker" or "Online trading" type, do not have the right to use materials of this website as well as any distorted writing of "FX Trading LLC". In case of violation, they will be prosecuted in accordance with legislation of intellectual property protection.',
     copyright2: 'FX Trading LLC does not provide service to residents of the EEA countries, USA, Israel, UK, Philippines, Japan and Brazil.',
@@ -314,6 +320,9 @@ const pt: Dictionary = {
   footer: {
     tagline: 'A plataforma de trading mais fácil de usar',
     riskWarning: 'AVISO DE RISCO:',
+    riskText: 'Investir em produtos financeiros envolve riscos. O desempenho passado não garante retornos futuros, e os valores podem oscilar devido às condições de mercado e a mudanças nos ativos subjacentes. Quaisquer previsões ou ilustrações são apenas para referência e não constituem garantias. Este site não constitui um convite ou recomendação para investir. Antes de investir, procure orientação de profissionais financeiros, jurídicos e fiscais e avalie se o produto é adequado aos seus objetivos, tolerância ao risco e circunstâncias.',
+    brokerage: 'Toda a atividade de corretagem neste site é fornecida pela FX Trading LLC.',
+    minInvestNote: '* O valor mínimo de investimento varia conforme a região e o método de pagamento.',
     riskDisclosure: 'Divulgação de Riscos',
     copyright1: 'Todos os materiais e serviços fornecidos neste site estão sujeitos a direitos autorais e pertencem à "FX Trading LLC". Qualquer uso dos materiais deste site deve ser aprovado por um representante oficial da "FX Trading LLC".',
     copyright2: 'A FX Trading LLC não presta serviços a residentes dos países da EEE, EUA, Israel, Reino Unido, Filipinas, Japão e Brasil.',
@@ -423,6 +432,9 @@ const es: Dictionary = {
   footer: {
     tagline: 'La plataforma de trading más fácil de usar',
     riskWarning: 'ADVERTENCIA DE RIESGO:',
+    riskText: 'Invertir en productos financieros implica riesgos. El rendimiento pasado no garantiza resultados futuros, y los valores pueden fluctuar debido a las condiciones del mercado y a cambios en los activos subyacentes. Cualquier pronóstico o ilustración es solo de referencia y no constituye una garantía. Este sitio web no constituye una invitación ni una recomendación para invertir. Antes de invertir, busque asesoramiento de profesionales financieros, legales y fiscales, y evalúe si el producto se ajusta a sus objetivos, tolerancia al riesgo y circunstancias.',
+    brokerage: 'Toda la actividad de corretaje en este sitio web es proporcionada por FX Trading LLC.',
+    minInvestNote: '* El monto mínimo de inversión varía según la región y el método de pago.',
     riskDisclosure: 'Divulgación de Riesgos',
     copyright1: 'Todos los materiales y servicios proporcionados en este sitio están sujetos a derechos de autor y pertenecen a "FX Trading LLC". Cualquier uso de los materiales de este sitio debe ser aprobado por un representante oficial de "FX Trading LLC".',
     copyright2: 'FX Trading LLC no presta servicios a residentes de los países de la EEA, EE.UU., Israel, Reino Unido, Filipinas, Japón y Brasil.',
@@ -532,6 +544,9 @@ const ru: Dictionary = {
   footer: {
     tagline: 'Самая удобная торговая платформа',
     riskWarning: 'ПРЕДУПРЕЖДЕНИЕ О РИСКАХ:',
+    riskText: 'Инвестирование в финансовые продукты связано с рисками. Прошлые результаты не гарантируют будущую доходность, а стоимость может колебаться из‑за рыночных условий и изменений базовых активов. Любые прогнозы или иллюстрации приведены только для справки и не являются гарантией. Этот сайт не является приглашением или рекомендацией инвестировать. Перед инвестированием проконсультируйтесь с финансовыми, юридическими и налоговыми специалистами и оцените, соответствует ли продукт вашим целям, толерантности к риску и обстоятельствам.',
+    brokerage: 'Вся брокерская деятельность на этом сайте осуществляется FX Trading LLC.',
+    minInvestNote: '* Минимальная сумма инвестиций зависит от региона и способа оплаты.',
     riskDisclosure: 'Раскрытие рисков',
     copyright1: 'Все материалы и услуги, предоставленные на этом сайте, защищены авторским правом и принадлежат "FX Trading LLC".',
     copyright2: 'FX Trading LLC не предоставляет услуги резидентам стран ЕЭЗ, США, Израиля, Великобритании, Филиппин, Японии и Бразилии.',
@@ -641,6 +656,9 @@ const id: Dictionary = {
   footer: {
     tagline: 'Platform trading paling mudah digunakan',
     riskWarning: 'PERINGATAN RISIKO:',
+    riskText: 'Berinvestasi pada produk keuangan mengandung risiko. Kinerja masa lalu tidak menjamin hasil di masa depan, dan nilai dapat berfluktuasi karena kondisi pasar serta perubahan aset dasar. Prakiraan atau ilustrasi apa pun hanya sebagai referensi dan bukan jaminan. Situs web ini bukan merupakan ajakan atau rekomendasi untuk berinvestasi. Sebelum berinvestasi, mintalah saran dari profesional keuangan, hukum, dan pajak, serta nilai apakah produk ini sesuai dengan tujuan, toleransi risiko, dan kondisi Anda.',
+    brokerage: 'Seluruh aktivitas perantara (brokerage) di situs web ini disediakan oleh FX Trading LLC.',
+    minInvestNote: '* Jumlah investasi minimum bervariasi tergantung wilayah dan metode pembayaran.',
     riskDisclosure: 'Pengungkapan Risiko',
     copyright1: 'Semua materi dan layanan yang tersedia di situs ini tunduk pada hak cipta dan milik "FX Trading LLC".',
     copyright2: 'FX Trading LLC tidak memberikan layanan kepada penduduk negara-negara EEA, AS, Israel, Inggris, Filipina, Jepang, dan Brasil.',

@@ -35,9 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: { absolute: m.title },
     description: m.description,
-    openGraph: { title: m.title, description: m.description },
-    twitter: { card: 'summary_large_image', title: m.title, description: m.description },
-    ...buildSeoMeta(lang, 'aml-policy'),
+    ...buildSeoMeta(lang, 'aml-policy', { title: m.title, description: m.description }),
   };
 }
 

@@ -30,9 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: { absolute: title },
     description,
-    openGraph: { title, description },
-    twitter: { card: 'summary_large_image', title, description },
-    ...buildSeoMeta(lang, 'quick-start'),
+    ...buildSeoMeta(lang, 'quick-start', { title, description }),
   };
 }
 

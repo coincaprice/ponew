@@ -15,6 +15,10 @@ export function getOgLocale(lang: string): string {
   return ogLocaleMap[lang as Locale] ?? 'en_US';
 }
 
+function getOgAlternates(lang: string): string[] {
+  return locales.filter(l => l !== lang).map(l => ogLocaleMap[l]);
+}
+
 const OG_IMAGE = [{ ...siteConfig.ogImage, url: `${BASE_URL}${siteConfig.ogImage.url}` }];
 
 /** Metadata shared by every root layout (icons, robots, verification, twitter defaults). */
@@ -38,6 +42,7 @@ export function buildBaseMetadata(lang: string, title: string, description: stri
     openGraph: {
       type: 'website',
       locale: getOgLocale(lang),
+      alternateLocale: getOgAlternates(lang),
       siteName: siteConfig.name,
       title,
       description,
@@ -68,12 +73,19 @@ export function buildBaseMetadata(lang: string, title: string, description: stri
   };
 }
 
+type PageSeo = { title?: string; description?: string };
+
 /**
- * Builds canonical + hreflang + og metadata for any page.
+ * Builds canonical + hreflang + Open Graph + Twitter metadata for any page.
  * @param lang - e.g. 'en', 'pt', 'es', 'ru', 'id'
  * @param slug - page slug WITHOUT leading slash, e.g. 'about-us', '' (homepage)
+ * @param page - optional title/description, mirrored into og:* and twitter:*
  */
-export function buildSeoMeta(lang: string, slug: string = ''): Pick<Metadata, 'alternates' | 'openGraph'> {
+export function buildSeoMeta(
+  lang: string,
+  slug: string = '',
+  page: PageSeo = {},
+): Pick<Metadata, 'alternates' | 'openGraph' | 'twitter'> {
   const locale = lang as Locale;
   const canonical = `${BASE_URL}${getLocalePath(locale, slug)}`;
 
@@ -92,6 +104,16 @@ export function buildSeoMeta(lang: string, slug: string = ''): Pick<Metadata, 'a
       images: OG_IMAGE,
       url: canonical,
       locale: getOgLocale(lang),
+      alternateLocale: getOgAlternates(lang),
+      ...(page.title && { title: page.title }),
+      ...(page.description && { description: page.description }),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: OG_IMAGE.map(i => i.url),
+      site: siteConfig.twitterHandle,
+      ...(page.title && { title: page.title }),
+      ...(page.description && { description: page.description }),
     },
   };
 }
