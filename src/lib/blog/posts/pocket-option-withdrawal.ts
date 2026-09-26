@@ -14,9 +14,9 @@ export const pocketOptionWithdrawal: BlogPost = {
   content: {
     en: {
       title: 'Pocket Option withdrawal: how to withdraw money, processing time, limits and fees',
-      metaTitle: 'Pocket Option withdrawal guide: how to withdraw money, time, limits and fees',
+      metaTitle: 'Pocket Option Withdrawal Guide – Time, Limits and Fees',
       metaDescription:
-        'How to withdraw money from Pocket Option step by step: verification, choosing a payment method, minimum $10, processing time around 24 hours, zero platform fees and how to fix a pending or rejected withdrawal.',
+        'How to withdraw money from Pocket Option: verification, payment methods, minimum $10, about 24-hour processing, zero platform fees and fixing pending withdrawals.',
       excerpt:
         'A complete pocketoption withdrawal walkthrough: what to verify before the first request, which methods are fastest, how long it takes and why some withdrawals get delayed.',
       coverAlt: 'Gold coins in front of a trading chart — withdrawing profit from Pocket Option',
@@ -83,9 +83,9 @@ export const pocketOptionWithdrawal: BlogPost = {
 
     pt: {
       title: 'Saque na Pocket Option: como retirar dinheiro, prazo, limites e taxas',
-      metaTitle: 'Guia de saque na Pocket Option: como retirar dinheiro, prazo, limites e taxas',
+      metaTitle: 'Guia de Saque Pocket Option – Prazo, Limites e Taxas',
       metaDescription:
-        'Como sacar da Pocket Option passo a passo: verificação, escolha do método de pagamento, mínimo de $10, processamento em cerca de 24 horas, sem taxas da plataforma e como resolver um saque pendente ou rejeitado.',
+        'Como sacar da Pocket Option: verificação, métodos de pagamento, mínimo de $10, processamento em cerca de 24 horas, sem taxas e como resolver um saque pendente.',
       excerpt:
         'Passo a passo completo do saque na pocketoption: o que verificar antes do primeiro pedido, quais métodos são mais rápidos, quanto tempo leva e por que alguns saques atrasam.',
       coverAlt: 'Moedas de ouro em frente a um gráfico de trading — sacando lucro da Pocket Option',
@@ -152,9 +152,9 @@ export const pocketOptionWithdrawal: BlogPost = {
 
     es: {
       title: 'Retiro en Pocket Option: cómo retirar dinero, tiempos, límites y comisiones',
-      metaTitle: 'Guía de retiro en Pocket Option: cómo retirar dinero, tiempos, límites y comisiones',
+      metaTitle: 'Guía de Retiro Pocket Option – Tiempos, Límites y Comisiones',
       metaDescription:
-        'Cómo retirar dinero de Pocket Option paso a paso: verificación, elección del método de pago, mínimo de $10, procesamiento en unas 24 horas, sin comisiones de la plataforma y cómo resolver un retiro pendiente o rechazado.',
+        'Cómo retirar dinero de Pocket Option: verificación, métodos de pago, mínimo de $10, procesamiento en unas 24 horas, sin comisiones y cómo resolver un retiro pendiente.',
       excerpt:
         'Recorrido completo del retiro en pocketoption: qué verificar antes de la primera solicitud, qué métodos son más rápidos, cuánto tarda y por qué algunos retiros se retrasan.',
       coverAlt: 'Monedas de oro frente a un gráfico de trading — retirando beneficios de Pocket Option',
@@ -220,10 +220,10 @@ export const pocketOptionWithdrawal: BlogPost = {
     },
 
     ru: {
-      title: 'Вывод средств с Pocket Option: как вывести деньги, сроки, лимиты и комиссии',
-      metaTitle: 'Вывод средств с Pocket Option: как вывести деньги, сроки, лимиты и комиссии',
+      title: 'Вывод средств с Pocket Option – сроки, лимиты и комиссии',
+      metaTitle: 'Вывод средств с Pocket Option – сроки, лимиты и комиссии',
       metaDescription:
-        'Как вывести деньги с Pocket Option пошагово: верификация, выбор платёжного метода, минимум $10, обработка около 24 часов, без комиссии платформы и что делать с ожидающей или отклонённой заявкой.',
+        'Как вывести деньги с Pocket Option: верификация, выбор платёжного метода, минимум $10, обработка около 24 часов, без комиссии и что делать с ожидающей заявкой.',
       excerpt:
         'Полный разбор вывода средств с pocketoption: что проверить перед первой заявкой, какие методы быстрее, сколько это занимает и почему некоторые выводы задерживаются.',
       coverAlt: 'Золотые монеты на фоне торгового графика — вывод прибыли с Pocket Option',
@@ -290,9 +290,9 @@ export const pocketOptionWithdrawal: BlogPost = {
 
     id: {
       title: 'Penarikan Pocket Option: cara withdraw, waktu proses, limit, dan biaya',
-      metaTitle: 'Panduan penarikan Pocket Option: cara withdraw, waktu proses, limit, dan biaya',
+      metaTitle: 'Panduan Penarikan Pocket Option – Waktu, Limit, dan Biaya',
       metaDescription:
-        'Cara menarik uang dari Pocket Option langkah demi langkah: verifikasi, memilih metode pembayaran, minimum $10, waktu proses sekitar 24 jam, tanpa biaya platform, dan cara mengatasi penarikan pending atau ditolak.',
+        'Cara withdraw dari Pocket Option: verifikasi, memilih metode pembayaran, minimum $10, proses sekitar 24 jam, tanpa biaya platform, dan solusi penarikan pending.',
       excerpt:
         'Panduan lengkap penarikan pocketoption: apa yang harus diverifikasi sebelum permintaan pertama, metode mana yang tercepat, berapa lama prosesnya, dan mengapa beberapa penarikan tertunda.',
       coverAlt: 'Koin emas di depan grafik trading — menarik profit dari Pocket Option',

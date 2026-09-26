@@ -14,9 +14,9 @@ export const howToTradeOnPocketOption: BlogPost = {
   content: {
     en: {
       title: 'How to trade on Pocket Option: a beginner’s guide to the trading terminal',
-      metaTitle: 'How to trade on Pocket Option: step-by-step terminal guide for beginners',
+      metaTitle: 'How to Trade on Pocket Option – Beginner Terminal Guide',
       metaDescription:
-        'Learn how to trade on Pocket Option: choose an asset, set the expiration time and trade amount, read the payout, place Up/Down trades and manage risk. Beginner tutorial with screenshots and FAQ.',
+        'Learn how to trade on Pocket Option: choose an asset, set expiration and amount, read the payout, place Up/Down trades and manage risk. Beginner tutorial with FAQ.',
       excerpt:
         'Everything a first-time trader needs to place a trade on the pocketoption terminal: assets, expiration, amount, payout, indicators and the mistakes to avoid.',
       coverAlt: 'Trader analysing charts in the Pocket Option trading terminal on a desktop monitor',
@@ -79,9 +79,9 @@ export const howToTradeOnPocketOption: BlogPost = {
 
     pt: {
       title: 'Como operar na Pocket Option: guia do terminal de trading para iniciantes',
-      metaTitle: 'Como operar na Pocket Option: guia passo a passo do terminal para iniciantes',
+      metaTitle: 'Como Operar na Pocket Option – Guia do Terminal para Iniciantes',
       metaDescription:
-        'Aprenda como operar na Pocket Option: escolha o ativo, defina o tempo de expiração e o valor, leia o payout, abra operações Para cima/Para baixo e gerencie o risco. Tutorial para iniciantes com imagens e FAQ.',
+        'Aprenda como operar na Pocket Option: escolha o ativo, defina expiração e valor, leia o payout, abra operações Para cima/Para baixo e gerencie o risco. Tutorial com FAQ.',
       excerpt:
         'Tudo o que um trader iniciante precisa para abrir a primeira operação no terminal pocketoption: ativos, expiração, valor, payout, indicadores e os erros a evitar.',
       coverAlt: 'Trader analisando gráficos no terminal de trading da Pocket Option em um monitor',
@@ -144,9 +144,9 @@ export const howToTradeOnPocketOption: BlogPost = {
 
     es: {
       title: 'Cómo operar en Pocket Option: guía del terminal de trading para principiantes',
-      metaTitle: 'Cómo operar en Pocket Option: guía paso a paso del terminal para principiantes',
+      metaTitle: 'Cómo Operar en Pocket Option – Guía del Terminal para Novatos',
       metaDescription:
-        'Aprende cómo operar en Pocket Option: elige el activo, define el tiempo de expiración y el importe, lee el payout, abre operaciones Arriba/Abajo y gestiona el riesgo. Tutorial para principiantes con imágenes y FAQ.',
+        'Aprende cómo operar en Pocket Option: elige el activo, define expiración e importe, lee el payout, abre operaciones Arriba/Abajo y gestiona el riesgo. Tutorial con FAQ.',
       excerpt:
         'Todo lo que un trader principiante necesita para abrir su primera operación en el terminal pocketoption: activos, expiración, importe, payout, indicadores y los errores que debe evitar.',
       coverAlt: 'Trader analizando gráficos en el terminal de trading de Pocket Option en un monitor',
@@ -209,9 +209,9 @@ export const howToTradeOnPocketOption: BlogPost = {
 
     ru: {
       title: 'Как торговать на Pocket Option: руководство по торговому терминалу для новичков',
-      metaTitle: 'Как торговать на Pocket Option: пошаговое руководство по терминалу для новичков',
+      metaTitle: 'Как торговать на Pocket Option – руководство для новичков',
       metaDescription:
-        'Узнайте, как торговать на Pocket Option: выбор актива, время экспирации и сумма сделки, чтение выплаты, сделки Вверх/Вниз и управление риском. Обучающая статья для новичков с изображениями и FAQ.',
+        'Узнайте, как торговать на Pocket Option: выбор актива, экспирация и сумма сделки, чтение выплаты, сделки Вверх/Вниз и управление риском. Статья для новичков с FAQ.',
       excerpt:
         'Всё, что нужно начинающему трейдеру для первой сделки в терминале pocketoption: активы, экспирация, сумма, выплата, индикаторы и ошибки, которых стоит избегать.',
       coverAlt: 'Трейдер анализирует графики в торговом терминале Pocket Option на мониторе',
@@ -274,9 +274,9 @@ export const howToTradeOnPocketOption: BlogPost = {
 
     id: {
       title: 'Cara trading di Pocket Option: panduan terminal trading untuk pemula',
-      metaTitle: 'Cara trading di Pocket Option: panduan terminal langkah demi langkah untuk pemula',
+      metaTitle: 'Cara Trading di Pocket Option – Panduan Terminal untuk Pemula',
       metaDescription:
-        'Pelajari cara trading di Pocket Option: pilih aset, atur waktu kedaluwarsa dan jumlah trade, baca payout, buka trade Naik/Turun, dan kelola risiko. Tutorial pemula dengan gambar dan FAQ.',
+        'Pelajari cara trading di Pocket Option: pilih aset, atur waktu kedaluwarsa dan jumlah, baca payout, buka trade Naik/Turun, dan kelola risiko. Tutorial pemula dengan FAQ.',
       excerpt:
         'Semua yang dibutuhkan trader pemula untuk membuka trade pertama di terminal pocketoption: aset, kedaluwarsa, jumlah, payout, indikator, dan kesalahan yang harus dihindari.',
       coverAlt: 'Trader menganalisis grafik di terminal trading Pocket Option pada monitor desktop',

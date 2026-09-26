@@ -14,9 +14,9 @@ export const pocketOptionMobileApp: BlogPost = {
   content: {
     en: {
       title: 'Pocket Option mobile app: how to download it on Android and iOS, features and trading from your phone',
-      metaTitle: 'Pocket Option app for Android and iOS: download, install and trade from your phone',
+      metaTitle: 'Pocket Option App for Android & iOS – Download and Trade',
       metaDescription:
-        'Pocket Option mobile app guide: how to download the Android APK or iOS app, log in, use the mobile terminal, demo account, deposits and withdrawals on the phone, notifications and the differences from the web platform.',
+        'Pocket Option app guide: download the Android APK or iOS app, log in, use the mobile terminal, demo account, deposits, withdrawals and notifications.',
       excerpt:
         'The pocketoption app puts the full terminal in your pocket. Here is how to install it on Android and iPhone, what it can do, how it differs from the web version and how to trade safely on a small screen.',
       coverAlt: 'Hand holding a smartphone with the Pocket Option trading app open',
@@ -90,9 +90,9 @@ export const pocketOptionMobileApp: BlogPost = {
     },
     pt: {
       title: 'App Pocket Option: como baixar no Android e iOS, recursos e como operar pelo celular',
-      metaTitle: 'App Pocket Option para Android e iOS: baixar, instalar e operar pelo celular',
+      metaTitle: 'App Pocket Option para Android e iOS – Baixar e Operar',
       metaDescription:
-        'Guia do app Pocket Option: como baixar o APK Android ou o app iOS, fazer login, usar o terminal mobile, conta demo, depósitos e saques pelo celular, notificações e diferenças para a versão web.',
+        'Guia do app Pocket Option: baixe o APK Android ou o app iOS, faça login, use o terminal mobile, conta demo, depósitos e saques pelo celular e notificações.',
       excerpt:
         'O app pocketoption coloca o terminal completo no seu bolso. Veja como instalar no Android e iPhone, o que ele faz, como difere da versão web e como operar com segurança em uma tela pequena.',
       coverAlt: 'Mão segurando um smartphone com o app de trading da Pocket Option aberto',
@@ -166,9 +166,9 @@ export const pocketOptionMobileApp: BlogPost = {
     },
     es: {
       title: 'App de Pocket Option: cómo descargarla en Android e iOS, funciones y operar desde el móvil',
-      metaTitle: 'App Pocket Option para Android e iOS: descargar, instalar y operar desde el móvil',
+      metaTitle: 'App Pocket Option para Android e iOS – Descargar y Operar',
       metaDescription:
-        'Guía de la app de Pocket Option: cómo descargar el APK de Android o la app de iOS, iniciar sesión, usar el terminal móvil, cuenta demo, depósitos y retiros desde el móvil, notificaciones y diferencias con la versión web.',
+        'Guía de la app Pocket Option: descarga el APK Android o la app iOS, inicia sesión, usa el terminal móvil, demo, depósitos y retiros desde el móvil.',
       excerpt:
         'La app pocketoption pone el terminal completo en tu bolsillo. Así se instala en Android e iPhone, qué puede hacer, en qué se diferencia de la versión web y cómo operar con seguridad en una pantalla pequeña.',
       coverAlt: 'Mano sosteniendo un smartphone con la app de trading de Pocket Option abierta',
@@ -242,9 +242,9 @@ export const pocketOptionMobileApp: BlogPost = {
     },
     ru: {
       title: 'Мобильное приложение Pocket Option: как скачать на Android и iOS, функции и торговля с телефона',
-      metaTitle: 'Приложение Pocket Option для Android и iOS: скачать, установить и торговать с телефона',
+      metaTitle: 'Приложение Pocket Option для Android и iOS – скачать',
       metaDescription:
-        'Руководство по приложению Pocket Option: как скачать APK для Android или приложение для iOS, войти, пользоваться мобильным терминалом, демо-счётом, пополнять и выводить с телефона, уведомления и отличия от веб-версии.',
+        'Руководство по приложению Pocket Option: скачать APK для Android или iOS-версию, войти, мобильный терминал, демо, пополнение и вывод с телефона.',
       excerpt:
         'Приложение pocketoption помещает полный терминал в карман. Как установить его на Android и iPhone, что оно умеет, чем отличается от веб-версии и как безопасно торговать на маленьком экране.',
       coverAlt: 'Рука держит смартфон с открытым торговым приложением Pocket Option',
@@ -318,9 +318,9 @@ export const pocketOptionMobileApp: BlogPost = {
     },
     id: {
       title: 'Aplikasi mobile Pocket Option: cara download di Android dan iOS, fitur, dan trading dari HP',
-      metaTitle: 'Aplikasi Pocket Option untuk Android dan iOS: download, instal, dan trading dari HP',
+      metaTitle: 'Aplikasi Pocket Option untuk Android & iOS – Download',
       metaDescription:
-        'Panduan aplikasi mobile Pocket Option: cara download APK Android atau aplikasi iOS, login, memakai terminal mobile, akun demo, deposit dan penarikan dari HP, notifikasi, dan perbedaannya dengan versi web.',
+        'Panduan aplikasi Pocket Option: download APK Android atau aplikasi iOS, login, terminal mobile, akun demo, deposit dan penarikan dari HP, notifikasi.',
       excerpt:
         'Aplikasi pocketoption membawa terminal lengkap ke kantong Anda. Begini cara menginstalnya di Android dan iPhone, apa yang bisa dilakukan, perbedaannya dengan versi web, dan cara trading aman di layar kecil.',
       coverAlt: 'Tangan memegang smartphone dengan aplikasi trading Pocket Option terbuka',

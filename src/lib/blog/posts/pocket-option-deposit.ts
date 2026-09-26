@@ -14,9 +14,9 @@ export const pocketOptionDeposit: BlogPost = {
   content: {
     en: {
       title: 'Pocket Option deposit: how to fund your account from $5, methods, time and fees',
-      metaTitle: 'Pocket Option deposit guide: minimum $5, payment methods, time and fees',
+      metaTitle: 'Pocket Option Deposit Guide – Minimum $5, Methods and Fees',
       metaDescription:
-        'How to deposit on Pocket Option step by step: minimum $5, cards, crypto, e-wallets and local methods, how long a deposit takes, bonus rules and what to do if the money has not arrived.',
+        'How to deposit on Pocket Option step by step: minimum $5, cards, crypto, e-wallets and local methods, processing time, bonus rules and what to do if money is missing.',
       excerpt:
         'Everything about funding a pocketoption account: the $5 minimum, which payment methods are fastest, deposit bonuses and the reasons a deposit can be delayed.',
       coverAlt: 'Bitcoin, USDT, Ethereum and other crypto coins — deposit methods on Pocket Option',
@@ -75,9 +75,9 @@ export const pocketOptionDeposit: BlogPost = {
     },
     pt: {
       title: 'Depósito na Pocket Option: como financiar a conta a partir de $5, métodos, prazos e taxas',
-      metaTitle: 'Guia de depósito Pocket Option: mínimo $5, métodos de pagamento, prazos e taxas',
+      metaTitle: 'Guia de Depósito Pocket Option – Mínimo $5, Métodos e Taxas',
       metaDescription:
-        'Como depositar na Pocket Option passo a passo: mínimo de $5, cartões, cripto, carteiras eletrônicas e métodos locais, quanto tempo demora, regras de bônus e o que fazer se o dinheiro não chegou.',
+        'Como depositar na Pocket Option passo a passo: mínimo de $5, cartões, cripto, carteiras eletrônicas e métodos locais, prazos, regras de bônus e problemas comuns.',
       excerpt:
         'Tudo sobre como financiar uma conta pocketoption: o mínimo de $5, quais métodos são mais rápidos, bônus de depósito e os motivos de atraso.',
       coverAlt: 'Moedas Bitcoin, USDT, Ethereum e outras criptos — métodos de depósito na Pocket Option',
@@ -136,9 +136,9 @@ export const pocketOptionDeposit: BlogPost = {
     },
     es: {
       title: 'Depósito en Pocket Option: cómo fondear tu cuenta desde $5, métodos, tiempos y comisiones',
-      metaTitle: 'Guía de depósito Pocket Option: mínimo $5, métodos de pago, tiempos y comisiones',
+      metaTitle: 'Guía de Depósito Pocket Option – Mínimo $5, Métodos y Comisiones',
       metaDescription:
-        'Cómo depositar en Pocket Option paso a paso: mínimo $5, tarjetas, cripto, monederos electrónicos y métodos locales, cuánto tarda un depósito, reglas del bono y qué hacer si el dinero no ha llegado.',
+        'Cómo depositar en Pocket Option paso a paso: mínimo $5, tarjetas, cripto, monederos y métodos locales, cuánto tarda, reglas del bono y problemas comunes.',
       excerpt:
         'Todo sobre cómo fondear una cuenta pocketoption: el mínimo de $5, qué métodos son más rápidos, bonos de depósito y los motivos de una demora.',
       coverAlt: 'Monedas de Bitcoin, USDT, Ethereum y otras criptos — métodos de depósito en Pocket Option',
@@ -197,9 +197,9 @@ export const pocketOptionDeposit: BlogPost = {
     },
     ru: {
       title: 'Депозит на Pocket Option: как пополнить счёт от $5, способы, сроки и комиссии',
-      metaTitle: 'Пополнение Pocket Option: минимум $5, способы оплаты, сроки и комиссии',
+      metaTitle: 'Пополнение Pocket Option – минимум $5, способы и комиссии',
       metaDescription:
-        'Как пополнить счёт на Pocket Option пошагово: минимум $5, карты, криптовалюта, электронные кошельки и локальные методы, сколько идёт депозит, условия бонуса и что делать, если деньги не пришли.',
+        'Как пополнить счёт на Pocket Option: минимум $5, карты, криптовалюта, электронные кошельки и локальные методы, сроки зачисления, условия бонуса и частые проблемы.',
       excerpt:
         'Всё о пополнении счёта pocketoption: минимум $5, какие способы самые быстрые, бонусы на депозит и причины задержек.',
       coverAlt: 'Монеты Bitcoin, USDT, Ethereum и другие криптовалюты — способы пополнения Pocket Option',
@@ -258,9 +258,9 @@ export const pocketOptionDeposit: BlogPost = {
     },
     id: {
       title: 'Deposit Pocket Option: cara mengisi saldo mulai $5, metode, waktu, dan biaya',
-      metaTitle: 'Panduan deposit Pocket Option: minimum $5, metode pembayaran, waktu, dan biaya',
+      metaTitle: 'Panduan Deposit Pocket Option – Minimum $5, Metode, dan Biaya',
       metaDescription:
-        'Cara deposit di Pocket Option langkah demi langkah: minimum $5, kartu, kripto, e-wallet dan metode lokal, berapa lama deposit masuk, aturan bonus, dan yang harus dilakukan jika dana belum masuk.',
+        'Cara deposit di Pocket Option langkah demi langkah: minimum $5, kartu, kripto, e-wallet dan metode lokal, waktu proses, aturan bonus, dan solusi masalah umum.',
       excerpt:
         'Semua tentang mengisi saldo akun pocketoption: minimum $5, metode mana yang paling cepat, bonus deposit, dan penyebab deposit tertunda.',
       coverAlt: 'Koin Bitcoin, USDT, Ethereum dan kripto lainnya — metode deposit di Pocket Option',

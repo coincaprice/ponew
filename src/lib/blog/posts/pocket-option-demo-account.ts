@@ -14,9 +14,9 @@ export const pocketOptionDemoAccount: BlogPost = {
   content: {
     en: {
       title: 'Pocket Option demo account: how to open it, $50,000 virtual balance and a 2-week practice plan',
-      metaTitle: 'Pocket Option demo account guide: open in 1 minute, $50,000 balance, practice plan',
+      metaTitle: 'Pocket Option Demo Account Guide – $50,000 in 1 Minute',
       metaDescription:
-        'How the Pocket Option demo account works: how to open it without a deposit, the $50,000 virtual balance, differences from the real account, how to refill demo funds and a two-week practice plan before going live.',
+        'How the Pocket Option demo account works: open it without a deposit, $50,000 virtual balance, differences from a real account, refills and a 2-week practice plan.',
       excerpt:
         'A practical guide to the pocketoption demo: what it is, how to open it in one minute, what it can and cannot teach you, and a structured plan to make the practice count.',
       coverAlt: 'Finger pressing a blue DEMO key on a keyboard — Pocket Option demo account',
@@ -76,9 +76,9 @@ export const pocketOptionDemoAccount: BlogPost = {
     },
     pt: {
       title: 'Conta demo da Pocket Option: como abrir, saldo virtual de $50.000 e plano de prática de 2 semanas',
-      metaTitle: 'Guia da conta demo Pocket Option: abra em 1 minuto, saldo de $50.000, plano de prática',
+      metaTitle: 'Guia da Conta Demo Pocket Option – $50.000 em 1 Minuto',
       metaDescription:
-        'Como funciona a conta demo da Pocket Option: como abrir sem depósito, o saldo virtual de $50.000, diferenças para a conta real, como recarregar os fundos demo e um plano de prática de duas semanas antes de operar com dinheiro real.',
+        'Como funciona a conta demo da Pocket Option: abrir sem depósito, saldo virtual de $50.000, diferenças para a conta real, recarga e plano de prática de 2 semanas.',
       excerpt:
         'Guia prático da demo pocketoption: o que é, como abrir em um minuto, o que ela ensina (e não ensina) e um plano estruturado para aproveitar a prática.',
       coverAlt: 'Dedo pressionando uma tecla azul DEMO no teclado — conta demo da Pocket Option',
@@ -138,9 +138,9 @@ export const pocketOptionDemoAccount: BlogPost = {
     },
     es: {
       title: 'Cuenta demo de Pocket Option: cómo abrirla, saldo virtual de $50.000 y plan de práctica de 2 semanas',
-      metaTitle: 'Guía de la cuenta demo Pocket Option: ábrela en 1 minuto, saldo de $50.000, plan de práctica',
+      metaTitle: 'Guía de la Cuenta Demo Pocket Option – $50.000 en 1 Minuto',
       metaDescription:
-        'Cómo funciona la cuenta demo de Pocket Option: cómo abrirla sin depósito, el saldo virtual de $50.000, diferencias con la cuenta real, cómo recargar los fondos demo y un plan de práctica de dos semanas antes de operar en real.',
+        'Cómo funciona la cuenta demo de Pocket Option: abrirla sin depósito, saldo virtual de $50.000, diferencias con la cuenta real, recarga y plan de práctica de 2 semanas.',
       excerpt:
         'Guía práctica de la demo pocketoption: qué es, cómo abrirla en un minuto, qué enseña (y qué no) y un plan estructurado para que la práctica cuente.',
       coverAlt: 'Dedo pulsando una tecla azul DEMO en un teclado — cuenta demo de Pocket Option',
@@ -200,9 +200,9 @@ export const pocketOptionDemoAccount: BlogPost = {
     },
     ru: {
       title: 'Демо-счёт Pocket Option: как открыть, виртуальный баланс $50 000 и план практики на 2 недели',
-      metaTitle: 'Демо-счёт Pocket Option: открыть за 1 минуту, баланс $50 000, план практики',
+      metaTitle: 'Демо-счёт Pocket Option – $50 000 за 1 минуту, план практики',
       metaDescription:
-        'Как работает демо-счёт Pocket Option: как открыть без депозита, виртуальный баланс $50 000, отличия от реального счёта, как пополнить демо-средства и двухнедельный план практики перед переходом на реальные деньги.',
+        'Как работает демо-счёт Pocket Option: открыть без депозита, виртуальный баланс $50 000, отличия от реального счёта, пополнение демо и план практики.',
       excerpt:
         'Практическое руководство по демо pocketoption: что это, как открыть за минуту, чему демо учит (и чему нет) и структурированный план, чтобы практика была полезной.',
       coverAlt: 'Палец нажимает синюю клавишу DEMO на клавиатуре — демо-счёт Pocket Option',
@@ -262,9 +262,9 @@ export const pocketOptionDemoAccount: BlogPost = {
     },
     id: {
       title: 'Akun demo Pocket Option: cara membukanya, saldo virtual $50.000, dan rencana latihan 2 minggu',
-      metaTitle: 'Panduan akun demo Pocket Option: buka dalam 1 menit, saldo $50.000, rencana latihan',
+      metaTitle: 'Panduan Akun Demo Pocket Option – $50.000 dalam 1 Menit',
       metaDescription:
-        'Cara kerja akun demo Pocket Option: cara membukanya tanpa deposit, saldo virtual $50.000, perbedaan dengan akun riil, cara mengisi ulang dana demo, dan rencana latihan dua minggu sebelum trading riil.',
+        'Cara kerja akun demo Pocket Option: buka tanpa deposit, saldo virtual $50.000, perbedaan dengan akun riil, isi ulang dana demo, dan rencana latihan 2 minggu.',
       excerpt:
         'Panduan praktis demo pocketoption: apa itu, cara membukanya dalam satu menit, apa yang bisa dan tidak bisa diajarkannya, serta rencana terstruktur agar latihan berarti.',
       coverAlt: 'Jari menekan tombol DEMO biru di keyboard — akun demo Pocket Option',

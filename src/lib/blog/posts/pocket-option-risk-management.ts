@@ -14,9 +14,9 @@ export const pocketOptionRiskManagement: BlogPost = {
   content: {
     en: {
       title: 'Risk management on Pocket Option: the 1–2% rule, daily limits and how not to blow a $50 account',
-      metaTitle: 'Pocket Option risk management: position size, daily loss limit, trading journal',
+      metaTitle: 'Pocket Option Risk Management – Position Size & Loss Limits',
       metaDescription:
-        'Practical risk management for Pocket Option traders: how much to risk per trade, why the 1–2% rule matters with fixed payouts, daily loss limits, a break-even win-rate table, the martingale trap and a simple trading journal.',
+        'Practical risk management for Pocket Option: how much to risk per trade, the 1–2% rule with fixed payouts, daily loss limits and a simple trading journal.',
       excerpt:
         'Most pocketoption accounts are lost not to bad analysis but to bad sizing. Here is a complete risk framework: per-trade size, daily limits, break-even math and the habits that keep a small account alive.',
       coverAlt: 'Trader watching a price chart on a monitor at night — managing risk on Pocket Option',
@@ -80,9 +80,9 @@ export const pocketOptionRiskManagement: BlogPost = {
     },
     pt: {
       title: 'Gestão de risco na Pocket Option: a regra de 1–2%, limites diários e como não zerar uma conta de $50',
-      metaTitle: 'Gestão de risco Pocket Option: tamanho de posição, limite diário de perda, diário de trading',
+      metaTitle: 'Gestão de Risco Pocket Option – Posição e Limite de Perda',
       metaDescription:
-        'Gestão de risco prática para traders da Pocket Option: quanto arriscar por operação, por que a regra de 1–2% importa com payouts fixos, limites diários de perda, tabela de taxa de acerto para empatar, a armadilha do martingale e um diário de trading simples.',
+        'Gestão de risco prática na Pocket Option: quanto arriscar por operação, regra de 1–2% com payouts fixos, limite diário de perda e diário de trading.',
       excerpt:
         'A maioria das contas pocketoption é perdida não por má análise, mas por mau dimensionamento. Aqui está um framework de risco completo: tamanho por operação, limites diários, matemática do ponto de equilíbrio e os hábitos que mantêm uma conta pequena viva.',
       coverAlt: 'Trader observando um gráfico de preços em um monitor à noite — gerindo risco na Pocket Option',
@@ -146,9 +146,9 @@ export const pocketOptionRiskManagement: BlogPost = {
     },
     es: {
       title: 'Gestión del riesgo en Pocket Option: la regla del 1–2%, límites diarios y cómo no quemar una cuenta de $50',
-      metaTitle: 'Gestión del riesgo Pocket Option: tamaño de posición, límite diario de pérdida, diario de trading',
+      metaTitle: 'Gestión del Riesgo Pocket Option – Posición y Límite de Pérdida',
       metaDescription:
-        'Gestión del riesgo práctica para traders de Pocket Option: cuánto arriesgar por operación, por qué importa la regla del 1–2% con pagos fijos, límites diarios de pérdida, tabla de tasa de acierto de equilibrio, la trampa de la martingala y un diario de trading sencillo.',
+        'Gestión del riesgo práctica en Pocket Option: cuánto arriesgar por operación, regla del 1–2% con pagos fijos, límite diario de pérdida y diario de trading.',
       excerpt:
         'La mayoría de cuentas pocketoption se pierden no por mal análisis sino por mal dimensionamiento. Aquí un marco de riesgo completo: tamaño por operación, límites diarios, matemática del punto de equilibrio y los hábitos que mantienen viva una cuenta pequeña.',
       coverAlt: 'Trader observando un gráfico de precios en un monitor de noche — gestionando el riesgo en Pocket Option',
@@ -212,9 +212,9 @@ export const pocketOptionRiskManagement: BlogPost = {
     },
     ru: {
       title: 'Управление риском на Pocket Option: правило 1–2%, дневные лимиты и как не слить счёт в $50',
-      metaTitle: 'Риск-менеджмент Pocket Option: размер позиции, дневной лимит убытка, торговый дневник',
+      metaTitle: 'Риск-менеджмент Pocket Option – размер позиции и лимиты',
       metaDescription:
-        'Практический риск-менеджмент для трейдеров Pocket Option: сколько рисковать в сделке, почему правило 1–2% важно при фиксированных выплатах, дневные лимиты убытка, таблица безубыточного винрейта, ловушка мартингейла и простой торговый дневник.',
+        'Практический риск-менеджмент на Pocket Option: сколько рисковать в сделке, правило 1–2% при фиксированных выплатах, дневной лимит убытка и дневник.',
       excerpt:
         'Большинство счетов pocketoption теряются не из-за плохого анализа, а из-за неправильного размера сделок. Полная система риска: размер сделки, дневные лимиты, математика безубыточности и привычки, которые сохраняют маленький счёт.',
       coverAlt: 'Трейдер смотрит на график цены на мониторе ночью — управление риском на Pocket Option',
@@ -278,9 +278,9 @@ export const pocketOptionRiskManagement: BlogPost = {
     },
     id: {
       title: 'Manajemen risiko di Pocket Option: aturan 1–2%, batas harian, dan cara agar akun $50 tidak habis',
-      metaTitle: 'Manajemen risiko Pocket Option: ukuran posisi, batas rugi harian, jurnal trading',
+      metaTitle: 'Manajemen Risiko Pocket Option – Ukuran Posisi & Batas Rugi',
       metaDescription:
-        'Manajemen risiko praktis untuk trader Pocket Option: berapa risiko per trade, mengapa aturan 1–2% penting dengan payout tetap, batas rugi harian, tabel win rate impas, jebakan martingale, dan jurnal trading sederhana.',
+        'Manajemen risiko praktis di Pocket Option: berapa risiko per trade, aturan 1–2% dengan payout tetap, batas rugi harian, dan jurnal trading sederhana.',
       excerpt:
         'Kebanyakan akun pocketoption hilang bukan karena analisis buruk, tetapi karena ukuran trade yang salah. Ini kerangka risiko lengkap: ukuran per trade, batas harian, matematika impas, dan kebiasaan yang menjaga akun kecil tetap hidup.',
       coverAlt: 'Trader mengamati grafik harga di monitor pada malam hari — mengelola risiko di Pocket Option',

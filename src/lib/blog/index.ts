@@ -161,24 +161,24 @@ export function getBlogDictionary(lang: string): BlogDictionary {
 
 export const blogIndexSeo: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: 'Pocket Option blog: tutorials, trading guides and platform news',
-    description: 'Pocket Option blog with step-by-step tutorials for beginners: how the trading terminal works, deposits and withdrawals, demo account practice, indicators and risk management on pocketoption.',
+    title: 'Pocket Option Blog – Tutorials, Guides and Platform News',
+    description: 'Pocket Option blog: step-by-step tutorials for beginners — trading terminal, deposits and withdrawals, demo account, indicators, risk management, mobile app.',
   },
   pt: {
-    title: 'Blog Pocket Option: tutoriais, guias de trading e novidades da plataforma',
-    description: 'Blog da Pocket Option com tutoriais passo a passo para iniciantes: como funciona o terminal, depósitos e saques, prática na conta demo, indicadores e gestão de risco na pocketoption.',
+    title: 'Blog Pocket Option – Tutoriais, Guias e Novidades',
+    description: 'Blog da Pocket Option: tutoriais passo a passo para iniciantes — terminal, depósitos e saques, conta demo, indicadores, gestão de risco e app mobile.',
   },
   es: {
-    title: 'Blog Pocket Option: tutoriales, guías de trading y novedades de la plataforma',
-    description: 'Blog de Pocket Option con tutoriales paso a paso para principiantes: cómo funciona el terminal, depósitos y retiros, práctica en la cuenta demo, indicadores y gestión del riesgo en pocketoption.',
+    title: 'Blog Pocket Option – Tutoriales, Guías y Novedades',
+    description: 'Blog de Pocket Option: tutoriales paso a paso para principiantes — terminal, depósitos y retiros, cuenta demo, indicadores, gestión del riesgo y app móvil.',
   },
   ru: {
-    title: 'Блог Pocket Option: обучение, руководства по торговле и новости платформы',
-    description: 'Блог Pocket Option с пошаговыми руководствами для новичков: как устроен торговый терминал, депозиты и выводы, практика на демо-счёте, индикаторы и управление риском на pocketoption.',
+    title: 'Блог Pocket Option – обучение, руководства и новости',
+    description: 'Блог Pocket Option: пошаговые руководства для новичков — терминал, пополнение и вывод, демо-счёт, индикаторы, риск-менеджмент и мобильное приложение.',
   },
   id: {
-    title: 'Blog Pocket Option: tutorial, panduan trading, dan berita platform',
-    description: 'Blog Pocket Option dengan tutorial langkah demi langkah untuk pemula: cara kerja terminal trading, deposit dan penarikan, latihan akun demo, indikator, dan manajemen risiko di pocketoption.',
+    title: 'Blog Pocket Option – Tutorial, Panduan, dan Berita',
+    description: 'Blog Pocket Option: tutorial langkah demi langkah untuk pemula — terminal trading, deposit dan penarikan, akun demo, indikator, risiko, aplikasi mobile.',
   },
 };
 

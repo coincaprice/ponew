@@ -19,10 +19,10 @@ const TITLES: Record<string, string> = {
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  pt: 'Conta demo Pocket Option grátis: $50.000 virtuais, cotações reais, 100+ ativos, recargas ilimitadas. Sem depósito nem cartão. Veja como abrir a demo pocketoption e quando migrar para a conta real.',
-  es: 'Cuenta demo Pocket Option gratis: $50.000 virtuales, cotizaciones reales, 100+ activos, recargas ilimitadas. Sin depósito ni tarjeta. Cómo abrir la demo pocketoption y cuándo pasar a real.',
-  ru: 'Бесплатное демо Pocket Option: $50 000 виртуальных, реальные котировки, 100+ активов, безлимитное пополнение. Без депозита и карты. Как открыть демо pocketoption и когда переходить на реальный счёт.',
-  id: 'Akun demo Pocket Option gratis: $50.000 virtual, kuotasi riil, 100+ aset, isi ulang tanpa batas. Tanpa deposit atau kartu. Cara membuka demo pocketoption dan kapan beralih ke akun riil.',
+  pt: 'Conta demo Pocket Option grátis: $50.000 virtuais, cotações reais, 100+ ativos, recargas ilimitadas, sem cartão. Como abrir a demo pocketoption.',
+  es: 'Cuenta demo Pocket Option gratis: $50.000 virtuales, cotizaciones reales, 100+ activos, recargas ilimitadas, sin tarjeta. Cómo abrir la demo pocketoption.',
+  ru: 'Бесплатный демо-счёт Pocket Option: $50 000 виртуальных, реальные котировки, 100+ активов, безлимитное пополнение, без карты. Как открыть демо pocketoption.',
+  id: 'Akun demo Pocket Option gratis: saldo virtual $50.000, harga real-time, 100+ aset, isi ulang tanpa batas, tanpa kartu. Cara buka demo pocketoption.',
 };
 
 type Props = { params: Promise<{ lang: string }> };

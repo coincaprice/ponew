@@ -14,9 +14,9 @@ export const pocketOptionIndicators: BlogPost = {
   content: {
     en: {
       title: 'Pocket Option indicators for beginners: the 5 tools worth learning first and how to combine them',
-      metaTitle: 'Best Pocket Option indicators for beginners: MA, RSI, Bollinger Bands, MACD, Stochastic',
+      metaTitle: 'Best Pocket Option Indicators for Beginners – MA, RSI, MACD',
       metaDescription:
-        'A beginner’s guide to Pocket Option indicators: how to add them to the chart, how Moving Average, RSI, Bollinger Bands, MACD and Stochastic work, which settings to start with and how to combine two indicators into a simple strategy.',
+        'Pocket Option indicators for beginners: how to add them, how Moving Average, RSI, Bollinger Bands, MACD and Stochastic work, starter settings and a simple strategy.',
       excerpt:
         'The pocketoption terminal has dozens of indicators — beginners need five. This guide explains each one, the settings to start with and a simple two-indicator strategy to test on demo.',
       coverAlt: 'Trader analysing indicator charts on two laptops — technical analysis on Pocket Option',
@@ -81,9 +81,9 @@ export const pocketOptionIndicators: BlogPost = {
     },
     pt: {
       title: 'Indicadores da Pocket Option para iniciantes: as 5 ferramentas para aprender primeiro e como combiná-las',
-      metaTitle: 'Melhores indicadores Pocket Option para iniciantes: MA, RSI, Bandas de Bollinger, MACD, Estocástico',
+      metaTitle: 'Melhores Indicadores Pocket Option para Iniciantes – MA, RSI',
       metaDescription:
-        'Guia para iniciantes sobre indicadores da Pocket Option: como adicioná-los ao gráfico, como funcionam Média Móvel, RSI, Bandas de Bollinger, MACD e Estocástico, quais configurações usar no início e como combinar dois indicadores em uma estratégia simples.',
+        'Indicadores da Pocket Option para iniciantes: como adicioná-los, como funcionam Média Móvel, RSI, Bollinger, MACD e Estocástico e uma estratégia simples.',
       excerpt:
         'O terminal pocketoption tem dezenas de indicadores — iniciantes precisam de cinco. Este guia explica cada um, as configurações iniciais e uma estratégia simples com dois indicadores para testar na demo.',
       coverAlt: 'Trader analisando gráficos de indicadores em dois laptops — análise técnica na Pocket Option',
@@ -148,9 +148,9 @@ export const pocketOptionIndicators: BlogPost = {
     },
     es: {
       title: 'Indicadores de Pocket Option para principiantes: las 5 herramientas que aprender primero y cómo combinarlas',
-      metaTitle: 'Mejores indicadores Pocket Option para principiantes: MA, RSI, Bandas de Bollinger, MACD, Estocástico',
+      metaTitle: 'Mejores Indicadores Pocket Option para Principiantes – MA, RSI',
       metaDescription:
-        'Guía para principiantes sobre indicadores de Pocket Option: cómo añadirlos al gráfico, cómo funcionan Media Móvil, RSI, Bandas de Bollinger, MACD y Estocástico, con qué ajustes empezar y cómo combinar dos indicadores en una estrategia sencilla.',
+        'Indicadores de Pocket Option para principiantes: cómo añadirlos, cómo funcionan Media Móvil, RSI, Bollinger, MACD y Estocástico y una estrategia sencilla.',
       excerpt:
         'El terminal pocketoption tiene decenas de indicadores — los principiantes necesitan cinco. Esta guía explica cada uno, los ajustes iniciales y una estrategia sencilla de dos indicadores para probar en demo.',
       coverAlt: 'Trader analizando gráficos de indicadores en dos portátiles — análisis técnico en Pocket Option',
@@ -215,9 +215,9 @@ export const pocketOptionIndicators: BlogPost = {
     },
     ru: {
       title: 'Индикаторы Pocket Option для начинающих: 5 инструментов, которые стоит изучить первыми, и как их сочетать',
-      metaTitle: 'Лучшие индикаторы Pocket Option для новичков: MA, RSI, полосы Боллинджера, MACD, Стохастик',
+      metaTitle: 'Лучшие индикаторы Pocket Option для новичков – MA, RSI, MACD',
       metaDescription:
-        'Руководство по индикаторам Pocket Option для начинающих: как добавить их на график, как работают скользящая средняя, RSI, полосы Боллинджера, MACD и Стохастик, с каких настроек начать и как объединить два индикатора в простую стратегию.',
+        'Индикаторы Pocket Option для новичков: как добавить на график, как работают скользящая средняя, RSI, Боллинджер, MACD и Стохастик, простая стратегия.',
       excerpt:
         'В терминале pocketoption десятки индикаторов — новичку нужно пять. В этом руководстве — каждый из них, стартовые настройки и простая стратегия на двух индикаторах для проверки на демо.',
       coverAlt: 'Трейдер анализирует графики с индикаторами на двух ноутбуках — технический анализ на Pocket Option',
@@ -282,9 +282,9 @@ export const pocketOptionIndicators: BlogPost = {
     },
     id: {
       title: 'Indikator Pocket Option untuk pemula: 5 alat yang layak dipelajari lebih dulu dan cara menggabungkannya',
-      metaTitle: 'Indikator Pocket Option terbaik untuk pemula: MA, RSI, Bollinger Bands, MACD, Stochastic',
+      metaTitle: 'Indikator Pocket Option Terbaik untuk Pemula – MA, RSI, MACD',
       metaDescription:
-        'Panduan pemula indikator Pocket Option: cara menambahkannya ke grafik, cara kerja Moving Average, RSI, Bollinger Bands, MACD dan Stochastic, pengaturan awal yang disarankan, dan cara menggabungkan dua indikator menjadi strategi sederhana.',
+        'Indikator Pocket Option untuk pemula: cara menambahkan ke grafik, cara kerja Moving Average, RSI, Bollinger Bands, MACD dan Stochastic, dan strategi sederhana.',
       excerpt:
         'Terminal pocketoption punya puluhan indikator — pemula hanya butuh lima. Panduan ini menjelaskan masing-masing, pengaturan awalnya, dan strategi dua indikator sederhana untuk diuji di demo.',
       coverAlt: 'Trader menganalisis grafik indikator di dua laptop — analisis teknikal di Pocket Option',

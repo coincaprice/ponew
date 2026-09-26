@@ -10,17 +10,17 @@ export async function generateStaticParams() {
 }
 
 const TITLES: Record<string, string> = {
-  pt: 'Como Começar a Negociar na Pocket Option – Guia Rápido em 6 Passos',
-  es: 'Cómo Empezar a Operar en Pocket Option – Guía Rápida en 6 Pasos',
-  ru: 'Как начать торговать на Pocket Option – быстрый старт за 6 шагов',
-  id: 'Cara Mulai Trading di Pocket Option – Panduan Cepat 6 Langkah',
+  pt: 'Como Começar a Operar na Pocket Option – 6 Passos',
+  es: 'Cómo Empezar a Operar en Pocket Option – 6 Pasos',
+  ru: 'Как начать торговать на Pocket Option – 6 шагов',
+  id: 'Cara Mulai Trading di Pocket Option – 6 Langkah Mudah',
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  pt: 'Início rápido Pocket Option: cadastre-se em 2 minutos, pratique na demo grátis de $50.000, deposite a partir de $5, faça sua primeira operação e saque o lucro. Guia passo a passo para iniciantes.',
-  es: 'Inicio rápido Pocket Option: regístrate en 2 minutos, practica en la demo gratis de $50.000, deposita desde $5, realiza tu primera operación y retira ganancias. Guía paso a paso para principiantes.',
-  ru: 'Быстрый старт Pocket Option: регистрация за 2 минуты, бесплатное демо $50 000, депозит от $5, первая сделка и вывод прибыли. Пошаговое руководство для новичков.',
-  id: 'Mulai cepat Pocket Option: daftar dalam 2 menit, latihan di demo gratis $50.000, deposit mulai $5, lakukan trade pertama, dan tarik profit. Panduan langkah demi langkah untuk pemula.',
+  pt: 'Início rápido Pocket Option: cadastre-se em 2 minutos, pratique na demo grátis de $50.000, deposite a partir de $5, opere e saque. Guia para iniciantes.',
+  es: 'Inicio rápido Pocket Option: regístrate en 2 minutos, practica en la demo gratis de $50.000, deposita desde $5, opera y retira. Guía para principiantes.',
+  ru: 'Быстрый старт Pocket Option: регистрация за 2 минуты, бесплатное демо $50 000, депозит от $5, первая сделка и вывод прибыли. Руководство для новичков.',
+  id: 'Mulai cepat Pocket Option: daftar dalam 2 menit, latihan di demo gratis $50.000, deposit mulai $5, trade pertama, dan tarik profit. Panduan untuk pemula.',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {

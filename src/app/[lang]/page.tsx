@@ -6,17 +6,17 @@ import { buildSeoMeta } from '@/lib/i18n/seo';
 const NON_EN_LOCALES = locales.filter(l => l !== 'en');
 
 const TITLES: Record<string, string> = {
-  pt: 'Pocket Option – Plataforma de Trading Online | Depósito de $5, Demo Grátis',
-  es: 'Pocket Option – Plataforma de Trading Online | Depósito de $5, Demo Gratis',
-  ru: 'Pocket Option – Платформа онлайн-трейдинга | Депозит от $5, бесплатное демо',
-  id: 'Pocket Option – Platform Trading Online | Deposit $5, Demo Gratis',
+  pt: 'Pocket Option – Plataforma de Trading | Depósito $5, Demo Grátis',
+  es: 'Pocket Option – Plataforma de Trading | Depósito $5, Demo Gratis',
+  ru: 'Pocket Option – Платформа для трейдинга | Депозит $5, демо',
+  id: 'Pocket Option – Platform Trading | Deposit $5, Demo Gratis',
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  pt: 'Pocket Option (PocketOption): negocie 100+ ativos — forex, cripto, ações e commodities — com depósito mínimo de $5, pagamentos de até 92% e conta demo grátis de $50.000. Abra sua conta.',
-  es: 'Pocket Option (PocketOption): opera 100+ activos — forex, cripto, acciones y materias primas — con depósito mínimo de $5, pagos de hasta 92% y cuenta demo gratis de $50.000. Abre tu cuenta.',
-  ru: 'Pocket Option (PocketOption): торгуйте 100+ активами — форекс, крипто, акции, сырьё — с депозитом от $5, выплатами до 92% и бесплатным демо на $50 000. Откройте счёт.',
-  id: 'Pocket Option (PocketOption): trading 100+ aset — forex, kripto, saham, komoditas — dengan deposit minimum $5, payout hingga 92%, dan akun demo gratis $50.000. Buka akun sekarang.',
+  pt: 'Pocket Option (PocketOption): negocie 100+ ativos — forex, cripto, ações, commodities — com depósito de $5, payouts até 92% e demo grátis de $50.000.',
+  es: 'Pocket Option (PocketOption): opera 100+ activos — forex, cripto, acciones, materias primas — con depósito de $5, pagos hasta 92% y demo gratis de $50.000.',
+  ru: 'Pocket Option (PocketOption): торгуйте 100+ активами — форекс, крипто, акции, сырьё — с депозитом от $5, выплатами до 92% и бесплатным демо на $50 000.',
+  id: 'Pocket Option (PocketOption): trading 100+ aset — forex, kripto, saham, komoditas — dengan deposit $5, payout hingga 92%, dan akun demo gratis $50.000.',
 };
 
 export async function generateStaticParams() {
