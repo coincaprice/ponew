@@ -2,8 +2,8 @@ import { QuickStartPage } from '@/components/pages/QuickStartPage';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
 
-const title = 'Quick Start – How to Start Trading on Pocket Option';
-const description = 'Get started on Pocket Option in minutes: open a free account, deposit funds, and place your first trade on 100+ assets including forex, crypto, and stocks.';
+const title = 'How to Start Trading on Pocket Option – Quick Start Guide (6 Steps)';
+const description = 'Pocket Option quick start: register in 2 minutes, practise on the free $50,000 demo, deposit from $5, place your first trade and withdraw profit. Step-by-step guide for beginners.';
 
 export const metadata: Metadata = {
   title: { absolute: title },

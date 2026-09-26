@@ -10,17 +10,17 @@ export async function generateStaticParams() {
 }
 
 const TITLES: Record<string, string> = {
-  pt: 'Início Rápido – Como Começar a Negociar na Pocket Option',
-  es: 'Inicio Rápido – Cómo Empezar a Operar en Pocket Option',
-  ru: 'Быстрый старт – Как начать торговать на Pocket Option',
-  id: 'Mulai Cepat – Cara Mulai Trading di Pocket Option',
+  pt: 'Como Começar a Negociar na Pocket Option – Guia Rápido em 6 Passos',
+  es: 'Cómo Empezar a Operar en Pocket Option – Guía Rápida en 6 Pasos',
+  ru: 'Как начать торговать на Pocket Option – быстрый старт за 6 шагов',
+  id: 'Cara Mulai Trading di Pocket Option – Panduan Cepat 6 Langkah',
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  pt: 'Aprenda a negociar na Pocket Option em minutos: crie sua conta gratuitamente, faça um depósito a partir de $5 e realize sua primeira negociação em mais de 100 ativos globais.',
-  es: 'Aprende a operar en Pocket Option en minutos: crea tu cuenta gratis, deposita desde $5 y realiza tu primera operación entre más de 100 activos globales.',
-  ru: 'Начните торговать на Pocket Option за считанные минуты: создайте бесплатный аккаунт, пополните счёт от $5 и совершите первую сделку среди более 100 мировых активов.',
-  id: 'Pelajari cara trading di Pocket Option dalam hitungan menit: buat akun gratis, deposit mulai $5, dan lakukan trade pertama Anda di lebih dari 100 aset global.',
+  pt: 'Início rápido Pocket Option: cadastre-se em 2 minutos, pratique na demo grátis de $50.000, deposite a partir de $5, faça sua primeira operação e saque o lucro. Guia passo a passo para iniciantes.',
+  es: 'Inicio rápido Pocket Option: regístrate en 2 minutos, practica en la demo gratis de $50.000, deposita desde $5, realiza tu primera operación y retira ganancias. Guía paso a paso para principiantes.',
+  ru: 'Быстрый старт Pocket Option: регистрация за 2 минуты, бесплатное демо $50 000, депозит от $5, первая сделка и вывод прибыли. Пошаговое руководство для новичков.',
+  id: 'Mulai cepat Pocket Option: daftar dalam 2 menit, latihan di demo gratis $50.000, deposit mulai $5, lakukan trade pertama, dan tarik profit. Panduan langkah demi langkah untuk pemula.',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
