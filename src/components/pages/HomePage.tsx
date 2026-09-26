@@ -5,7 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Star, ChevronLeft, ChevronRight, Play, Download, LayoutGrid, Send, ShieldCheck, Zap, Globe2 } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, Play, Download, LayoutGrid, Send, ShieldCheck, Zap, Globe2, Timer, FlaskConical, Layers, Coins, ArrowLeftRight, Users, LineChart, Headphones } from 'lucide-react';
 import { REGISTER_URL, LOGIN_URL, AFFILIATE_REL } from '@/config/links';
 import { getDictionary } from '@/lib/i18n/dictionaries';
 
@@ -97,14 +97,14 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
   ];
 
   const WHY = [
-    { img: '/images/why/1.svg', title: t.why.item1Title, desc: t.why.item1Desc },
-    { img: '/images/why/2.svg', title: t.why.item2Title, desc: t.why.item2Desc },
-    { img: '/images/why/3.svg', title: t.why.item3Title, desc: t.why.item3Desc },
-    { img: '/images/why/4.svg', title: t.why.item4Title, desc: t.why.item4Desc },
-    { img: '/images/why/5.svg', title: t.why.item5Title, desc: t.why.item5Desc },
-    { img: '/images/why/6.svg', title: t.why.item6Title, desc: t.why.item6Desc },
-    { img: '/images/why/7.svg', title: t.why.item7Title, desc: t.why.item7Desc },
-    { img: '/images/why/8.svg', title: t.why.item8Title, desc: t.why.item8Desc },
+    { icon: Timer, title: t.why.item1Title, desc: t.why.item1Desc },
+    { icon: FlaskConical, title: t.why.item2Title, desc: t.why.item2Desc },
+    { icon: Layers, title: t.why.item3Title, desc: t.why.item3Desc },
+    { icon: Coins, title: t.why.item4Title, desc: t.why.item4Desc },
+    { icon: ArrowLeftRight, title: t.why.item5Title, desc: t.why.item5Desc },
+    { icon: Users, title: t.why.item6Title, desc: t.why.item6Desc },
+    { icon: LineChart, title: t.why.item7Title, desc: t.why.item7Desc },
+    { icon: Headphones, title: t.why.item8Title, desc: t.why.item8Desc },
   ];
 
   const visibleCount = isMobile ? 1 : 4;
@@ -283,12 +283,14 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: '700', color: '#0D1B2A', lineHeight: '1.2', marginBottom: '16px' }}>{t.why.title}</h2>
             <p className="mx-auto md:mx-0" style={{ fontSize: '17px', color: '#5A6A85', maxWidth: '520px', lineHeight: '1.6' }}>{t.why.subtitle}</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mb-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
             {WHY.map((item, i) => (
-              <div key={i} className="text-center md:text-left" style={{ padding: '8px 0' }}>
-                <img src={item.img} alt={item.title} loading="lazy" className="mx-auto md:mx-0 w-16 h-16 md:w-12 md:h-12" style={{ marginBottom: '18px', display: 'block' }} />
-                <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#0D1B2A', letterSpacing: '0.01em', marginBottom: '10px', lineHeight: '1.35' }}>{item.title}</h3>
-                <p style={{ fontSize: '17px', color: '#5A6A85', lineHeight: '1.7' }}>{item.desc}</p>
+              <div key={i} className="card-premium text-center md:text-left" style={{ padding: '28px 24px' }}>
+                <div className="mx-auto md:mx-0" style={{ width: '52px', height: '52px', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '18px', background: 'linear-gradient(135deg, rgba(0,153,250,0.14), rgba(0,82,204,0.08))', border: '1px solid rgba(0,153,250,0.18)' }}>
+                  <item.icon className="w-6 h-6" style={{ color: '#0099FA' }} strokeWidth={1.8} />
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#0D1B2A', letterSpacing: '0.01em', marginBottom: '10px', lineHeight: '1.35' }}>{item.title}</h3>
+                <p style={{ fontSize: '15px', color: '#5A6A85', lineHeight: '1.7' }}>{item.desc}</p>
               </div>
             ))}
           </div>
