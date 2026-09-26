@@ -25,7 +25,7 @@ cp ecosystem.config.js "$STAGE/"
 
 echo "[$(date +%T)] syncing to $USER@$HOST:$APP_DIR"
 $SSH "$USER@$HOST" "mkdir -p $APP_DIR"
-rsync -az --delete "$STAGE/" "$USER@$HOST:$APP_DIR/"
+rsync -az --delete --chown=root:root --chmod=D755,F644 "$STAGE/" "$USER@$HOST:$APP_DIR/"
 
 echo "[$(date +%T)] restarting pm2"
 $SSH "$USER@$HOST" "cd $APP_DIR && pm2 startOrReload ecosystem.config.js --update-env && pm2 save >/dev/null"
