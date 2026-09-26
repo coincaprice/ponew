@@ -195,32 +195,39 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
       </section>
 
       {/* CONDITIONS */}
-      <section ref={conditionsRef} className="bg-[#F4F6FB] py-16 lg:py-24 overflow-hidden">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-0">
-            <div className="w-full lg:w-[46%] flex-shrink-0">
-              <h2 className="text-[28px] md:text-[38px] lg:text-[46px] font-heading font-bold text-[#080F20] leading-tight mb-10 md:mb-12 text-center md:text-left">{t.conditions.title}</h2>
-              {/* Mobile: single column centered list */}
-              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 gap-y-0 md:gap-y-10">
+      <section ref={conditionsRef} className="relative overflow-hidden py-20 lg:py-28" style={{ background: 'linear-gradient(180deg, #F7F9FD 0%, #EEF3FA 100%)' }}>
+        <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(0,153,250,0.16) 0%, rgba(0,153,250,0) 70%)' }} />
+        <div className="pointer-events-none absolute -bottom-48 left-[-8%] h-[420px] w-[420px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(0,82,204,0.10) 0%, rgba(0,82,204,0) 70%)' }} />
+        <div className="container mx-auto px-6 max-w-7xl relative">
+          <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-12">
+            <div className="w-full lg:w-[48%] flex-shrink-0">
+              <span className="eyebrow mb-5"><Zap className="w-3.5 h-3.5" />{t.conditions.eyebrow}</span>
+              <h2 className="text-[30px] md:text-[40px] lg:text-[46px] font-heading font-bold text-[#080F20] leading-[1.15] mb-4 text-center md:text-left">{t.conditions.title}</h2>
+              <p className="text-[16px] md:text-[17px] text-[#5A6A85] leading-relaxed mb-10 max-w-[480px] text-center md:text-left mx-auto md:mx-0">{t.conditions.subtitle}</p>
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 {[
-                  { target: 5,     prefix: '$', suffix: '*', label: t.conditions.minInvest },
-                  { target: 1,     prefix: '$', suffix: '',  label: t.conditions.minTrade },
-                  { target: 50000, prefix: '$', suffix: '',  label: t.conditions.demoMoney },
-                  { target: 50,    prefix: '',  suffix: '+', label: t.conditions.paymentMethods },
-                  { target: 0,     prefix: '$', suffix: '',  label: t.conditions.noCommission },
-                  { target: 100,   prefix: '',  suffix: '+', label: t.conditions.assets },
+                  { icon: Coins,          target: 5,     prefix: '$', suffix: '*', label: t.conditions.minInvest },
+                  { icon: Zap,            target: 1,     prefix: '$', suffix: '',  label: t.conditions.minTrade },
+                  { icon: FlaskConical,   target: 50000, prefix: '$', suffix: '',  label: t.conditions.demoMoney },
+                  { icon: ArrowLeftRight, target: 50,    prefix: '',  suffix: '+', label: t.conditions.paymentMethods },
+                  { icon: ShieldCheck,    target: 0,     prefix: '$', suffix: '',  label: t.conditions.noCommission },
+                  { icon: Layers,         target: 100,   prefix: '',  suffix: '+', label: t.conditions.assets },
                 ].map((s, i) => (
-                  <div key={i} className="text-center md:text-left py-6 md:py-0">
-                    <div className="text-[52px] md:text-[48px] lg:text-[56px] font-heading font-bold text-[#0099FA] leading-none mb-2">
+                  <div key={i} className="card-premium p-4 md:p-5">
+                    <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full" style={{ background: '#EEF3FA' }}>
+                      <s.icon className="h-[18px] w-[18px] text-[#0099FA]" strokeWidth={1.75} fill="#0099FA" fillOpacity={0.18} />
+                    </div>
+                    <div className="text-[28px] md:text-[34px] font-heading font-bold leading-none mb-1.5 bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #0099FA, #0052cc)' }}>
                       <CountUpNumber target={s.target} prefix={s.prefix} suffix={s.suffix} active={countStarted} />
                     </div>
-                    <div className="text-[16px] md:text-[18px] text-[#5A6A85] leading-snug whitespace-pre-line">{s.label}</div>
+                    <div className="text-[13px] md:text-[14px] text-[#5A6A85] leading-snug whitespace-pre-line">{s.label}</div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="hidden md:flex w-full lg:w-[54%] items-center justify-end">
-              <img src="/images/monitor.webp" alt="Trading Platform" className="w-full max-w-[680px] h-auto object-contain" />
+            <div className="hidden md:flex w-full lg:w-[52%] items-center justify-center lg:justify-end relative">
+              <div className="pointer-events-none absolute inset-x-[10%] top-[10%] h-[70%] rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
+              <img src="/images/monitor.webp" alt="Trading Platform" className="relative w-full max-w-[680px] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
             </div>
           </div>
         </div>

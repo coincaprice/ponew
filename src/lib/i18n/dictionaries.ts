@@ -18,6 +18,8 @@ export type Dictionary = {
     startOneClick: string;
   };
   conditions: {
+    eyebrow: string;
+    subtitle: string;
     title: string;
     minInvest: string;
     minTrade: string;
@@ -124,6 +126,8 @@ const en: Dictionary = {
     startOneClick: 'Start in one click',
   },
   conditions: {
+    eyebrow: 'Trading conditions',
+    subtitle: 'Transparent terms built for traders of every level — start small, scale with confidence.',
     title: 'Place your trades on best conditions',
     minInvest: 'Minimum investment\namount',
     minTrade: 'Minimum trade amount',
@@ -236,6 +240,8 @@ const pt: Dictionary = {
     startOneClick: 'Comece com um clique',
   },
   conditions: {
+    eyebrow: 'Condições de negociação',
+    subtitle: 'Termos transparentes para traders de todos os níveis — comece pequeno, cresça com confiança.',
     title: 'Negocie nas melhores condições',
     minInvest: 'Valor mínimo\nde investimento',
     minTrade: 'Valor mínimo de negociação',
@@ -348,6 +354,8 @@ const es: Dictionary = {
     startOneClick: 'Comenzar con un clic',
   },
   conditions: {
+    eyebrow: 'Condiciones de trading',
+    subtitle: 'Términos transparentes para traders de todos los niveles — empieza en pequeño, crece con confianza.',
     title: 'Opera en las mejores condiciones',
     minInvest: 'Monto mínimo\nde inversión',
     minTrade: 'Monto mínimo de operación',
@@ -460,6 +468,8 @@ const ru: Dictionary = {
     startOneClick: 'Начать в один клик',
   },
   conditions: {
+    eyebrow: 'Торговые условия',
+    subtitle: 'Прозрачные условия для трейдеров любого уровня — начните с малого и уверенно растите.',
     title: 'Торгуйте в лучших условиях',
     minInvest: 'Минимальная сумма\nинвестиций',
     minTrade: 'Минимальная сумма сделки',
@@ -572,6 +582,8 @@ const id: Dictionary = {
     startOneClick: 'Mulai dengan satu klik',
   },
   conditions: {
+    eyebrow: 'Kondisi trading',
+    subtitle: 'Ketentuan transparan untuk trader di semua level — mulai dari kecil, berkembang dengan percaya diri.',
     title: 'Lakukan trading dengan kondisi terbaik',
     minInvest: 'Jumlah investasi\nminimum',
     minTrade: 'Jumlah trading minimum',
