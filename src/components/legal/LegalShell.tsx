@@ -26,7 +26,8 @@ export function LegalShell({
       <style>{`
         .legal-hero-inner { max-width: 1400px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
         .legal-content-wrap { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
-        .legal-grid { display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start; }
+        .legal-grid { display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start; overflow-wrap: anywhere; }
+        .legal-grid > * { min-width: 0; }
         .legal-sidebar { position: sticky; top: 100px; }
         .legal-mobile-toc { display: none; background: #fff; border-radius: 14px; padding: 20px 18px; border: 1px solid #E8EDF5; box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 24px; }
         .legal-card { background: #fff; border-radius: 14px; padding: 36px 40px; border: 1px solid #E8EDF5; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }

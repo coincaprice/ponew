@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { fontVariables } from '@/styles/fonts';
 
 export const metadata: Metadata = {
   title: { absolute: '404 – Page Not Found | Pocket Option' },
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <html lang="en">
+    <html lang="en" className={fontVariables}>
       <body style={{ margin: 0, padding: 0, background: '#080F20', fontFamily: 'var(--font-sans)' }}>
         <Header lang="en" />
 

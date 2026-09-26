@@ -10,17 +10,17 @@ export async function generateStaticParams() {
 }
 
 const TITLES: Record<string, string> = {
-  pt: 'Contato – Suporte Pocket Option 24/7',
-  es: 'Contacto – Soporte Pocket Option 24/7',
-  ru: 'Контакты – Поддержка Pocket Option 24/7',
-  id: 'Kontak – Dukungan Pocket Option 24/7',
+  pt: 'Contatos do suporte Pocket Option: central de ajuda, chat e redes sociais',
+  es: 'Contactos de soporte de Pocket Option: mesa de ayuda, chat y redes sociales',
+  ru: 'Контакты поддержки Pocket Option: служба помощи, чат и соцсети',
+  id: 'Kontak dukungan Pocket Option: meja bantuan, chat, dan media sosial',
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  pt: 'Entre em contato com a equipe de suporte da Pocket Option. Disponível 24/7 via chat ao vivo, e-mail e Telegram para resolver suas dúvidas e problemas rapidamente.',
-  es: 'Contacta al equipo de soporte de Pocket Option. Disponible 24/7 por chat en vivo, correo electrónico y Telegram para resolver tus dudas y problemas rápidamente.',
-  ru: 'Свяжитесь с командой поддержки Pocket Option. Доступно 24/7 через онлайн-чат, электронную почту и Telegram для быстрого решения ваших вопросов.',
-  id: 'Hubungi tim dukungan Pocket Option. Tersedia 24/7 melalui live chat, email, dan Telegram untuk menyelesaikan pertanyaan dan masalah Anda dengan cepat.',
+  pt: 'Como contatar o suporte da Pocket Option 24/7: central de suporte na plataforma para depósitos, saques e KYC, chat da comunidade de traders e canais sociais oficiais da pocketoption.',
+  es: 'Cómo contactar al soporte de Pocket Option 24/7: mesa de soporte en la plataforma para depósitos, retiros y KYC, chat de la comunidad de traders y canales sociales oficiales de pocketoption.',
+  ru: 'Как связаться с поддержкой Pocket Option 24/7: служба поддержки внутри платформы по депозитам, выводам и KYC, чат сообщества трейдеров и официальные соцсети pocketoption.',
+  id: 'Cara menghubungi dukungan Pocket Option 24/7: meja dukungan di platform untuk deposit, penarikan, dan KYC, chat komunitas trader, serta saluran sosial resmi pocketoption.',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {

@@ -20,12 +20,11 @@ const LOCALES: { code: Locale; country: string }[] = [
 function FlagImg({ country, size = 20 }: { country: string; size?: number }) {
   return (
     <img
-      src={`https://flagcdn.com/w${size}/${country}.png`}
-      srcSet={`https://flagcdn.com/w${size * 2}/${country}.png 2x`}
+      src={`/images/flags/${country}.svg`}
       width={size}
       height={Math.round(size * 0.75)}
-      alt={country}
-      loading="lazy"
+      alt=""
+      aria-hidden
       className="rounded-[2px] object-cover"
       style={{ display: 'inline-block' }}
     />
@@ -119,6 +118,9 @@ export function Header({ lang = 'en' }: Props) {
           <div ref={langRef} className="relative hidden md:block">
             <button
               onClick={() => setLangOpen(o => !o)}
+              aria-haspopup="listbox"
+              aria-expanded={langOpen}
+              aria-label="Change language"
               className="flex items-center gap-1.5 text-sm text-[#8A9BBE] hover:text-white transition-colors px-2 py-1 rounded-md hover:bg-white/10"
             >
               <FlagImg country={currentLocaleInfo.country} size={20} />
@@ -161,6 +163,7 @@ export function Header({ lang = 'en' }: Props) {
             className="lg:hidden flex items-center justify-center"
             onClick={() => setMobileOpen(o => !o)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
             style={{ width: '40px', height: '40px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.12)', background: mobileOpen ? 'rgba(0,153,250,0.15)' : 'rgba(255,255,255,0.06)', flexShrink: 0, transition: 'background 0.2s, border-color 0.2s', borderColor: mobileOpen ? 'rgba(0,153,250,0.4)' : 'rgba(255,255,255,0.12)' }}
           >
             {mobileOpen ? (
@@ -180,7 +183,7 @@ export function Header({ lang = 'en' }: Props) {
 
       {/* Mobile Drawer — full-screen overlay + slide panel */}
       <div
-        className={`fixed inset-0 z-[200] lg:hidden transition-all duration-300 ${mobileOpen ? 'visible' : 'invisible pointer-events-none'}`}
+        className={`fixed inset-0 z-[200] overflow-hidden lg:hidden transition-all duration-300 ${mobileOpen ? 'visible' : 'invisible pointer-events-none'}`}
       >
         {/* Backdrop */}
         <div
@@ -199,6 +202,7 @@ export function Header({ lang = 'en' }: Props) {
             <Logo href={lp('')} size="sm" onClick={() => setMobileOpen(false)} />
             <button
               onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
               style={{ width: '34px', height: '34px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', flexShrink: 0 }}
             >
               <X className="w-4 h-4" />

@@ -2,8 +2,8 @@ import { ContactsPage } from '@/components/pages/ContactsPage';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
 
-const title = 'Contacts – 24/7 Support | Pocket Option';
-const description = 'Contact Pocket Option support specialists via live chat, email, or our community forum. Our team is available 24/7 to help you with trading and account questions.';
+const title = 'Pocket Option support contacts: help desk, community chat and social media';
+const description = 'How to contact Pocket Option support 24/7: the in-platform support desk for deposits, withdrawals and KYC, the trader community chat, and official pocketoption social channels.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
