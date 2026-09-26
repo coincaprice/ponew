@@ -1,11 +1,19 @@
 import type { MetadataRoute } from 'next';
 import { siteRoutes } from '@/config/routes';
+import type { SiteRoute } from '@/config/routes';
+import { blogPosts } from '@/lib/blog';
 import { BASE_URL, locales, localeHreflang, getLocalePath } from '@/lib/i18n/config';
 
 const LAST_MODIFIED = new Date();
 
+const blogRoutes: SiteRoute[] = blogPosts.map(p => ({
+  slug: `blog/${p.slug}`,
+  changeFrequency: 'monthly',
+  priority: 0.6,
+}));
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return siteRoutes.flatMap(route => {
+  return [...siteRoutes, ...blogRoutes].flatMap(route => {
     const languages: Record<string, string> = {
       'x-default': `${BASE_URL}${getLocalePath('en', route.slug)}`,
     };

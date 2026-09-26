@@ -6,30 +6,28 @@ interface Props {
   slug: string;
   homeName: string;
   pageName: string;
+  parent?: { slug: string; name: string };
 }
 
-export function BreadcrumbJsonLd({ lang, slug, homeName, pageName }: Props) {
+export function BreadcrumbJsonLd({ lang, slug, homeName, pageName, parent }: Props) {
   const locale = lang as Locale;
-  const homeUrl = `${BASE_URL}${getLocalePath(locale, '')}`;
-  const pageUrl = `${BASE_URL}${getLocalePath(locale, slug)}`;
+  const url = (s: string) => `${BASE_URL}${getLocalePath(locale, s)}`;
+
+  const crumbs = [
+    { name: homeName, item: url('') },
+    ...(parent ? [{ name: parent.name, item: url(parent.slug) }] : []),
+    { name: pageName, item: url(slug) },
+  ];
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: homeName,
-        item: homeUrl,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: pageName,
-        item: pageUrl,
-      },
-    ],
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: c.item,
+    })),
   };
 
   return (

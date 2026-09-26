@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { X, ChevronDown, Zap, PlayCircle, Info, BarChart2, ChevronRight, Globe } from 'lucide-react';
+import { X, ChevronDown, Zap, PlayCircle, Info, BarChart2, Newspaper, ChevronRight, Globe } from 'lucide-react';
 import { Logo } from '@/components/layout/Logo';
 import { REGISTER_URL, LOGIN_URL, AFFILIATE_REL } from '@/config/links';
 import { getDictionary } from '@/lib/i18n/dictionaries';
@@ -83,6 +83,7 @@ export function Header({ lang = 'en' }: Props) {
     { label: t.nav.freeDemo, href: lp('free-demo'), Icon: PlayCircle },
     { label: t.nav.aboutUs, href: lp('about-us'), Icon: Info },
     { label: t.nav.tradingAssets, href: lp('assets'), Icon: BarChart2 },
+    { label: t.nav.blog, href: lp('blog'), Icon: Newspaper },
   ];
 
   const currentLocaleInfo = LOCALES.find(l => l.code === locale) ?? LOCALES[0];

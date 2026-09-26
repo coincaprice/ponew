@@ -7,6 +7,7 @@ import type { Locale } from '@/lib/i18n/config';
 type Props = { lang?: string };
 
 const FOOTER_LABELS: Record<string, Record<Locale, string>> = {
+  blog: { en: 'Blog', pt: 'Blog', es: 'Blog', ru: 'Блог', id: 'Blog' },
   contacts: { en: 'Contacts', pt: 'Contatos', es: 'Contactos', ru: 'Контакты', id: 'Kontak' },
   terms: { en: 'Terms and Conditions', pt: 'Termos e Condições', es: 'Términos y Condiciones', ru: 'Условия использования', id: 'Syarat dan Ketentuan' },
   aml: { en: 'AML and KYC policy', pt: 'Política AML e KYC', es: 'Política AML y KYC', ru: 'Политика ПОД/ФТ и KYC', id: 'Kebijakan AML dan KYC' },
@@ -22,6 +23,7 @@ export function Footer({ lang = 'en' }: Props) {
   const label = (key: keyof typeof FOOTER_LABELS) => FOOTER_LABELS[key][locale] ?? FOOTER_LABELS[key].en;
 
   const NAV_LINKS = [
+    { label: label('blog'), href: lp('blog') },
     { label: label('contacts'), href: lp('contacts') },
     { label: label('terms'), href: lp('terms-and-conditions') },
     { label: label('aml'), href: lp('aml-policy') },

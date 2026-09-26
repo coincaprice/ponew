@@ -11,6 +11,7 @@ export const siteRoutes: SiteRoute[] = [
   { slug: 'quick-start', changeFrequency: 'monthly', priority: 0.8 },
   { slug: 'free-demo', changeFrequency: 'monthly', priority: 0.8 },
   { slug: 'assets', changeFrequency: 'weekly', priority: 0.8 },
+  { slug: 'blog', changeFrequency: 'weekly', priority: 0.7 },
   { slug: 'contacts', changeFrequency: 'monthly', priority: 0.6 },
   { slug: 'privacy-policy', changeFrequency: 'yearly', priority: 0.3 },
   { slug: 'payment-policy', changeFrequency: 'yearly', priority: 0.3 },
