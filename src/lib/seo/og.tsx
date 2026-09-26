@@ -136,7 +136,7 @@ function Card({ eyebrow, title, subtitle, stats, logoSrc }: OgCopy & { stats: re
             </div>
           ))}
         </div>
-        <div style={{ fontSize: 20, fontWeight: 600, color: 'rgba(255,255,255,0.55)' }}>pocketoption.dev</div>
+        <div style={{ fontSize: 20, fontWeight: 600, color: 'rgba(255,255,255,0.55)' }}>pocketoption.lc</div>
       </div>
     </div>
   );

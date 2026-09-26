@@ -28,7 +28,7 @@ export function buildBaseMetadata(lang: string, title: string, description: stri
     keywords: [
       'pocket option', 'pocketoption', 'pocket option trading',
       'online trading platform', 'binary options', 'forex trading',
-      'cryptocurrency trading', 'trading platform', 'pocketoption.dev',
+      'cryptocurrency trading', 'trading platform', 'pocketoption.lc',
     ],
     authors: [{ name: siteConfig.name, url: BASE_URL }],
     creator: siteConfig.name,

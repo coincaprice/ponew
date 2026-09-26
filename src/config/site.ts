@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Pocket Option',
-  url: 'https://pocketoption.dev',
+  url: 'https://pocketoption.lc',
   description:
     'Trade over 100 global assets including forex, cryptocurrencies, stocks, and commodities on Pocket Option. Start online trading with a fast and secure platform.',
   twitterHandle: '@pocketbrokergl',

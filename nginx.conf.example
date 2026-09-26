@@ -1,9 +1,9 @@
 server {
     listen 80;
-    server_name pocketoption.dev www.pocketoption.dev;
+    server_name pocketoption.lc www.pocketoption.lc;
 
-    if ($host = www.pocketoption.dev) {
-        return 301 https://pocketoption.dev$request_uri;
+    if ($host = www.pocketoption.lc) {
+        return 301 https://pocketoption.lc$request_uri;
     }
 
     return 301 https://$host$request_uri;
@@ -11,10 +11,10 @@ server {
 
 server {
     listen 443 ssl http2;
-    server_name pocketoption.dev;
+    server_name pocketoption.lc;
 
-    ssl_certificate     /etc/letsencrypt/live/pocketoption.dev/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/pocketoption.dev/privkey.pem;
+    ssl_certificate     /etc/letsencrypt/live/pocketoption.lc/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pocketoption.lc/privkey.pem;
     ssl_protocols       TLSv1.2 TLSv1.3;
     ssl_ciphers         HIGH:!aNULL:!MD5;
 
