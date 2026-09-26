@@ -199,7 +199,7 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
         <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(0,153,250,0.16) 0%, rgba(0,153,250,0) 70%)' }} />
         <div className="pointer-events-none absolute -bottom-48 left-[-8%] h-[420px] w-[420px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(0,82,204,0.10) 0%, rgba(0,82,204,0) 70%)' }} />
         <div className="container mx-auto px-6 max-w-7xl relative">
-          <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-12">
+          <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-8">
             <div className="w-full lg:w-[48%] flex-shrink-0">
               <span className="eyebrow mb-5"><Zap className="w-3.5 h-3.5" />{t.conditions.eyebrow}</span>
               <h2 className="text-[30px] md:text-[40px] lg:text-[46px] font-heading font-bold text-[#080F20] leading-[1.15] mb-4 text-center md:text-left">{t.conditions.title}</h2>
@@ -225,9 +225,9 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
                 ))}
               </div>
             </div>
-            <div className="hidden md:flex w-full lg:w-[52%] items-center justify-center lg:justify-end relative">
-              <div className="pointer-events-none absolute inset-x-[10%] top-[10%] h-[70%] rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
-              <img src="/images/monitor.webp" alt="Trading Platform" className="relative w-full max-w-[680px] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
+            <div className="hidden md:flex w-full lg:w-[52%] self-stretch items-center justify-center lg:justify-start relative">
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[60%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
+              <img src="/images/monitor.webp" alt="Trading Platform" className="relative w-full max-w-[720px] lg:max-w-none lg:w-[118%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
             </div>
           </div>
         </div>
