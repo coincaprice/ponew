@@ -12,17 +12,17 @@ export function generateStaticParams() {
 }
 
 const TITLES: Record<string, string> = {
-  pt: 'Conta Demo Grátis – Pratique Trading Sem Risco | Pocket Option',
-  es: 'Cuenta Demo Gratis – Opera Sin Riesgo | Pocket Option',
-  ru: 'Бесплатный Демо-счёт – Торгуйте Без Риска | Pocket Option',
-  id: 'Akun Demo Gratis – Berlatih Trading Tanpa Risiko | Pocket Option',
+  pt: 'Conta Demo Pocket Option – $50.000 Grátis, Sem Depósito',
+  es: 'Cuenta Demo Pocket Option – $50.000 Gratis, Sin Depósito',
+  ru: 'Демо-счёт Pocket Option – $50 000 бесплатно, без депозита',
+  id: 'Akun Demo Pocket Option – $50.000 Gratis, Tanpa Deposit',
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  pt: 'Abra uma conta demo gratuita na Pocket Option com $50.000 em fundos virtuais. Pratique estratégias de trading sem risco com dados reais de mercado e mais de 100 ativos.',
-  es: 'Abre una cuenta demo gratuita en Pocket Option con $50,000 en fondos virtuales. Practica estrategias de trading sin riesgo con datos reales del mercado y más de 100 activos.',
-  ru: 'Откройте бесплатный демо-счёт на Pocket Option с $50 000 виртуальных средств. Практикуйте торговые стратегии без риска с реальными рыночными данными и 100+ активами.',
-  id: 'Buka akun demo gratis di Pocket Option dengan $50.000 dana virtual. Berlatih strategi trading tanpa risiko dengan data pasar nyata dan 100+ aset.',
+  pt: 'Conta demo Pocket Option grátis: $50.000 virtuais, cotações reais, 100+ ativos, recargas ilimitadas. Sem depósito nem cartão. Veja como abrir a demo pocketoption e quando migrar para a conta real.',
+  es: 'Cuenta demo Pocket Option gratis: $50.000 virtuales, cotizaciones reales, 100+ activos, recargas ilimitadas. Sin depósito ni tarjeta. Cómo abrir la demo pocketoption y cuándo pasar a real.',
+  ru: 'Бесплатное демо Pocket Option: $50 000 виртуальных, реальные котировки, 100+ активов, безлимитное пополнение. Без депозита и карты. Как открыть демо pocketoption и когда переходить на реальный счёт.',
+  id: 'Akun demo Pocket Option gratis: $50.000 virtual, kuotasi riil, 100+ aset, isi ulang tanpa batas. Tanpa deposit atau kartu. Cara membuka demo pocketoption dan kapan beralih ke akun riil.',
 };
 
 type Props = { params: Promise<{ lang: string }> };
@@ -30,10 +30,12 @@ type Props = { params: Promise<{ lang: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   if (!NON_EN_LOCALES.includes(lang as Exclude<Locale, 'en'>)) return {};
+  const title = TITLES[lang] ?? TITLES.pt;
+  const description = DESCRIPTIONS[lang] ?? DESCRIPTIONS.pt;
   return {
-    title: { absolute: TITLES[lang] ?? TITLES.pt },
-    description: DESCRIPTIONS[lang] ?? DESCRIPTIONS.pt,
-    ...buildSeoMeta(lang, 'free-demo'),
+    title: { absolute: title },
+    description,
+    ...buildSeoMeta(lang, 'free-demo', { title, description }),
   };
 }
 
