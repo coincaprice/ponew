@@ -3,25 +3,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Star, ChevronLeft, ChevronRight, Play, Download, LayoutGrid, Send, ShieldCheck, Zap, Globe2, Timer, FlaskConical, Layers, Coins, ArrowLeftRight, Users, LineChart, Headphones } from 'lucide-react';
+import { FaqJsonLd } from '@/components/seo/FaqJsonLd';
+import {
+  Star, ChevronLeft, ChevronRight, ArrowRight, ShieldCheck, Zap, Timer, FlaskConical, Layers,
+  Coins, ArrowLeftRight, Users, LineChart, Headphones, Check, Minus, Smartphone, Globe, Send,
+  Apple, CandlestickChart, Target, Rocket, Clock, Copy, Wallet, Banknote, Bitcoin, Landmark,
+  BarChart3, Gem, TrendingUp,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { REGISTER_URL, LOGIN_URL, AFFILIATE_REL } from '@/config/links';
-import { getDictionary } from '@/lib/i18n/dictionaries';
+import { getLocalePath, isLocale } from '@/lib/i18n/config';
+import { getHomeDictionary } from '@/lib/i18n/home';
 
-function formatReviewDate(raw: string): string {
-  const [datePart] = raw.split(' ');
-  const [year, month, day] = datePart.split('-').map(Number);
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return `${months[month - 1]} ${day}, ${year}`;
-}
-
-const REVIEWS = [
-  { date: '2025-11-26 04:09:33', text: 'Pocket Option is a beginner-friendly trading platform with a simple and easy-to-use interface. It offers a demo account, low minimum deposits, and access to a wide range of assets like forex, stocks and crypto. The platform supports social trading, allowing users to copy expert traders, and provides multiple payment methods and ...', flag: 'https://flagcdn.com/w40/in.png', name: 'Vinod Kum. M', uid: 'UID 113533265' },
-  { date: '2026-02-24 11:22:10', text: 'This Pocket Option Platform is the best, it\'s very easy to deposit and withdraw. Highly recommended for anyone looking for a reliable trading platform with excellent customer support and fast execution ...', flag: 'https://flagcdn.com/w40/ng.png', name: 'Oluwaseyi O.', uid: 'UID 69107619' },
-  { date: '2026-03-05 08:14:55', text: 'Great platform for trading. Clean interface and helpful support team. The demo account is perfect for beginners to practice before trading with real funds. Would highly recommend to anyone ...', flag: 'https://flagcdn.com/w40/gb.png', name: 'James W.', uid: 'UID 88421337' },
-  { date: '2026-02-18 19:43:01', text: 'Amazing tools for beginners, demo account is a life saver. Fast withdrawals and a very intuitive interface. Social trading feature is a bonus. One of the best platforms I have used so far ...', flag: 'https://flagcdn.com/w40/za.png', name: 'Michael T.', uid: 'UID 77654921' },
-];
+const BRAND = '#0099FA';
 
 function CountUpNumber({ target, prefix = '', suffix = '', duration = 1800, active }: {
   target: number; prefix?: string; suffix?: string; duration?: number; active: boolean;
@@ -42,32 +36,42 @@ function CountUpNumber({ target, prefix = '', suffix = '', duration = 1800, acti
     raf = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(raf);
   }, [active, target, duration]);
-  const fmt = (n: number) => {
-    if (n >= 1000) {
-      const k = Math.floor(n / 1000);
-      const rem = String(n % 1000).padStart(3, '0');
-      return `${k} ${rem}`;
-    }
-    return String(n);
-  };
+  const fmt = (n: number) => (n >= 1000 ? `${Math.floor(n / 1000)} ${String(n % 1000).padStart(3, '0')}` : String(n));
   return <>{prefix}{fmt(count)}{suffix}</>;
 }
 
+function IconBadge({ icon: Icon, size = 64 }: { icon: LucideIcon; size?: number }) {
+  const inner = Math.round(size / 2);
+  return (
+    <div className="flex items-center justify-center rounded-full" style={{ width: size, height: size, background: '#EEF3FA' }}>
+      <Icon style={{ width: inner, height: inner, color: BRAND }} strokeWidth={1.75} fill={BRAND} fillOpacity={0.18} />
+    </div>
+  );
+}
+
+function SectionHead({ eyebrow, title, subtitle, align = 'center', dark = false, as = 'h2' }: {
+  eyebrow: string; title: string; subtitle?: string; align?: 'center' | 'left'; dark?: boolean; as?: 'h2' | 'h3';
+}) {
+  const Tag = as;
+  const alignCls = align === 'center' ? 'text-center items-center mx-auto' : 'text-center md:text-left items-center md:items-start';
+  return (
+    <div className={`flex flex-col ${alignCls} max-w-[760px] mb-12 md:mb-16`}>
+      <span className={`eyebrow ${dark ? 'eyebrow-dark' : ''} mb-5`}>{eyebrow}</span>
+      <Tag className={`font-heading font-bold leading-[1.15] text-[28px] md:text-[38px] lg:text-[44px] ${dark ? 'text-white' : 'text-[#080F20]'}`}>{title}</Tag>
+      {subtitle && <p className={`mt-4 text-[16px] md:text-[17px] leading-relaxed ${dark ? 'text-white/65' : 'text-[#5A6A85]'}`}>{subtitle}</p>}
+    </div>
+  );
+}
+
 export function HomePage({ lang = 'en' }: { lang?: string }) {
-  const t = getDictionary(lang);
-  const [slideIndex, setSlideIndex] = useState(0);
+  const t = getHomeDictionary(lang);
+  const locale = isLocale(lang) ? lang : 'en';
+  const lp = (path: string) => getLocalePath(locale, path);
+
   const [reviewIdx, setReviewIdx] = useState(0);
-  const [faqOpen, setFaqOpen] = useState<number | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [faqOpen, setFaqOpen] = useState<number | null>(0);
   const [countStarted, setCountStarted] = useState(false);
   const conditionsRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const onResize = () => { setIsMobile(window.innerWidth < 768); setSlideIndex(0); };
-    onResize();
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
 
   useEffect(() => {
     const el = conditionsRef.current;
@@ -79,117 +83,113 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
     return () => obs.disconnect();
   }, []);
 
-  const OFFERS = [
-    { img: '/images/offers/comm.webp', title: t.offers.paymentMethods },
-    { img: '/images/offers/trade.webp', title: t.offers.tradingAssets },
-    { img: '/images/offers/archi.webp', title: t.offers.achievements },
-    { img: '/images/offers/copy.webp', title: t.offers.apps },
-    { img: '/images/offers/tournament.svg', title: t.offers.tournaments },
+  const WHY_ICONS: LucideIcon[] = [Timer, FlaskConical, Layers, Coins, ArrowLeftRight, Users, LineChart, Headphones];
+  const TRADE_ICONS: LucideIcon[] = [Zap, Target, Rocket, Clock, Copy];
+  const ASSET_ICONS: LucideIcon[] = [Landmark, Bitcoin, BarChart3, Gem, TrendingUp];
+  const APP_ICONS: LucideIcon[] = [Smartphone, Apple, Globe, Send];
+  const PAY_ICONS: LucideIcon[] = [Zap, Clock, ShieldCheck, Banknote];
+  const STEP_ICONS: LucideIcon[] = [Users, Wallet, CandlestickChart];
+
+  const CONDITIONS = [
+    { icon: Coins,          target: 5,     prefix: '$', suffix: '*' },
+    { icon: Zap,            target: 1,     prefix: '$', suffix: ''  },
+    { icon: FlaskConical,   target: 50000, prefix: '$', suffix: ''  },
+    { icon: ArrowLeftRight, target: 50,    prefix: '',  suffix: '+' },
+    { icon: ShieldCheck,    target: 0,     prefix: '$', suffix: ''  },
+    { icon: Layers,         target: 100,   prefix: '',  suffix: '+' },
   ];
 
-  const FAQS = [
-    { q: t.faq.q1, a: t.faq.a1 },
-    { q: t.faq.q2, a: t.faq.a2 },
-    { q: t.faq.q3, a: t.faq.a3 },
-    { q: t.faq.q4, a: t.faq.a4 },
-    { q: t.faq.q5, a: t.faq.a5 },
-    { q: t.faq.q6, a: t.faq.a6 },
-  ];
+  const PAYMENT_LOGOS = ['Visa', 'Mastercard', 'Pix', 'UPI', 'M-Pesa', 'bKash', 'Mercado Pago', 'Jeton', 'Perfect Money', 'USDT', 'Bitcoin', 'Ethereum'];
 
-  const WHY = [
-    { icon: Timer, title: t.why.item1Title, desc: t.why.item1Desc },
-    { icon: FlaskConical, title: t.why.item2Title, desc: t.why.item2Desc },
-    { icon: Layers, title: t.why.item3Title, desc: t.why.item3Desc },
-    { icon: Coins, title: t.why.item4Title, desc: t.why.item4Desc },
-    { icon: ArrowLeftRight, title: t.why.item5Title, desc: t.why.item5Desc },
-    { icon: Users, title: t.why.item6Title, desc: t.why.item6Desc },
-    { icon: LineChart, title: t.why.item7Title, desc: t.why.item7Desc },
-    { icon: Headphones, title: t.why.item8Title, desc: t.why.item8Desc },
-  ];
-
-  const visibleCount = isMobile ? 1 : 4;
-  const maxIndex = OFFERS.length - visibleCount;
-  const prev = () => setSlideIndex(i => Math.max(0, i - 1));
-  const next = () => setSlideIndex(i => Math.min(maxIndex, i + 1));
-  const review = REVIEWS[reviewIdx];
-
-  const APPS = [
-    { Icon: Play, label: t.apps.android, action: t.apps.androidAction },
-    { Icon: Download, label: t.apps.apk, action: t.apps.apkAction },
-    { Icon: LayoutGrid, label: t.apps.webApp, action: t.apps.webAppAction },
-    { Icon: Send, label: t.apps.telegram, action: t.apps.telegramAction },
-  ];
-
-  const STEPS = [
-    { icon: <svg width="24" height="24" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="9" r="5" stroke="#0099FA" strokeWidth="1.8"/><path d="M3 23c0-5.52 4.48-10 10-10s10 4.48 10 10" stroke="#0099FA" strokeWidth="1.8" strokeLinecap="round"/></svg>, title: t.steps.step1Title, desc: t.steps.step1Desc },
-    { icon: <svg width="24" height="24" viewBox="0 0 26 26" fill="none"><rect x="3" y="6" width="20" height="14" rx="3" stroke="#0099FA" strokeWidth="1.8"/><path d="M3 11h20" stroke="#0099FA" strokeWidth="1.8"/><circle cx="8" cy="17" r="1.5" fill="#0099FA"/></svg>, title: t.steps.step2Title, desc: t.steps.step2Desc },
-    { icon: <svg width="24" height="24" viewBox="0 0 26 26" fill="none"><polyline points="3,20 10,12 16,17 23,6" stroke="#0099FA" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><polyline points="18,6 23,6 23,11" stroke="#0099FA" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>, title: t.steps.step3Title, desc: t.steps.step3Desc },
-  ];
+  const review = t.reviews.items[reviewIdx];
 
   return (
     <div className="min-h-screen bg-[#080F20] flex flex-col font-sans">
       <Header lang={lang} />
+      <FaqJsonLd items={t.faq.items} />
 
       {/* HERO */}
-      <section className="relative w-full overflow-hidden min-h-[680px] flex items-center" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
-
-        {/* Ambient glow */}
+      <section className="relative w-full overflow-hidden min-h-[720px] flex items-center" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
         <div className="absolute pointer-events-none" style={{ top: '-15%', left: '-8%', width: '65%', height: '65%', background: 'radial-gradient(ellipse, rgba(0,153,250,0.13) 0%, transparent 68%)', borderRadius: '50%' }} />
         <div className="absolute pointer-events-none" style={{ bottom: '5%', right: '-5%', width: '55%', height: '55%', background: 'radial-gradient(ellipse, rgba(0,82,204,0.11) 0%, transparent 65%)', borderRadius: '50%' }} />
-
-        {/* Desktop image */}
-        <img src="/images/header-bg.webp" alt="" className="hidden md:block absolute top-1/2 -translate-y-1/2 right-[-2%] w-[58%] pointer-events-none select-none animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]" />
-
-        {/* Mobile image — right-side only, clipped off-screen right, clearly visible */}
-        <img
-          src="/images/header-bg.webp"
-          alt=""
-          className="md:hidden absolute top-[40px] pointer-events-none select-none"
-          style={{
-            right: '-50%',
-            width: '120%',
-            opacity: 0.92,
-            maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)',
-          }}
-        />
-
-        {/* Desktop overlay */}
+        <img src="/images/header-bg.webp" alt="Pocket Option trading terminal" className="hidden md:block absolute top-1/2 -translate-y-1/2 right-[-2%] w-[58%] pointer-events-none select-none animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]" />
+        <img src="/images/header-bg.webp" alt="" className="md:hidden absolute top-[40px] pointer-events-none select-none" style={{ right: '-50%', width: '120%', opacity: 0.92, maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)' }} />
         <div className="hidden md:block absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, #0A2540 0%, #0A2540cc 35%, #0A254055 65%, transparent 100%)' }} />
-
-        {/* Mobile overlay — strong left for text readability, fades right so image shows */}
         <div className="md:hidden absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(5,15,30,0.93) 0%, rgba(5,15,30,0.90) 28%, rgba(5,15,30,0.55) 52%, rgba(5,15,30,0.15) 100%)' }} />
-
         <div className="absolute inset-0 grid-noise pointer-events-none" />
 
-        <div className="container-x relative z-10 pt-[120px] md:pt-[190px] lg:pt-[230px] pb-20 lg:pb-36">
-          <div className="w-full lg:w-[54%] text-white">
+        <div className="container-x relative z-10 pt-[120px] md:pt-[170px] lg:pt-[190px] pb-16 lg:pb-28">
+          <div className="w-full lg:w-[56%] text-white">
             <div className="animate-fade-up flex justify-center md:justify-start mb-6">
               <span className="eyebrow eyebrow-dark">
                 <span className="live-dot w-2 h-2 rounded-full bg-[#22c55e]" />
-                {t.conditions.assets}
+                {t.hero.eyebrow}
               </span>
             </div>
-            <h1 className="animate-fade-up delay-100 text-[32px] md:text-[50px] lg:text-[62px] font-heading font-extrabold leading-[1.08] mb-6 text-center md:text-left text-gradient-brand">
-              {t.hero.title}
+            <h1 className="animate-fade-up delay-100 text-[34px] md:text-[50px] lg:text-[60px] font-heading font-extrabold leading-[1.08] mb-6 text-center md:text-left">
+              {t.hero.title}{' '}
+              <span className="text-gradient-brand">{t.hero.titleAccent}</span>
             </h1>
-            <p className="animate-fade-up delay-200 text-[16px] md:text-[18px] lg:text-[19px] text-white/75 mb-10 leading-relaxed text-center md:text-left max-w-[560px] mx-auto md:mx-0">{t.hero.subtitle}</p>
-
+            <p className="animate-fade-up delay-200 text-[16px] md:text-[17.5px] text-white/75 mb-10 leading-relaxed text-center md:text-left max-w-[600px] mx-auto md:mx-0">{t.hero.subtitle}</p>
             <div className="animate-fade-up delay-300 flex flex-col sm:flex-row items-center gap-3.5 justify-center md:justify-start">
-              <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} className="btn-brand w-full sm:w-auto h-[54px] px-9 text-[15px] font-bold tracking-[0.08em] uppercase">
-                {t.hero.registrationBtn}
-                <ChevronRight className="w-4 h-4" />
+              <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} className="btn-brand w-full sm:w-auto h-[54px] px-9 text-[15px] font-bold tracking-[0.06em] uppercase">
+                {t.hero.register}<ChevronRight className="w-4 h-4" />
               </a>
-              <a href={LOGIN_URL} target="_blank" rel={AFFILIATE_REL} className="btn-ghost-light w-full sm:w-auto h-[54px] px-8 text-[15px]">
-                {t.hero.logIn}
-              </a>
+              <a href={LOGIN_URL} target="_blank" rel={AFFILIATE_REL} className="btn-ghost-light w-full sm:w-auto h-[54px] px-8 text-[15px]">{t.hero.login}</a>
             </div>
+            <div className="animate-fade-up delay-400 mt-10 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center md:justify-start gap-x-7 gap-y-3 text-[13.5px] text-white/65">
+              {t.hero.trust.map(item => (
+                <span key={item} className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-[#5fb8ff]" />{item}</span>
+              ))}
+            </div>
+            <p className="mt-6 text-[12px] text-white/40 text-center md:text-left">{t.hero.riskNote}</p>
+          </div>
+        </div>
+      </section>
 
-            <div className="animate-fade-up delay-400 mt-10 flex flex-wrap items-center justify-center md:justify-start gap-x-8 gap-y-3 text-[13.5px] text-white/60">
-              <span className="inline-flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#5fb8ff]" />{t.why.item1Title}</span>
-              <span className="inline-flex items-center gap-2"><Zap className="w-4 h-4 text-[#5fb8ff]" />{t.hero.startOneClick}</span>
-              <span className="inline-flex items-center gap-2"><Globe2 className="w-4 h-4 text-[#5fb8ff]" />{t.conditions.paymentMethods.replace('\n', ' ')}</span>
+      {/* STATS BAR */}
+      <section className="relative bg-[#061A33] border-y border-white/5">
+        <div className="container-x py-8 md:py-9">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-7 gap-x-6 divide-x-0 lg:divide-x divide-white/10">
+            {t.stats.map((s, i) => (
+              <div key={s.label} className={`text-center lg:px-4 ${i === t.stats.length - 1 ? 'col-span-2 sm:col-span-1' : ''}`}>
+                <div className="font-heading font-extrabold text-[30px] md:text-[34px] leading-none text-white">{s.value}</div>
+                <div className="mt-2 text-[12.5px] uppercase tracking-[0.12em] text-white/50">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="container-x">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <div className="lg:col-span-7">
+              <span className="eyebrow mb-5">{t.about.eyebrow}</span>
+              <h2 className="font-heading font-bold text-[28px] md:text-[38px] lg:text-[42px] leading-[1.15] text-[#080F20] mb-7">{t.about.title}</h2>
+              <div className="space-y-5 text-[16.5px] md:text-[17.5px] leading-[1.8] text-[#3E4C63]">
+                <p>{t.about.p1}</p>
+                <p>{t.about.p2}</p>
+              </div>
+              <a href={lp('about-us')} className="mt-8 inline-flex items-center gap-2 text-[15px] font-semibold text-[#0099FA] hover:gap-3 transition-all">
+                {t.about.cta}<ArrowRight className="w-4 h-4" />
+              </a>
             </div>
+            <aside className="lg:col-span-5 card-premium overflow-hidden">
+              <div className="px-7 py-5 border-b border-[#E4EBF5] flex items-center gap-3" style={{ background: 'linear-gradient(135deg, #F7FAFF, #EEF3FA)' }}>
+                <IconBadge icon={ShieldCheck} size={40} />
+                <h3 className="font-heading font-bold text-[17px] text-[#080F20]">{t.about.factsTitle}</h3>
+              </div>
+              <dl className="divide-y divide-[#EEF2F8]">
+                {t.about.facts.map(f => (
+                  <div key={f.label} className="flex items-start justify-between gap-6 px-7 py-3.5">
+                    <dt className="text-[14px] text-[#7A889E] shrink-0">{f.label}</dt>
+                    <dd className="text-[14.5px] font-semibold text-[#0D1B2A] text-right">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </aside>
           </div>
         </div>
       </section>
@@ -198,158 +198,143 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
       <section ref={conditionsRef} className="relative overflow-hidden py-20 lg:py-28" style={{ background: 'linear-gradient(180deg, #F7F9FD 0%, #EEF3FA 100%)' }}>
         <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(0,153,250,0.16) 0%, rgba(0,153,250,0) 70%)' }} />
         <div className="pointer-events-none absolute -bottom-48 left-[-8%] h-[420px] w-[420px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(0,82,204,0.10) 0%, rgba(0,82,204,0) 70%)' }} />
-        <div className="container mx-auto px-6 max-w-7xl relative">
+        <div className="container-x relative">
           <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-8">
             <div className="w-full lg:w-[48%] flex-shrink-0">
               <span className="eyebrow mb-5"><Zap className="w-3.5 h-3.5" />{t.conditions.eyebrow}</span>
               <h2 className="text-[30px] md:text-[40px] lg:text-[46px] font-heading font-bold text-[#080F20] leading-[1.15] mb-4 text-center md:text-left">{t.conditions.title}</h2>
               <p className="text-[16px] md:text-[17px] text-[#5A6A85] leading-relaxed mb-10 max-w-[480px] text-center md:text-left mx-auto md:mx-0">{t.conditions.subtitle}</p>
               <div className="grid grid-cols-2 gap-3 md:gap-4">
-                {[
-                  { icon: Coins,          target: 5,     prefix: '$', suffix: '*', label: t.conditions.minInvest },
-                  { icon: Zap,            target: 1,     prefix: '$', suffix: '',  label: t.conditions.minTrade },
-                  { icon: FlaskConical,   target: 50000, prefix: '$', suffix: '',  label: t.conditions.demoMoney },
-                  { icon: ArrowLeftRight, target: 50,    prefix: '',  suffix: '+', label: t.conditions.paymentMethods },
-                  { icon: ShieldCheck,    target: 0,     prefix: '$', suffix: '',  label: t.conditions.noCommission },
-                  { icon: Layers,         target: 100,   prefix: '',  suffix: '+', label: t.conditions.assets },
-                ].map((s, i) => (
+                {CONDITIONS.map((s, i) => (
                   <div key={i} className="card-premium p-4 md:p-5">
-                    <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full" style={{ background: '#EEF3FA' }}>
-                      <s.icon className="h-[18px] w-[18px] text-[#0099FA]" strokeWidth={1.75} fill="#0099FA" fillOpacity={0.18} />
-                    </div>
-                    <div className="text-[28px] md:text-[34px] font-heading font-bold leading-none mb-1.5 bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #0099FA, #0052cc)' }}>
+                    <div className="mb-3"><IconBadge icon={s.icon} size={36} /></div>
+                    <div className="text-[28px] md:text-[34px] font-heading font-bold leading-none mb-1.5 text-[#0099FA]">
                       <CountUpNumber target={s.target} prefix={s.prefix} suffix={s.suffix} active={countStarted} />
                     </div>
-                    <div className="text-[13px] md:text-[14px] text-[#5A6A85] leading-snug whitespace-pre-line">{s.label}</div>
+                    <div className="text-[13px] md:text-[14px] text-[#5A6A85] leading-snug">{t.conditions.items[i]}</div>
                   </div>
                 ))}
               </div>
+              <p className="mt-5 text-[12.5px] text-[#8A9BB5]">{t.conditions.footnote}</p>
             </div>
             <div className="hidden md:flex w-full lg:w-[52%] self-stretch items-center justify-center lg:justify-start relative">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-[60%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
-              <img src="/images/monitor.webp" alt="Trading Platform" className="relative w-full max-w-[720px] lg:max-w-none lg:w-[118%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
+              <img src="/images/monitor.webp" alt="Pocket Option web trading platform" className="relative w-full max-w-[720px] lg:max-w-none lg:w-[118%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section style={{ background: '#ffffff', padding: '96px 0 88px' }}>
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div style={{ textAlign: 'center', marginBottom: '72px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: '700', color: '#0D1B2A', marginBottom: '14px', lineHeight: '1.2' }}>{t.steps.title}</h2>
-            <p style={{ fontSize: '17px', color: '#5A6A85', maxWidth: '440px', margin: '0 auto', lineHeight: '1.65' }}>{t.steps.subtitle}</p>
-          </div>
-          {/* Desktop steps */}
-          <div className="hidden md:block">
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'flex-start' }}>
-              <div style={{ position: 'absolute', top: '32px', left: 'calc(16.66%)', right: 'calc(16.66%)', height: '1px', background: '#D6E4F5', zIndex: 0 }} />
-              {STEPS.map((step, i) => (
-                <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', zIndex: 1, padding: '0 40px' }}>
-                  <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: '#EEF5FF', border: '2px solid #D0E4F9', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '28px', flexShrink: 0, position: 'relative' }}>
-                    {step.icon}
-                    <div style={{ position: 'absolute', top: '-6px', right: '-6px', width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg, #0099FA, #0052cc)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: '800', color: '#fff', border: '2px solid #fff' }}>{i + 1}</div>
-                  </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#0D1B2A', marginBottom: '10px', lineHeight: '1.3', textAlign: 'center' }}>{step.title}</h3>
-                  <p style={{ fontSize: '17px', color: '#5A6A85', lineHeight: '1.75', textAlign: 'center', margin: 0 }}>{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Mobile steps */}
-          <div className="block md:hidden">
-            <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
-              <div style={{ position: 'absolute', left: '31px', top: '64px', bottom: '64px', width: '1px', background: '#D6E4F5' }} />
-              {STEPS.map((step, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '18px', marginBottom: i < 2 ? '40px' : '0', position: 'relative', zIndex: 1 }}>
-                  <div style={{ width: '62px', height: '62px', borderRadius: '50%', background: '#EEF5FF', border: '2px solid #D0E4F9', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative' }}>
-                    {step.icon}
-                    <div style={{ position: 'absolute', top: '-6px', right: '-6px', width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg, #0099FA, #0052cc)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: '800', color: '#fff', border: '2px solid #fff' }}>{i + 1}</div>
-                  </div>
-                  <div style={{ paddingTop: '10px' }}>
-                    <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#0D1B2A', marginBottom: '6px', lineHeight: '1.3' }}>{step.title}</h3>
-                    <p style={{ fontSize: '17px', color: '#5A6A85', lineHeight: '1.7', margin: 0 }}>{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '56px' }}>
-            <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '15px 44px', borderRadius: '8px', background: 'linear-gradient(to right, #0099FA, #0052cc)', color: '#ffffff', fontSize: '16px', fontWeight: '600', textDecoration: 'none', boxShadow: '0 6px 20px rgba(0,153,250,0.3)' }}>
-              {t.steps.getStarted}
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section style={{ background: '#ffffff', padding: '88px 0 72px', position: 'relative', overflow: 'hidden' }}>
-        <div className="container mx-auto px-6 max-w-7xl" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="text-center md:text-left" style={{ marginBottom: '64px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: '700', color: '#0D1B2A', lineHeight: '1.2', marginBottom: '16px' }}>{t.why.title}</h2>
-            <p className="mx-auto md:mx-0" style={{ fontSize: '17px', color: '#5A6A85', maxWidth: '520px', lineHeight: '1.6' }}>{t.why.subtitle}</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-            {WHY.map((item, i) => (
-              <div key={i} className="card-premium text-center md:text-left" style={{ padding: '28px 24px' }}>
-                <div className="mx-auto md:mx-0" style={{ width: '64px', height: '64px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', background: '#EEF3FA' }}>
-                  <item.icon style={{ width: '32px', height: '32px', color: '#0099FA' }} strokeWidth={1.75} fill="#0099FA" fillOpacity={0.18} />
-                </div>
-                <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#0D1B2A', letterSpacing: '0.01em', marginBottom: '10px', lineHeight: '1.35' }}>{item.title}</h3>
-                <p style={{ fontSize: '15px', color: '#5A6A85', lineHeight: '1.7' }}>{item.desc}</p>
+      {/* WHY */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="container-x">
+          <SectionHead eyebrow={t.why.eyebrow} title={t.why.title} subtitle={t.why.subtitle} align="left" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {t.why.items.map((item, i) => (
+              <div key={item.title} className="card-premium text-center md:text-left p-7">
+                <div className="mx-auto md:mx-0 mb-5 w-fit"><IconBadge icon={WHY_ICONS[i]} /></div>
+                <h3 className="font-heading font-bold text-[18px] text-[#0D1B2A] mb-2.5 leading-[1.35]">{item.title}</h3>
+                <p className="text-[15px] text-[#5A6A85] leading-[1.7]">{item.desc}</p>
               </div>
             ))}
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', borderTop: '1px solid #E4EBF5', paddingTop: '40px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '16px', fontWeight: '600', color: '#5A6A85', letterSpacing: '0.12em', textTransform: 'uppercase' }}>{t.why.tradeOneClick}</span>
-            <Button asChild style={{ height: '48px', padding: '0 36px', borderRadius: '8px', background: 'linear-gradient(to right, #0099FA, #0052cc)', color: 'white', fontWeight: '600', fontSize: '13px', letterSpacing: '0.08em', textTransform: 'uppercase', border: 'none', boxShadow: '0 4px 20px rgba(0,153,250,0.35)' }}>
-              <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL}>{t.why.startTrading}</a>
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* OFFERS SLIDER */}
-      <section className="py-16 overflow-hidden" style={{ background: '#0f487c' }}>
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex justify-end gap-3 mb-8">
-            <button onClick={prev} disabled={slideIndex === 0} className="w-11 h-11 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:border-white hover:text-white disabled:opacity-25 transition-all bg-white/10"><ChevronLeft className="w-5 h-5" /></button>
-            <button onClick={next} disabled={slideIndex >= maxIndex} className="w-11 h-11 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:border-white hover:text-white disabled:opacity-25 transition-all bg-white/10"><ChevronRight className="w-5 h-5" /></button>
-          </div>
-          <div className="overflow-hidden">
-            <div className="flex gap-5 transition-transform duration-500 ease-in-out" style={{ transform: isMobile ? `translateX(calc(-${slideIndex} * (100% + 20px)))` : `translateX(calc(-${slideIndex} * (25% + 5px)))` }}>
-              {OFFERS.map((offer, i) => (
-                <div key={i} className="flex-shrink-0 rounded-2xl overflow-hidden flex flex-col" style={{ width: isMobile ? 'calc(100% - 0px)' : 'calc(25% - 15px)', background: 'linear-gradient(160deg, #0E3A6E 0%, #0A2550 60%, #061830 100%)' }}>
-                  <div className="flex items-center justify-center pt-8 pb-4 px-6 flex-1">
-                    <img src={offer.img} alt={offer.title} loading="lazy" className="w-32 h-32 object-contain drop-shadow-2xl" />
+      {/* TRADE TYPES */}
+      <section className="relative overflow-hidden py-20 lg:py-28" style={{ background: 'linear-gradient(160deg, #061A33 0%, #0A2540 55%, #0C3260 100%)' }}>
+        <div className="absolute inset-0 grid-noise pointer-events-none opacity-60" />
+        <div className="container-x relative">
+          <SectionHead eyebrow={t.tradeTypes.eyebrow} title={t.tradeTypes.title} subtitle={t.tradeTypes.subtitle} dark />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {t.tradeTypes.items.map((item, i) => {
+              const Icon = TRADE_ICONS[i];
+              return (
+                <div key={item.title} className="glass-dark rounded-2xl p-6 border border-white/10 hover:border-[#0099FA]/50 transition-colors">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/[0.06]">
+                      <Icon className="h-5 w-5 text-[#5fb8ff]" strokeWidth={1.75} fill="#5fb8ff" fillOpacity={0.15} />
+                    </div>
+                    <span className="font-heading text-[12px] font-bold tracking-[0.2em] text-white/30">0{i + 1}</span>
                   </div>
-                  <div className="px-6 pb-8 pt-4">
-                    <h3 className="text-white text-[18px] font-bold tracking-wide mb-5 whitespace-pre-line leading-snug">{offer.title}</h3>
-                    <button className="w-[90px] h-9 rounded-[6px] bg-[#0A2550] hover:bg-[#0d3266] border border-white/10 text-white text-[13px] font-semibold tracking-widest uppercase transition-colors">{t.offers.more}</button>
-                  </div>
+                  <h3 className="font-heading font-bold text-[17px] text-white mb-2">{item.title}</h3>
+                  <p className="text-[14px] leading-[1.7] text-white/60">{item.desc}</p>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* LUCK SECTION */}
-      <section style={{ background: 'white', padding: '0 0 64px 0' }}>
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div style={{ paddingTop: '36px' }}>
-            <div className="flex flex-col md:flex-row md:items-center pl-6 md:pl-[220px] pr-6 md:pr-12" style={{ background: '#eef2f9', borderRadius: '16px', boxShadow: '0 2px 20px rgba(0,0,0,0.07)', position: 'relative', overflow: 'visible', minHeight: '200px', paddingTop: '48px', paddingBottom: '48px' }}>
-              <img src="/images/gift.webp" alt="Gift box" loading="lazy" className="hidden md:block" style={{ position: 'absolute', left: '12px', bottom: '0', height: '240px', width: 'auto' }} />
-              <div className="flex-1 mb-6 md:mb-0 md:mr-12">
-                <h2 className="text-[30px] md:text-[46px]" style={{ fontWeight: '700', color: '#0D1B2A', marginBottom: '10px', lineHeight: '1.2' }}>{t.luck.title}</h2>
-                <p className="text-[17px] md:text-[18px]" style={{ color: '#5A6A85', lineHeight: '1.55', maxWidth: '380px', margin: 0 }}>{t.luck.subtitle}</p>
+      {/* ASSETS */}
+      <section className="bg-[#F7F9FD] py-20 lg:py-28">
+        <div className="container-x">
+          <SectionHead eyebrow={t.assets.eyebrow} title={t.assets.title} subtitle={t.assets.subtitle} />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {t.assets.groups.map((g, i) => (
+              <div key={g.name} className="card-premium p-6 flex flex-col">
+                <div className="flex items-start justify-between mb-5">
+                  <IconBadge icon={ASSET_ICONS[i]} size={48} />
+                  <span className="font-heading font-extrabold text-[26px] leading-none text-[#0099FA]">{g.count}</span>
+                </div>
+                <h3 className="font-heading font-bold text-[17px] text-[#0D1B2A] mb-1.5">{g.name}</h3>
+                <p className="text-[13.5px] leading-relaxed text-[#7A889E]">{g.examples}</p>
               </div>
-              <div className="flex flex-col md:flex-row md:items-center gap-3 flex-shrink-0">
-                <Input type="email" placeholder={t.luck.emailPlaceholder} style={{ height: '48px', borderRadius: '6px', padding: '0 16px', border: '1px solid #C8D5E8', fontSize: '16px', background: 'white', color: '#0D1B2A' }} className="w-full md:w-[248px] focus-visible:ring-[#0099FA]" />
-                <Button asChild className="w-full md:w-auto" style={{ height: '48px', padding: '0 28px', borderRadius: '6px', background: 'linear-gradient(to right, #0099FA, #0052cc)', color: 'white', fontWeight: '600', fontSize: '17px', letterSpacing: '0.09em', textTransform: 'uppercase', border: 'none', whiteSpace: 'nowrap', cursor: 'pointer' }}>
-                  <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL}>{t.luck.checkNow}</a>
-                </Button>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <a href={lp('assets')} className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#0099FA] hover:gap-3 transition-all">{t.assets.cta}<ArrowRight className="w-4 h-4" /></a>
+          </div>
+        </div>
+      </section>
+
+      {/* STEPS */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="container-x">
+          <SectionHead eyebrow={t.steps.eyebrow} title={t.steps.title} subtitle={t.steps.subtitle} />
+          <ol className="relative grid md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="hidden md:block absolute top-[44px] left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-transparent via-[#C9DBF0] to-transparent" />
+            {t.steps.items.map((step, i) => (
+              <li key={step.title} className="relative card-premium p-8 text-center">
+                <div className="relative mx-auto mb-6 w-fit">
+                  <IconBadge icon={STEP_ICONS[i]} size={72} />
+                  <span className="absolute -top-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full border-2 border-white text-[12px] font-extrabold text-white" style={{ background: 'linear-gradient(135deg, #0099FA, #0052cc)' }}>{i + 1}</span>
+                </div>
+                <h3 className="font-heading font-bold text-[19px] text-[#0D1B2A] mb-2.5">{step.title}</h3>
+                <p className="text-[15.5px] leading-[1.7] text-[#5A6A85]">{step.desc}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-12 text-center">
+            <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} className="btn-brand h-[52px] px-10 text-[14px] font-bold tracking-[0.06em] uppercase">{t.steps.cta}<ArrowRight className="w-4 h-4" /></a>
+          </div>
+        </div>
+      </section>
+
+      {/* PAYMENTS */}
+      <section className="relative overflow-hidden py-20 lg:py-24" style={{ background: 'linear-gradient(180deg, #063764 0%, #052B4F 100%)' }}>
+        <div className="container-x">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5">
+              <span className="eyebrow eyebrow-dark mb-5">{t.payments.eyebrow}</span>
+              <h2 className="font-heading font-bold text-[28px] md:text-[38px] leading-[1.15] text-white mb-4">{t.payments.title}</h2>
+              <p className="text-[16px] md:text-[17px] leading-relaxed text-white/65 mb-8">{t.payments.subtitle}</p>
+              <ul className="grid sm:grid-cols-2 gap-3.5">
+                {t.payments.points.map((p, i) => {
+                  const Icon = PAY_ICONS[i];
+                  return (
+                    <li key={p} className="flex items-center gap-3 text-[14.5px] text-white/85">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/[0.08]"><Icon className="h-4 w-4 text-[#5fb8ff]" /></span>{p}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                {PAYMENT_LOGOS.map(name => (
+                  <div key={name} className="glass-dark flex h-[68px] items-center justify-center rounded-xl border border-white/10 px-3 text-center font-heading text-[14px] font-bold tracking-tight text-white/85">{name}</div>
+                ))}
               </div>
             </div>
           </div>
@@ -357,115 +342,149 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
       </section>
 
       {/* APPS */}
-      <section className="bg-white overflow-hidden" style={{ paddingTop: '72px', paddingBottom: '0' }}>
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex flex-col md:flex-row md:items-center gap-12">
-            <div style={{ flexShrink: 0 }} className="w-full md:w-1/2">
-              <h2 className="text-[28px] md:text-[46px] mb-7 md:mb-12" style={{ fontWeight: '700', color: '#0D1B2A', lineHeight: '1.15', whiteSpace: 'pre-line' }}>{t.apps.title}</h2>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-                {APPS.map(({ Icon, label, action }) => (
-                  <div key={label} className="w-[calc(50%-6px)] md:w-[136px]" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#EEF2F9', borderRadius: '14px', paddingTop: '32px', paddingBottom: '24px', paddingLeft: '12px', paddingRight: '12px', cursor: 'pointer' }}>
-                    <Icon strokeWidth={1.5} style={{ width: '40px', height: '40px', color: '#8EA4C0', marginBottom: '16px' }} />
-                    <span style={{ fontSize: '16px', fontWeight: '600', color: '#1A2B42', textAlign: 'center', marginBottom: '14px', lineHeight: '1.3' }}>{label}</span>
-                    <span style={{ fontSize: '17px', color: '#5A7A9E', textDecoration: 'underline', textUnderlineOffset: '3px' }}>{action}</span>
-                  </div>
+      <section className="bg-white overflow-hidden pt-20 lg:pt-28">
+        <div className="container-x">
+          <div className="flex flex-col md:flex-row md:items-end gap-12">
+            <div className="w-full md:w-1/2 pb-20 lg:pb-28">
+              <span className="eyebrow mb-5">{t.apps.eyebrow}</span>
+              <h2 className="font-heading font-bold text-[28px] md:text-[40px] leading-[1.15] text-[#080F20] mb-4">{t.apps.title}</h2>
+              <p className="text-[16px] md:text-[17px] leading-relaxed text-[#5A6A85] mb-9 max-w-[480px]">{t.apps.subtitle}</p>
+              <div className="grid grid-cols-2 gap-3.5">
+                {t.apps.items.map((app, i) => (
+                  <a key={app.name} href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} className="card-premium flex items-center gap-4 p-4">
+                    <IconBadge icon={APP_ICONS[i]} size={44} />
+                    <div>
+                      <div className="font-heading font-bold text-[15px] text-[#0D1B2A]">{app.name}</div>
+                      <div className="text-[13px] text-[#7A889E]">{app.desc}</div>
+                    </div>
+                  </a>
                 ))}
               </div>
             </div>
-            <div className="hidden md:block" style={{ flex: 1, position: 'relative', minHeight: '420px' }}>
-              <img src="/images/iphone.webp" alt="App back" loading="lazy" style={{ position: 'absolute', right: '0', bottom: '0', width: '210px', zIndex: 1, filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.10))' }} />
-              <img src="/images/android.webp" alt="App front" loading="lazy" style={{ position: 'absolute', right: '140px', bottom: '0', width: '240px', zIndex: 2, filter: 'drop-shadow(0 12px 32px rgba(0,0,0,0.18))' }} />
+            <div className="hidden md:block relative flex-1 min-h-[460px]">
+              <div className="pointer-events-none absolute left-1/2 bottom-0 h-[80%] w-[80%] -translate-x-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.14)' }} />
+              <img src="/images/iphone.webp" alt="Pocket Option app for iOS" loading="lazy" className="absolute right-0 bottom-0 w-[210px] z-[1] drop-shadow-[0_8px_20px_rgba(0,0,0,0.10)]" />
+              <img src="/images/android.webp" alt="Pocket Option app for Android" loading="lazy" className="absolute right-[140px] bottom-0 w-[240px] z-[2] drop-shadow-[0_12px_32px_rgba(0,0,0,0.18)]" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROS & CONS */}
+      <section className="bg-[#F7F9FD] py-20 lg:py-28">
+        <div className="container-x">
+          <SectionHead eyebrow={t.prosCons.eyebrow} title={t.prosCons.title} subtitle={t.prosCons.subtitle} />
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="card-premium p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E6F6EE]"><Check className="h-5 w-5 text-[#16A34A]" strokeWidth={2.5} /></span>
+                <h3 className="font-heading font-bold text-[19px] text-[#0D1B2A]">{t.prosCons.prosTitle}</h3>
+              </div>
+              <ul className="space-y-3.5">
+                {t.prosCons.pros.map(p => (
+                  <li key={p} className="flex gap-3 text-[15px] leading-[1.65] text-[#3E4C63]"><Check className="mt-1 h-4 w-4 shrink-0 text-[#16A34A]" strokeWidth={2.5} />{p}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="card-premium p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFF1E6]"><Minus className="h-5 w-5 text-[#EA580C]" strokeWidth={2.5} /></span>
+                <h3 className="font-heading font-bold text-[19px] text-[#0D1B2A]">{t.prosCons.consTitle}</h3>
+              </div>
+              <ul className="space-y-3.5">
+                {t.prosCons.cons.map(c => (
+                  <li key={c} className="flex gap-3 text-[15px] leading-[1.65] text-[#3E4C63]"><Minus className="mt-1 h-4 w-4 shrink-0 text-[#EA580C]" strokeWidth={2.5} />{c}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REVIEWS */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="container-x">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-4">
+              <span className="eyebrow mb-5">{t.reviews.eyebrow}</span>
+              <h2 className="font-heading font-bold text-[28px] md:text-[38px] leading-[1.15] text-[#080F20] mb-4">{t.reviews.title}</h2>
+              <p className="text-[16px] leading-relaxed text-[#5A6A85] mb-8">{t.reviews.subtitle}</p>
+              <div className="flex items-center gap-4">
+                <span className="font-heading font-extrabold text-[44px] leading-none text-[#0D1B2A]">4.8</span>
+                <div>
+                  <div className="flex gap-0.5">{[1,2,3,4,5].map(i => <Star key={i} className="h-4 w-4" style={{ fill: '#FFC107', color: '#FFC107' }} />)}</div>
+                  <div className="text-[13px] text-[#7A889E] mt-1">{t.reviews.ratingLabel}</div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-8">
+              <div className="card-premium p-8 md:p-10 relative">
+                <span className="absolute top-6 right-8 font-heading text-[80px] leading-none text-[#0099FA]/10 select-none">&ldquo;</span>
+                <div className="flex gap-1 mb-5">{[1,2,3,4,5].map(i => <Star key={i} className="h-[18px] w-[18px]" style={{ fill: '#FFC107', color: '#FFC107' }} />)}</div>
+                <p className="text-[17px] md:text-[18px] leading-[1.75] text-[#1A2B42] mb-8 min-h-[120px]">{review.text}</p>
+                <div className="flex items-center justify-between gap-4 border-t border-[#E4EBF5] pt-6">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full font-heading text-[14px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #0099FA, #0052cc)' }}>{review.name.charAt(0)}</span>
+                    <div>
+                      <div className="font-semibold text-[15px] text-[#0D1B2A]">{review.name}</div>
+                      <div className="text-[13px] text-[#8A9BB5]">{review.country} · {review.date}</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <button aria-label="Previous review" onClick={() => setReviewIdx(i => (i - 1 + t.reviews.items.length) % t.reviews.items.length)} className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C8D8EA] text-[#3B6DB5] hover:bg-[#EEF3FA] transition-colors"><ChevronLeft className="h-4 w-4" /></button>
+                    <button aria-label="Next review" onClick={() => setReviewIdx(i => (i + 1) % t.reviews.items.length)} className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C8D8EA] text-[#3B6DB5] hover:bg-[#EEF3FA] transition-colors"><ChevronRight className="h-4 w-4" /></button>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 flex justify-center gap-1.5">
+                {t.reviews.items.map((_, i) => (
+                  <button key={i} aria-label={`Review ${i + 1}`} onClick={() => setReviewIdx(i)} className="h-1.5 rounded-full transition-all" style={{ width: i === reviewIdx ? 24 : 8, background: i === reviewIdx ? BRAND : '#D6E0EE' }} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section style={{ background: '#ffffff', padding: '88px 0' }}>
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <h2 style={{ fontSize: 'clamp(26px, 4vw, 42px)', fontWeight: '700', color: '#0D1B2A', lineHeight: '1.2', marginBottom: '14px' }}>{t.faq.title}</h2>
-            <p style={{ fontSize: '17px', color: '#5A6A85', maxWidth: '520px', margin: '0 auto', lineHeight: '1.6' }}>{t.faq.subtitle}</p>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {FAQS.map((item, i) => {
+      <section className="bg-[#F7F9FD] py-20 lg:py-28">
+        <div className="container-x">
+          <SectionHead eyebrow={t.faq.eyebrow} title={t.faq.title} subtitle={t.faq.subtitle} />
+          <div className="max-w-4xl mx-auto flex flex-col gap-3">
+            {t.faq.items.map((item, i) => {
               const isOpen = faqOpen === i;
               return (
-                <div key={i} style={{ border: isOpen ? '1px solid rgba(0,153,250,0.4)' : '1px solid #E4EBF5', borderRadius: '14px', overflow: 'hidden', background: isOpen ? 'rgba(0,153,250,0.03)' : '#FAFCFF', transition: 'border-color 0.25s, background 0.25s', boxShadow: isOpen ? '0 4px 24px rgba(0,153,250,0.08)' : '0 1px 4px rgba(0,0,0,0.04)' }}>
-                  <button onClick={() => setFaqOpen(isOpen ? null : i)} style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '22px 28px', background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left', gap: '16px' }}>
-                    <span style={{ fontSize: '16px', fontWeight: '600', color: '#0D1B2A', lineHeight: '1.4', flex: 1 }}>{item.q}</span>
-                    <span style={{ width: '28px', height: '28px', borderRadius: '50%', background: isOpen ? 'linear-gradient(135deg, #0099FA, #0052cc)' : '#EEF3FC', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 0.25s, transform 0.3s', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}>
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke={isOpen ? '#fff' : '#0099FA'} strokeWidth="2" strokeLinecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke={isOpen ? '#fff' : '#0099FA'} strokeWidth="2" strokeLinecap="round"/></svg>
+                <div key={item.q} className="rounded-2xl border bg-white transition-all" style={{ borderColor: isOpen ? 'rgba(0,153,250,0.4)' : '#E4EBF5', boxShadow: isOpen ? '0 8px 30px rgba(0,153,250,0.08)' : '0 1px 4px rgba(0,0,0,0.03)' }}>
+                  <button onClick={() => setFaqOpen(isOpen ? null : i)} aria-expanded={isOpen} className="flex w-full items-center justify-between gap-4 px-7 py-5 text-left">
+                    <h3 className="font-heading font-semibold text-[16px] md:text-[17px] leading-[1.4] text-[#0D1B2A]">{item.q}</h3>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all" style={{ background: isOpen ? 'linear-gradient(135deg, #0099FA, #0052cc)' : '#EEF3FC', transform: isOpen ? 'rotate(45deg)' : 'none' }}>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="1" x2="6" y2="11" stroke={isOpen ? '#fff' : BRAND} strokeWidth="2" strokeLinecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke={isOpen ? '#fff' : BRAND} strokeWidth="2" strokeLinecap="round"/></svg>
                     </span>
                   </button>
-                  {isOpen && (<div style={{ padding: '0 28px 24px 28px' }}><p style={{ fontSize: '16px', color: '#5A6A85', lineHeight: '1.75', margin: 0 }}>{item.a}</p></div>)}
+                  {isOpen && <p className="px-7 pb-6 -mt-1 text-[15.5px] leading-[1.75] text-[#5A6A85]">{item.a}</p>}
                 </div>
               );
             })}
           </div>
-          <div style={{ textAlign: 'center', marginTop: '48px' }}>
-            <p style={{ fontSize: '16px', color: '#5A6A85', marginBottom: '20px' }}>
-              {t.faq.stillHaveQuestions}{' '}
-              <a href="/contacts" style={{ color: '#0099FA', fontWeight: '600', textDecoration: 'none' }}>{t.faq.contactSupport}</a>
-            </p>
-          </div>
+          <p className="mt-10 text-center text-[15px] text-[#5A6A85]">
+            {t.faq.stillQuestions}{' '}
+            <a href={lp('contacts')} className="font-semibold text-[#0099FA]">{t.faq.contact}</a>
+          </p>
         </div>
       </section>
 
-      {/* REVIEWS */}
-      <section style={{ background: '#F0F4FA', padding: '72px 0' }}>
-        <div className="container mx-auto px-6 max-w-7xl">
-          <h2 style={{ fontSize: 'clamp(26px, 5vw, 40px)', fontWeight: '700', color: '#0D1B2A', marginBottom: '8px' }}>{t.reviews.title}</h2>
-          <p style={{ fontSize: '17px', color: '#5A6A85', marginBottom: '40px' }}>{t.reviews.subtitle}</p>
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="w-full md:w-[58%]" style={{ background: 'white', borderRadius: '16px', border: '1px solid #E4EBF5', padding: '32px', boxShadow: '0 2px 12px rgba(0,0,0,0.05)' }}>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0" style={{ marginBottom: '20px' }}>
-                <div style={{ display: 'flex', gap: '4px' }}>{[1,2,3,4,5].map(i => <Star key={i} style={{ width: '20px', height: '20px', fill: '#FFC107', color: '#FFC107' }} />)}</div>
-                <span style={{ fontSize: '13px', color: '#8A9BB5', fontWeight: 500, letterSpacing: '0.01em' }}>{formatReviewDate(review.date)}</span>
-              </div>
-              <p style={{ fontSize: '16px', color: '#1A2B42', lineHeight: '1.7', marginBottom: '16px' }}>{review.text}</p>
-              <a href="#" style={{ fontSize: '16px', color: '#1A2B42', textDecoration: 'underline', display: 'block', marginBottom: '28px' }}>{t.reviews.showFullReview}</a>
-              <hr style={{ border: 'none', borderTop: '1px solid #E4EBF5', marginBottom: '20px' }} />
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <img src={review.flag} alt={`${review.name} country flag`} loading="lazy" style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover', border: '2px solid #E4EBF5' }} />
-                  <div>
-                    <div style={{ fontSize: '16px', fontWeight: '600', color: '#0D1B2A' }}>{review.name}</div>
-                    <div style={{ fontSize: '14px', color: '#8A9BB5' }}>{review.uid}</div>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '8px' }}>
-                  <button onClick={() => setReviewIdx(i => Math.max(0, i - 1))} disabled={reviewIdx === 0} style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1.5px solid #C8D8EA', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: reviewIdx === 0 ? 'not-allowed' : 'pointer', opacity: reviewIdx === 0 ? 0.4 : 1, color: '#3B6DB5' }}><ChevronLeft style={{ width: '16px', height: '16px' }} /></button>
-                  <button onClick={() => setReviewIdx(i => Math.min(REVIEWS.length - 1, i + 1))} disabled={reviewIdx === REVIEWS.length - 1} style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1.5px solid #C8D8EA', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: reviewIdx === REVIEWS.length - 1 ? 'not-allowed' : 'pointer', opacity: reviewIdx === REVIEWS.length - 1 ? 0.4 : 1, color: '#3B6DB5' }}><ChevronRight style={{ width: '16px', height: '16px' }} /></button>
-                </div>
-              </div>
-            </div>
-            <div style={{ flex: 1, paddingTop: '8px' }}>
-              <a href="#" style={{ fontSize: '17px', color: '#0099FA', textDecoration: 'underline', display: 'block', marginBottom: '20px' }}>{t.reviews.allReviews}</a>
-              <p style={{ fontSize: '17px', color: '#5A6A85', lineHeight: '1.65', marginBottom: '28px' }}>{t.reviews.feedbackText}</p>
-              <button style={{ height: '48px', padding: '0 28px', borderRadius: '6px', border: '1px solid #D0DCF0', background: '#d6e6f2', fontSize: '13px', fontWeight: '600', letterSpacing: '0.1em', color: '#3A4F6E', cursor: 'pointer', textTransform: 'uppercase', marginBottom: '20px', display: 'block' }}>{t.reviews.submitReview}</button>
-              <p style={{ fontSize: '12px', color: '#8A9BB5', lineHeight: '1.5' }}>{t.reviews.reviewsNote}</p>
-            </div>
+      {/* FINAL CTA */}
+      <section className="relative overflow-hidden py-20 lg:py-24" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 50%, #0C3260 100%)' }}>
+        <div className="absolute inset-0 grid-noise pointer-events-none opacity-60" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.18)' }} />
+        <div className="container-x relative text-center">
+          <h2 className="font-heading font-extrabold text-[30px] md:text-[44px] leading-[1.12] text-white mb-4">{t.finalCta.title}</h2>
+          <p className="text-[16px] md:text-[18px] text-white/70 max-w-[600px] mx-auto mb-9">{t.finalCta.subtitle}</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} className="btn-brand w-full sm:w-auto h-[54px] px-10 text-[15px] font-bold tracking-[0.06em] uppercase">{t.finalCta.register}<ChevronRight className="w-4 h-4" /></a>
+            <a href={lp('free-demo')} className="btn-ghost-light w-full sm:w-auto h-[54px] px-8 text-[15px]">{t.finalCta.demo}</a>
           </div>
-        </div>
-      </section>
-
-      {/* PAYMENT METHODS */}
-      <section style={{ background: '#063764', padding: '56px 5%' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '48px 64px', marginBottom: '40px' }}>
-          <img src="https://cdn.simpleicons.org/visa/ffffff" alt="Visa" loading="lazy" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
-          <span style={{ color: 'white', fontWeight: '700', fontSize: '22px', letterSpacing: '-0.02em' }}>Jetonbank<span style={{ color: '#5bb8ff' }}>.</span></span>
-          <img src="https://cdn.simpleicons.org/pix/ffffff" alt="Pix" loading="lazy" style={{ height: '32px' }} />
-          <span style={{ color: 'white', fontWeight: '700', fontSize: '20px', letterSpacing: '-0.01em' }}>easypaisa</span>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/1200px-UPI-Logo-vector.svg.png" alt="UPI" loading="lazy" style={{ height: '30px', filter: 'brightness(0) invert(1)' }} />
-          <span style={{ color: 'white', fontWeight: '800', fontSize: '20px', letterSpacing: '-0.01em' }}>m<span style={{ background: 'white', color: '#063764', borderRadius: '3px', padding: '0 3px', fontSize: '16px', fontWeight: '900', margin: '0 1px' }}>p</span>esa</span>
-          <span style={{ color: 'white', fontWeight: '700', fontSize: '20px', border: '2px solid white', borderRadius: '20px', padding: '2px 14px', letterSpacing: '0.04em' }}>MTN</span>
-          <span style={{ color: 'white', fontWeight: '700', fontSize: '20px' }}>b<span style={{ color: '#e8a0bf' }}>K</span>ash</span>
-          <img src="https://cdn.simpleicons.org/mercadopago/ffffff" alt="Mercado Pago" loading="lazy" style={{ height: '28px' }} />
-          <span style={{ color: 'white', fontWeight: '700', fontSize: '22px', letterSpacing: '-0.01em' }}>volet<span style={{ color: '#5bb8ff' }}>.</span></span>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <a href="#" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '17px', textDecoration: 'none' }}>{t.offers.more}</a>
+          <p className="mt-6 text-[13px] text-white/40">{t.finalCta.note}</p>
         </div>
       </section>
 
