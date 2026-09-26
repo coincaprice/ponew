@@ -1,3 +1,4 @@
+import { RelatedGuides } from '@/components/blog/RelatedGuides';
 import type { Metadata } from 'next';
 import { HomePage } from '@/components/pages/HomePage';
 import { buildSeoMeta } from '@/lib/i18n/seo';
@@ -14,6 +15,6 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <HomePage lang="en" />
+    <HomePage lang="en" guides={<RelatedGuides locale="en" slugs={['how-to-trade-on-pocket-option', 'pocket-option-deposit', 'pocket-option-withdrawal']} />} />
   );
 }

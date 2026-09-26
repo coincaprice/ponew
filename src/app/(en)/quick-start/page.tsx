@@ -1,3 +1,4 @@
+import { RelatedGuides } from '@/components/blog/RelatedGuides';
 import { QuickStartPage } from '@/components/pages/QuickStartPage';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
@@ -13,6 +14,6 @@ export const metadata: Metadata = {
 
 export default function QuickStart() {
   return (
-    <QuickStartPage lang="en" />
+    <QuickStartPage lang="en" guides={<RelatedGuides locale="en" slugs={['how-to-trade-on-pocket-option', 'pocket-option-demo-account', 'pocket-option-deposit']} />} />
   );
 }

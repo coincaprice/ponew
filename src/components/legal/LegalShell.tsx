@@ -22,7 +22,7 @@ export function LegalShell({
   const homeHref = lang === 'en' ? '/' : `/${lang}`;
 
   return (
-    <main style={{ background: '#F8FAFC', minHeight: '100vh', fontFamily: 'var(--font-sans)' }}>
+    <div style={{ background: '#F8FAFC', minHeight: '100vh', fontFamily: 'var(--font-sans)' }}>
       <style>{`
         .legal-hero-inner { max-width: 1400px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
         .legal-content-wrap { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
@@ -44,6 +44,7 @@ export function LegalShell({
       `}</style>
 
       <Header lang={lang as Locale} />
+      <main>
 
       {/* Hero */}
       <section style={{ background: 'linear-gradient(135deg, #020d1a 0%, #061829 50%, #0a2540 100%)', paddingTop: 130, paddingBottom: 60, position: 'relative', overflow: 'hidden' }}>
@@ -96,7 +97,8 @@ export function LegalShell({
         </div>
       </section>
 
+      </main>
       <Footer lang={lang as Locale} />
-    </main>
+    </div>
   );
 }

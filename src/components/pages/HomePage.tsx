@@ -42,7 +42,7 @@ function CountUpNumber({ target, prefix = '', suffix = '', duration = 1800, acti
   return <>{prefix}{fmt(count)}{suffix}</>;
 }
 
-export function HomePage({ lang = 'en' }: { lang?: string }) {
+export function HomePage({ lang = 'en', guides }: { lang?: string; guides?: React.ReactNode }) {
   const t = getHomeDictionary(lang);
   const locale = isLocale(lang) ? lang : 'en';
   const lp = (path: string) => getLocalePath(locale, path);
@@ -98,14 +98,15 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
   return (
     <div className="min-h-screen bg-[#080F20] flex flex-col font-sans">
       <Header lang={lang} />
+      <main className="flex-1 flex flex-col">
       <FaqJsonLd items={t.faq.items} />
 
       {/* HERO */}
       <section className="relative w-full overflow-hidden min-h-[720px] flex items-center" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
         <div className="absolute pointer-events-none" style={{ top: '-15%', left: '-8%', width: '65%', height: '65%', background: 'radial-gradient(ellipse, rgba(0,153,250,0.13) 0%, transparent 68%)', borderRadius: '50%' }} />
         <div className="absolute pointer-events-none" style={{ bottom: '5%', right: '-5%', width: '55%', height: '55%', background: 'radial-gradient(ellipse, rgba(0,82,204,0.11) 0%, transparent 65%)', borderRadius: '50%' }} />
-        <img src="/images/header-bg.webp" alt="Pocket Option trading terminal" className="hidden md:block absolute top-1/2 -translate-y-1/2 right-[-2%] w-[58%] pointer-events-none select-none animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]" />
-        <img src="/images/header-bg.webp" alt="" className="md:hidden absolute top-[40px] pointer-events-none select-none" style={{ right: '-50%', width: '120%', opacity: 0.92, maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)' }} />
+        <img src="/images/header-bg.webp" alt="Pocket Option trading terminal" width={1537} height={1439} fetchPriority="high" className="hidden md:block absolute top-1/2 -translate-y-1/2 right-[-2%] w-[58%] pointer-events-none select-none animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]" />
+        <img src="/images/header-bg.webp" alt="" width={1537} height={1439} className="md:hidden absolute top-[40px] pointer-events-none select-none" style={{ right: '-50%', width: '120%', opacity: 0.92, maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)' }} />
         <div className="hidden md:block absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, #0A2540 0%, #0A2540cc 35%, #0A254055 65%, transparent 100%)' }} />
         <div className="md:hidden absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(5,15,30,0.93) 0%, rgba(5,15,30,0.90) 28%, rgba(5,15,30,0.55) 52%, rgba(5,15,30,0.15) 100%)' }} />
         <div className="absolute inset-0 grid-noise pointer-events-none" />
@@ -176,7 +177,7 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
               <dl className="divide-y divide-[#EEF2F8]">
                 {t.about.facts.map(f => (
                   <div key={f.label} className="flex items-start justify-between gap-6 px-7 py-3.5">
-                    <dt className="text-[14px] text-[#7A889E] shrink-0">{f.label}</dt>
+                    <dt className="text-[14px] text-[#66748A] shrink-0">{f.label}</dt>
                     <dd className="text-[14.5px] font-semibold text-[#0D1B2A] text-right">{f.value}</dd>
                   </div>
                 ))}
@@ -211,7 +212,7 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="hidden md:flex w-full lg:w-[52%] self-stretch items-center justify-center lg:justify-start relative">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-[60%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
-              <img src="/images/monitor.webp" alt="Pocket Option web trading platform" className="relative w-full max-w-[720px] lg:max-w-none lg:w-[118%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
+              <img src="/images/monitor.webp" alt="Pocket Option web trading platform" width={935} height={790} loading="lazy" className="relative w-full max-w-[720px] lg:max-w-none lg:w-[118%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
             </div>
           </div>
         </div>
@@ -270,7 +271,7 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
                   <span className="font-heading font-extrabold text-[26px] leading-none text-[#0099FA]">{g.count}</span>
                 </div>
                 <h3 className="font-heading font-bold text-[17px] text-[#0D1B2A] mb-1.5">{g.name}</h3>
-                <p className="text-[13.5px] leading-relaxed text-[#7A889E]">{g.examples}</p>
+                <p className="text-[13.5px] leading-relaxed text-[#66748A]">{g.examples}</p>
               </div>
             ))}
           </div>
@@ -284,8 +285,9 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
       <section className="bg-white py-20 lg:py-28">
         <div className="container-x">
           <SectionHead eyebrow={t.steps.eyebrow} title={t.steps.title} subtitle={t.steps.subtitle} />
-          <ol className="relative grid md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="relative">
             <div className="hidden md:block absolute top-[44px] left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-transparent via-[#C9DBF0] to-transparent" />
+          <ol className="relative grid md:grid-cols-3 gap-6 lg:gap-8">
             {t.steps.items.map((step, i) => (
               <li key={step.title} className="relative card-premium p-8 text-center">
                 <div className="relative mx-auto mb-6 w-fit">
@@ -297,6 +299,7 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
               </li>
             ))}
           </ol>
+          </div>
           <div className="mt-12 text-center">
             <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} className="btn-brand h-[52px] px-10 text-[14px] font-bold tracking-[0.06em] uppercase">{t.steps.cta}<ArrowRight className="w-4 h-4" /></a>
           </div>
@@ -352,7 +355,7 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
                     <IconBadge icon={APP_ICONS[i]} size={44} />
                     <div>
                       <div className="font-heading font-bold text-[15px] text-[#0D1B2A]">{app.name}</div>
-                      <div className="text-[13px] text-[#7A889E]">{app.desc}</div>
+                      <div className="text-[13px] text-[#66748A]">{app.desc}</div>
                     </div>
                   </a>
                 ))}
@@ -410,7 +413,7 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
                 <span className="font-heading font-extrabold text-[44px] leading-none text-[#0D1B2A]">4.8</span>
                 <div>
                   <div className="flex gap-0.5">{[1,2,3,4,5].map(i => <Star key={i} className="h-4 w-4" style={{ fill: '#FFC107', color: '#FFC107' }} />)}</div>
-                  <div className="text-[13px] text-[#7A889E] mt-1">{t.reviews.ratingLabel}</div>
+                  <div className="text-[13px] text-[#66748A] mt-1">{t.reviews.ratingLabel}</div>
                 </div>
               </div>
             </div>
@@ -435,7 +438,7 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
               </div>
               <div className="mt-4 flex justify-center gap-1.5">
                 {t.reviews.items.map((_, i) => (
-                  <button key={i} aria-label={`Review ${i + 1}`} onClick={() => setReviewIdx(i)} className="h-1.5 rounded-full transition-all" style={{ width: i === reviewIdx ? 24 : 8, background: i === reviewIdx ? BRAND : '#D6E0EE' }} />
+                  <button key={i} aria-label={`Review ${i + 1}`} onClick={() => setReviewIdx(i)} className="flex h-6 min-w-6 items-center justify-center"><span className="block h-1.5 rounded-full transition-all" style={{ width: i === reviewIdx ? 24 : 8, background: i === reviewIdx ? BRAND : '#D6E0EE' }} /></button>
                 ))}
               </div>
             </div>
@@ -471,6 +474,8 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
       </section>
 
       {/* FINAL CTA */}
+      {guides}
+
       <section className="relative overflow-hidden py-20 lg:py-24" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 50%, #0C3260 100%)' }}>
         <div className="absolute inset-0 grid-noise pointer-events-none opacity-60" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.18)' }} />
@@ -484,6 +489,8 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
           <p className="mt-6 text-[13px] text-white/40">{t.finalCta.note}</p>
         </div>
       </section>
+
+      </main>
 
       <Footer lang={lang} />
     </div>

@@ -1,3 +1,4 @@
+import { RelatedGuides } from '@/components/blog/RelatedGuides';
 import { FreeDemoPage } from '@/components/pages/FreeDemoPage';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
@@ -13,6 +14,6 @@ export const metadata: Metadata = {
 
 export default function FreeDemo() {
   return (
-    <FreeDemoPage lang="en" />
+    <FreeDemoPage lang="en" guides={<RelatedGuides locale="en" slugs={['pocket-option-demo-account', 'pocket-option-indicators', 'pocket-option-risk-management']} />} />
   );
 }

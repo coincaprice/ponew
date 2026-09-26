@@ -40,6 +40,7 @@ export function AboutUsPage({ lang = 'en' }: { lang?: string }) {
       <BreadcrumbJsonLd lang={lang} slug="about-us" homeName={t.home} pageName={t.breadcrumb} />
       <FaqJsonLd items={t.faq.items} />
       <Header lang={lang} />
+      <main className="flex-1 flex flex-col">
 
       {/* HERO */}
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
@@ -239,6 +240,8 @@ export function AboutUsPage({ lang = 'en' }: { lang?: string }) {
           <p className="text-[13px] text-white/40">{t.finalCta.note}</p>
         </div>
       </section>
+
+      </main>
 
       <Footer lang={lang} />
     </div>

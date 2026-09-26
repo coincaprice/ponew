@@ -1,6 +1,7 @@
+import { RelatedGuides } from '@/components/blog/RelatedGuides';
 import { QuickStartPage } from "@/components/pages/QuickStartPage";
 import type { Metadata } from "next";
-import { locales } from "@/lib/i18n/config";
+import { locales, type Locale } from '@/lib/i18n/config';
 import { buildSeoMeta } from "@/lib/i18n/seo";
 
 const NON_EN_LOCALES = locales.filter(l => l !== 'en');
@@ -36,5 +37,5 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 export default async function QuickStartLang({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return <QuickStartPage lang={lang} />;
+  return <QuickStartPage lang={lang as Locale} guides={<RelatedGuides locale={lang as Locale} slugs={['how-to-trade-on-pocket-option', 'pocket-option-demo-account', 'pocket-option-deposit']} />} />;
 }

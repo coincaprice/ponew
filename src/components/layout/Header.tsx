@@ -121,7 +121,7 @@ export function Header({ lang = 'en' }: Props) {
               onClick={() => setLangOpen(o => !o)}
               aria-haspopup="listbox"
               aria-expanded={langOpen}
-              aria-label="Change language"
+              aria-label={`${locale.toUpperCase()} – change language`}
               className="flex items-center gap-1.5 text-sm text-[#8A9BBE] hover:text-white transition-colors px-2 py-1 rounded-md hover:bg-white/10"
             >
               <FlagImg country={currentLocaleInfo.country} size={20} />

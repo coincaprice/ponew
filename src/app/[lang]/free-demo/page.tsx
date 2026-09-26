@@ -1,3 +1,4 @@
+import { RelatedGuides } from '@/components/blog/RelatedGuides';
 import { FreeDemoPage } from '@/components/pages/FreeDemoPage';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import { BASE_URL, locales, getLocalePath } from '@/lib/i18n/config';
@@ -42,5 +43,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function FreeDemoLang({ params }: Props) {
   const { lang } = await params;
   if (!NON_EN_LOCALES.includes(lang as Exclude<Locale, 'en'>)) notFound();
-  return <FreeDemoPage lang={lang as Locale} />;
+  return <FreeDemoPage lang={lang as Locale} guides={<RelatedGuides locale={lang as Locale} slugs={['pocket-option-demo-account', 'pocket-option-indicators', 'pocket-option-risk-management']} />} />;
 }

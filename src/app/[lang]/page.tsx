@@ -1,6 +1,7 @@
+import { RelatedGuides } from '@/components/blog/RelatedGuides';
 import { HomePage } from '@/components/pages/HomePage';
 import type { Metadata } from 'next';
-import { locales } from '@/lib/i18n/config';
+import { locales, type Locale } from '@/lib/i18n/config';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 
 const NON_EN_LOCALES = locales.filter(l => l !== 'en');
@@ -39,5 +40,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function LangPage({ params }: Props) {
   const { lang } = await params;
-  return <HomePage lang={lang} />;
+  return <HomePage lang={lang as Locale} guides={<RelatedGuides locale={lang as Locale} slugs={['how-to-trade-on-pocket-option', 'pocket-option-deposit', 'pocket-option-withdrawal']} />} />;
 }

@@ -144,6 +144,7 @@ export function ContactsPage({ lang = 'en' }: { lang?: string }) {
     <>
       <BreadcrumbJsonLd lang={lang} slug="contacts" homeName={t.home} pageName={t.breadcrumb} />
       <Header lang={lang} />
+      <main className="flex-1 flex flex-col">
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#080F20] pt-[120px] pb-16 lg:pt-[150px] lg:pb-24 text-white">
@@ -233,6 +234,8 @@ export function ContactsPage({ lang = 'en' }: { lang?: string }) {
           </div>
         </div>
       </section>
+
+      </main>
 
       <Footer lang={lang} />
     </>

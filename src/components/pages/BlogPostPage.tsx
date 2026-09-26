@@ -112,6 +112,7 @@ export function BlogPostPage({ lang = 'en', post }: { lang?: string; post: BlogP
       <ArticleJsonLd lang={locale} slug={slug} headline={c.title} description={c.metaDescription} image={post.cover} datePublished={post.publishedAt} dateModified={post.updatedAt} author={post.author} />
       <FaqJsonLd items={c.faq} />
       <Header lang={locale} />
+      <main className="flex-1 flex flex-col">
 
       {/* HERO */}
       <section className="relative overflow-hidden pt-[110px] md:pt-[150px] pb-[120px] md:pb-[200px] text-white" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
@@ -210,6 +211,7 @@ export function BlogPostPage({ lang = 'en', post }: { lang?: string; post: BlogP
       )}
 
       <BlogCta locale={locale} t={t} />
+      </main>
       <Footer lang={locale} />
     </div>
   );

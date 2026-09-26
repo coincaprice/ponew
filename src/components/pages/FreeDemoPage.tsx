@@ -22,7 +22,7 @@ const HIGHLIGHT_ICONS: LucideIcon[] = [ShieldCheck, Activity, RefreshCw, LayoutG
 const STEP_ICONS: LucideIcon[] = [UserPlus, ToggleRight, MousePointerClick];
 const PRACTICE_ICONS: LucideIcon[] = [Layers, SlidersHorizontal, Timer, PieChart, Globe, Trophy];
 
-export function FreeDemoPage({ lang = 'en' }: { lang?: string }) {
+export function FreeDemoPage({ lang = 'en', guides }: { lang?: string; guides?: React.ReactNode }) {
   const t = getFreeDemoDictionary(lang);
   const locale = isLocale(lang) ? lang : 'en';
   const lp = (path: string) => getLocalePath(locale, path);
@@ -34,6 +34,7 @@ export function FreeDemoPage({ lang = 'en' }: { lang?: string }) {
       <HowToJsonLd name={t.steps.title} description={t.steps.subtitle} steps={t.steps.items.map(s => ({ name: s.title, text: s.desc }))} />
       <FaqJsonLd items={t.faq.items} />
       <Header lang={lang} />
+      <main className="flex-1 flex flex-col">
 
       {/* HERO */}
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
@@ -233,6 +234,8 @@ export function FreeDemoPage({ lang = 'en' }: { lang?: string }) {
       </section>
 
       {/* FINAL CTA */}
+      {guides}
+
       <section className="relative overflow-hidden py-20 lg:py-24" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 50%, #0C3260 100%)' }}>
         <div className="absolute inset-0 grid-noise pointer-events-none opacity-60" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.18)' }} />
@@ -246,6 +249,8 @@ export function FreeDemoPage({ lang = 'en' }: { lang?: string }) {
           <p className="mt-6 text-[13px] text-white/40">{t.finalCta.note}</p>
         </div>
       </section>
+
+      </main>
 
       <Footer lang={lang} />
     </div>

@@ -19,6 +19,7 @@ export function BlogIndexPage({ lang = 'en' }: { lang?: string }) {
     <div className="min-h-screen bg-[#080F20] flex flex-col font-sans">
       <BreadcrumbJsonLd lang={locale} slug="blog" homeName={t.home} pageName={t.breadcrumb} />
       <Header lang={locale} />
+      <main className="flex-1 flex flex-col">
 
       {/* HERO */}
       <section className="relative overflow-hidden pt-[110px] md:pt-[150px] pb-16 lg:pb-24 text-white" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
@@ -86,6 +87,7 @@ export function BlogIndexPage({ lang = 'en' }: { lang?: string }) {
       </section>
 
       <BlogCta locale={locale} t={t} />
+      </main>
       <Footer lang={locale} />
     </div>
   );

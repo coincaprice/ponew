@@ -126,7 +126,7 @@
   .eyebrow {
     @apply inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.14em];
     font-family: var(--font-heading);
-    color: #0099fa;
+    color: #0066b3;
     border-color: rgba(0, 153, 250, 0.25);
     background: rgba(0, 153, 250, 0.06);
   }
