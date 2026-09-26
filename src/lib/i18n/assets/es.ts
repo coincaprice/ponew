@@ -1,0 +1,93 @@
+import type { AssetsDictionary } from './types';
+
+export const es: AssetsDictionary = {
+  home: 'Inicio',
+  breadcrumb: 'Calendario de activos',
+  hero: {
+    eyebrow: 'Activos Pocket Option',
+    title: 'Activos de Pocket Option',
+    titleAccent: 'y horario de trading',
+    subtitle:
+      'Consulta todos los activos que puedes operar en Pocket Option — más de 100 pares de divisas, acciones, criptomonedas, materias primas e índices — con el pago actual de cada uno y las horas en que están abiertos. Usa el calendario para operar cuando el pago de pocketoption es más alto y el mercado que conoces está activo.',
+    cta: 'Empezar a operar',
+    secondary: 'Practicar en demo',
+    facts: [
+      { value: '100+', label: 'Activos negociables' },
+      { value: '92%', label: 'Pago máximo' },
+      { value: '24/7', label: 'Mercados OTC' },
+      { value: '5', label: 'Clases de activos' },
+    ],
+  },
+  categories: {
+    eyebrow: 'Clases de activos',
+    title: 'Qué puedes operar en Pocket Option',
+    subtitle: 'Cinco mercados en un terminal. Todas las clases están en la cuenta demo con los mismos pagos que en real.',
+    countLabel: 'activos',
+    topPayoutLabel: 'pago máximo',
+    items: {
+      Currency: { name: 'Pares de divisas', desc: 'Mayores como EUR/USD y GBP/USD más decenas de pares exóticos, con cotizaciones OTC disponibles las 24 horas.' },
+      Commodities: { name: 'Materias primas', desc: 'Oro, plata, petróleo Brent y WTI, gas natural, platino y paladio — los favoritos de los fondos en un clic.' },
+      Stocks: { name: 'Acciones', desc: 'Apple, NVIDIA, Tesla, Amazon, Microsoft y otras blue chips de EE. UU. como contratos de pago fijo a corto plazo.' },
+      Cryptocurrencies: { name: 'Criptomonedas', desc: 'Bitcoin, Ethereum, Solana, Toncoin, Dogecoin y más — opera el mercado cripto todos los días de la semana.' },
+      Indices: { name: 'Índices', desc: 'S&P 500, Dow Jones, Nasdaq 100, DAX, FTSE 100, Nikkei 225 y otros índices globales.' },
+    },
+  },
+  table: {
+    eyebrow: 'Calendario en vivo',
+    title: 'Pagos de Pocket Option por activo',
+    subtitle: 'Lista actual de activos disponibles con su porcentaje de pago. Filtra por clase, busca por nombre o muestra solo activos OTC.',
+    search: 'Buscar activo, p. ej. EUR/USD',
+    all: 'Todos',
+    otcOnly: 'Solo OTC',
+    assetCol: 'Activo',
+    payoutCol: 'Pago',
+    updated: 'Válido para',
+    showing: 'activos mostrados',
+    empty: 'Ningún activo coincide con el filtro.',
+    note: '* Los porcentajes de pago cambian con las condiciones del mercado y pueden diferir en el momento de abrir una operación. El pago exacto siempre se muestra en el terminal antes de confirmar. Los activos OTC (Over-The-Counter) los cotiza la plataforma y están disponibles 24/7, incluidos los fines de semana.',
+  },
+  hours: {
+    eyebrow: 'Horario de trading',
+    title: 'Cuándo están abiertos los mercados de Pocket Option',
+    subtitle: 'Los activos de bolsa siguen al mercado subyacente. Los activos OTC nunca cierran.',
+    items: [
+      { title: 'Forex (bolsa)', time: 'Lun 00:00 – Vie 23:59 (UTC+2)', desc: 'Los pares de divisas se negocian de forma continua desde la apertura de Sídney el lunes hasta el cierre de Nueva York el viernes.' },
+      { title: 'Acciones e índices', time: 'Sesiones bursátiles, lun–vie', desc: 'Las acciones e índices de EE. UU. siguen el horario de NYSE/Nasdaq; los índices europeos y asiáticos siguen sus sesiones locales.' },
+      { title: 'Materias primas', time: 'Sesiones de futuros, lun–vie', desc: 'Oro, plata y petróleo siguen los calendarios de COMEX y NYMEX con breves pausas diarias.' },
+      { title: 'Criptomonedas', time: '24/7', desc: 'Bitcoin, Ethereum y otros criptoactivos se cotizan las 24 horas, todos los días.' },
+      { title: 'Activos OTC', time: '24/7, incl. fines de semana', desc: 'Las cotizaciones OTC de Pocket Option para forex, acciones, materias primas e índices están disponibles cuando las bolsas cierran.' },
+    ],
+    note: 'Los horarios del calendario usan la zona horaria de la plataforma (UTC+2). El trading se pausa brevemente en algunos activos durante publicaciones económicas importantes.',
+  },
+  tips: {
+    eyebrow: 'Cómo usarlo',
+    title: 'Cómo leer el calendario de activos de Pocket Option',
+    subtitle: 'Cuatro cosas que revisar antes de elegir un activo.',
+    items: [
+      { title: 'Compara pagos, no solo precios', desc: 'Un pago del 92% significa que una operación de $10 devuelve $19,20 si aciertas. Activos con el mismo movimiento pero mayor pago son simplemente más rentables.' },
+      { title: 'Elige la sesión activa', desc: 'La volatilidad es mayor cuando el mercado subyacente está abierto — solapamiento Londres/Nueva York para forex, sesión de EE. UU. para acciones.' },
+      { title: 'Entiende las cotizaciones OTC', desc: 'Los activos OTC los valora la plataforma y mantienen las mismas reglas y pagos, por eso son populares los fines de semana.' },
+      { title: 'Prueba primero en demo', desc: 'Todos los activos de esta lista están en la cuenta demo de $50.000 con pagos idénticos — pruébalos antes de operar en real.' },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Activos de Pocket Option — preguntas frecuentes',
+    subtitle: 'Respuestas rápidas sobre mercados, pagos y horarios.',
+    items: [
+      { q: '¿Cuántos activos puedo operar en Pocket Option?', a: 'Más de 100 activos en cinco clases: pares de divisas, acciones, criptomonedas, materias primas e índices. El número exacto cambia a medida que la plataforma añade instrumentos.' },
+      { q: '¿Cuál es el pago máximo en Pocket Option?', a: 'Los activos populares pagan hasta el 92% por operación correcta. El pago se muestra junto a cada activo en el calendario y en el terminal antes de abrir la posición.' },
+      { q: '¿Qué significa OTC en Pocket Option?', a: 'Los activos OTC (Over-The-Counter) los cotiza la propia plataforma y no una bolsa, por lo que pueden operarse 24/7 — incluidos fines de semana — con las mismas reglas y pagos.' },
+      { q: '¿Por qué cambian los pagos?', a: 'Los pagos dependen de la volatilidad, la liquidez y la hora del día. Son más altos en sesiones activas y pueden bajar cerca de noticias o cuando el mercado es poco líquido.' },
+      { q: '¿Puedo operar activos de Pocket Option los fines de semana?', a: 'Sí. Las criptomonedas operan 24/7 y las versiones OTC de forex, acciones, materias primas e índices están disponibles sábado y domingo.' },
+      { q: '¿Están los mismos activos en la cuenta demo?', a: 'Sí. La cuenta demo gratuita de $50.000 usa la misma lista de activos, cotizaciones en vivo y pagos que una cuenta real.' },
+    ],
+  },
+  finalCta: {
+    title: 'Opera 100+ activos de Pocket Option desde $1',
+    subtitle: 'Abre una cuenta gratis, elige un activo del calendario y haz tu primera operación — en demo o en real.',
+    cta: 'Abrir cuenta gratis',
+    secondary: 'Guía de inicio rápido',
+    note: 'El trading implica riesgo. Opera solo con fondos que puedas permitirte perder.',
+  },
+};

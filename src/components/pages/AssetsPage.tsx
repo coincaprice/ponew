@@ -1,259 +1,306 @@
 'use client';
 
-import { useState, useEffect } from "react";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { useEffect, useMemo, useState } from 'react';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
+import { FaqJsonLd } from '@/components/seo/FaqJsonLd';
+import { IconBadge } from '@/components/ui/IconBadge';
+import { SectionHead } from '@/components/ui/SectionHead';
+import { FaqAccordion } from '@/components/ui/FaqAccordion';
+import {
+  ChevronRight, ChevronDown, Search, Clock, Coins, Gem, Building2, Bitcoin, BarChart3,
+  Percent, Activity, Globe, FlaskConical,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { REGISTER_URL, AFFILIATE_REL } from '@/config/links';
+import { getLocalePath, isLocale } from '@/lib/i18n/config';
+import { getAssetsDictionary, type AssetCategoryKey } from '@/lib/i18n/assets';
+import { ASSETS, ASSET_CATEGORIES } from '@/data/assets';
 
-type Lang = "en" | "pt" | "es" | "ru" | "id";
-
-const T: Record<Lang, {
-  home: string; breadcrumb: string; heroTitle: string; heroDesc: string;
-  datePrefix: string; assetsCol: string; payoutCol: string; footerNote: string;
-  catCurrency: string; catCommodities: string; catStocks: string; catCrypto: string; catIndices: string;
-  tabCurrent: string; tabGeneral: string; tabOtc: string;
-}> = {
-  en: {
-    home: "Home", breadcrumb: "Assets trading schedule",
-    heroTitle: "Assets trading schedule",
-    heroDesc: "Use the asset schedule to determine the best time to trade. Plan your session based on exchange and OTC asset availability.",
-    datePrefix: "Current list of available assets with corresponding payouts. Relevant for:",
-    assetsCol: "Assets", payoutCol: "Payout",
-    footerNote: "* The payout percentage may change depending on market conditions. OTC (Over-The-Counter) assets are available 24/7.",
-    catCurrency: "Currency", catCommodities: "Commodities", catStocks: "Stocks", catCrypto: "Cryptocurrencies", catIndices: "Indices",
-    tabCurrent: "CURRENT", tabGeneral: "GENERAL", tabOtc: "OTC",
-  },
-  pt: {
-    home: "Início", breadcrumb: "Calendário de ativos",
-    heroTitle: "Calendário de ativos",
-    heroDesc: "Use o calendário de ativos para determinar o melhor momento para negociar. Planeje sua sessão com base na disponibilidade de ativos de câmbio e OTC.",
-    datePrefix: "Lista atual de ativos disponíveis com os respectivos pagamentos. Válido para:",
-    assetsCol: "Ativos", payoutCol: "Retorno",
-    footerNote: "* O percentual de retorno pode mudar dependendo das condições de mercado. Os ativos OTC (Over-The-Counter) estão disponíveis 24/7.",
-    catCurrency: "Moedas", catCommodities: "Commodities", catStocks: "Ações", catCrypto: "Criptomoedas", catIndices: "Índices",
-    tabCurrent: "ATUAL", tabGeneral: "GERAL", tabOtc: "OTC",
-  },
-  es: {
-    home: "Inicio", breadcrumb: "Calendario de activos",
-    heroTitle: "Calendario de activos",
-    heroDesc: "Usa el calendario de activos para determinar el mejor momento para operar. Planifica tu sesión según la disponibilidad de activos de bolsa y OTC.",
-    datePrefix: "Lista actual de activos disponibles con sus correspondientes pagos. Válido para:",
-    assetsCol: "Activos", payoutCol: "Pago",
-    footerNote: "* El porcentaje de pago puede cambiar según las condiciones del mercado. Los activos OTC (Over-The-Counter) están disponibles las 24 horas, los 7 días de la semana.",
-    catCurrency: "Divisas", catCommodities: "Materias primas", catStocks: "Acciones", catCrypto: "Criptomonedas", catIndices: "Índices",
-    tabCurrent: "ACTUAL", tabGeneral: "GENERAL", tabOtc: "OTC",
-  },
-  ru: {
-    home: "Главная", breadcrumb: "Расписание активов",
-    heroTitle: "Расписание активов",
-    heroDesc: "Используйте расписание активов, чтобы определить лучшее время для торговли. Планируйте свою сессию на основе доступности биржевых и OTC-активов.",
-    datePrefix: "Текущий список доступных активов с соответствующими выплатами. Актуально для:",
-    assetsCol: "Активы", payoutCol: "Выплата",
-    footerNote: "* Процент выплат может меняться в зависимости от рыночных условий. OTC-активы (внебиржевые) доступны 24/7.",
-    catCurrency: "Валюты", catCommodities: "Товары", catStocks: "Акции", catCrypto: "Криптовалюты", catIndices: "Индексы",
-    tabCurrent: "ТЕКУЩИЕ", tabGeneral: "ОБЩИЕ", tabOtc: "OTC",
-  },
-  id: {
-    home: "Beranda", breadcrumb: "Jadwal aset trading",
-    heroTitle: "Jadwal aset trading",
-    heroDesc: "Gunakan jadwal aset untuk menentukan waktu terbaik untuk trading. Rencanakan sesi Anda berdasarkan ketersediaan aset bursa dan OTC.",
-    datePrefix: "Daftar aset tersedia saat ini dengan payout yang sesuai. Berlaku untuk:",
-    assetsCol: "Aset", payoutCol: "Payout",
-    footerNote: "* Persentase payout dapat berubah tergantung kondisi pasar. Aset OTC (Over-The-Counter) tersedia 24/7.",
-    catCurrency: "Mata Uang", catCommodities: "Komoditas", catStocks: "Saham", catCrypto: "Kripto", catIndices: "Indeks",
-    tabCurrent: "SAAT INI", tabGeneral: "UMUM", tabOtc: "OTC",
-  },
+const CATEGORY_ICONS: Record<AssetCategoryKey, LucideIcon> = {
+  Currency: Coins,
+  Commodities: Gem,
+  Stocks: Building2,
+  Cryptocurrencies: Bitcoin,
+  Indices: BarChart3,
 };
+const HOURS_ICONS: LucideIcon[] = [Coins, Building2, Gem, Bitcoin, Clock];
+const TIP_ICONS: LucideIcon[] = [Percent, Activity, Globe, FlaskConical];
 
-type Asset = { name: string; payout: number };
-const ASSETS: Record<string, Asset[]> = {
-  Currency: [
-    { name: "EUR/USD OTC", payout: 92 }, { name: "AUD/CAD OTC", payout: 92 }, { name: "AUD/CHF OTC", payout: 92 },
-    { name: "AUD/USD OTC", payout: 92 }, { name: "CHF/JPY OTC", payout: 92 }, { name: "GBP/AUD OTC", payout: 92 },
-    { name: "USD/DZD OTC", payout: 92 }, { name: "USD/ARS OTC", payout: 92 }, { name: "YER/USD OTC", payout: 92 },
-    { name: "LBP/USD OTC", payout: 92 }, { name: "BHD/CNY OTC", payout: 92 }, { name: "AED/CNY OTC", payout: 92 },
-    { name: "ZAR/USD OTC", payout: 92 }, { name: "UAH/USD OTC", payout: 92 }, { name: "CHF/NOK OTC", payout: 91 },
-    { name: "EUR/HUF OTC", payout: 91 }, { name: "EUR/GBP OTC", payout: 90 }, { name: "USD/CNH OTC", payout: 90 },
-    { name: "USD/MXN OTC", payout: 90 }, { name: "CAD/CHF OTC", payout: 88 }, { name: "USD/CAD OTC", payout: 87 },
-    { name: "EUR/NZD OTC", payout: 86 }, { name: "USD/CHF OTC", payout: 85 }, { name: "USD/CLP OTC", payout: 85 },
-    { name: "GBP/USD OTC", payout: 83 }, { name: "USD/JPY OTC", payout: 80 }, { name: "EUR/RUB OTC", payout: 79 },
-    { name: "EUR/JPY OTC", payout: 77 }, { name: "USD/THB OTC", payout: 76 }, { name: "USD/IDR OTC", payout: 76 },
-    { name: "AUD/NZD OTC", payout: 75 }, { name: "AUD/JPY OTC", payout: 74 }, { name: "JOD/CNY OTC", payout: 72 },
-    { name: "USD/INR OTC", payout: 69 }, { name: "USD/MYR OTC", payout: 67 }, { name: "USD/COP OTC", payout: 67 },
-    { name: "EUR/TRY OTC", payout: 66 }, { name: "USD/BRL OTC", payout: 62 }, { name: "TND/USD OTC", payout: 60 },
-    { name: "CAD/JPY OTC", payout: 59 }, { name: "KES/USD OTC", payout: 57 }, { name: "NGN/USD OTC", payout: 56 },
-    { name: "QAR/CNY OTC", payout: 53 }, { name: "USD/EGP OTC", payout: 52 }, { name: "USD/RUB OTC", payout: 51 },
-    { name: "USD/PKR OTC", payout: 49 }, { name: "MAD/USD OTC", payout: 47 }, { name: "USD/VND OTC", payout: 43 },
-    { name: "USD/PHP OTC", payout: 41 }, { name: "USD/SGD OTC", payout: 39 }, { name: "EUR/CHF OTC", payout: 38 },
-    { name: "NZD/USD OTC", payout: 36 }, { name: "GBP/JPY OTC", payout: 35 }, { name: "OMR/CNY OTC", payout: 30 },
-    { name: "NZD/JPY OTC", payout: 28 }, { name: "SAR/CNY OTC", payout: 28 }, { name: "USD/BDT OTC", payout: 25 },
-  ],
-  Commodities: [
-    { name: "Gold OTC", payout: 80 }, { name: "Brent Oil OTC", payout: 80 }, { name: "WTI Crude Oil OTC", payout: 80 },
-    { name: "Silver OTC", payout: 80 }, { name: "Natural Gas OTC", payout: 45 }, { name: "Platinum spot OTC", payout: 45 },
-    { name: "Palladium spot OTC", payout: 45 },
-  ],
-  Stocks: [
-    { name: "NVIDIA OTC", payout: 96 }, { name: "Apple OTC", payout: 92 }, { name: "McDonald's OTC", payout: 92 },
-    { name: "FACEBOOK INC OTC", payout: 92 }, { name: "Tesla OTC", payout: 92 }, { name: "Boeing Company OTC", payout: 92 },
-    { name: "Amazon OTC", payout: 92 }, { name: "FedEx OTC", payout: 92 }, { name: "VISA OTC", payout: 92 },
-    { name: "Palantir Technologies OTC", payout: 92 }, { name: "American Express OTC", payout: 84 },
-    { name: "GameStop Corp OTC", payout: 83 }, { name: "Marathon Digital Holdings OTC", payout: 83 },
-    { name: "Advanced Micro Devices OTC", payout: 82 }, { name: "Microsoft OTC", payout: 72 },
-    { name: "Intel OTC", payout: 65 }, { name: "Pfizer Inc OTC", payout: 58 }, { name: "Johnson & Johnson OTC", payout: 56 },
-    { name: "VIX OTC", payout: 52 }, { name: "Citigroup Inc OTC", payout: 50 }, { name: "Alibaba OTC", payout: 48 },
-    { name: "Netflix OTC", payout: 46 }, { name: "Cisco OTC", payout: 38 }, { name: "Coinbase Global OTC", payout: 23 },
-    { name: "ExxonMobil OTC", payout: 20 },
-  ],
-  Cryptocurrencies: [
-    { name: "Solana OTC", payout: 92 }, { name: "Toncoin OTC", payout: 92 }, { name: "Polygon OTC", payout: 92 },
-    { name: "Bitcoin ETF OTC", payout: 92 }, { name: "Bitcoin OTC", payout: 91 }, { name: "Avalanche OTC", payout: 86 },
-    { name: "Dogecoin OTC", payout: 77 }, { name: "TRON OTC", payout: 64 }, { name: "Polkadot OTC", payout: 61 },
-    { name: "BNB OTC", payout: 51 }, { name: "Litecoin OTC", payout: 44 }, { name: "Cardano OTC", payout: 25 },
-    { name: "Chainlink OTC", payout: 25 }, { name: "Ethereum OTC", payout: 21 }, { name: "Bitcoin", payout: 15 },
-  ],
-  Indices: [
-    { name: "AUS 200 OTC", payout: 67 }, { name: "E35EUR OTC", payout: 45 }, { name: "100GBP OTC", payout: 45 },
-    { name: "F40EUR OTC", payout: 45 }, { name: "JPN225 OTC", payout: 45 }, { name: "D30EUR OTC", payout: 45 },
-    { name: "E50EUR OTC", payout: 45 }, { name: "SP500 OTC", payout: 45 }, { name: "DJI30 OTC", payout: 45 },
-    { name: "US100 OTC", payout: 45 },
-  ],
-};
+type Filter = 'All' | AssetCategoryKey;
 
-function PayoutBar({ payout }: { payout: number }) {
-  return (
-    <div style={{ flex: 1, minWidth: 0, height: 28, position: "relative" }}>
-      <div style={{ width: `${payout}%`, height: "100%", background: "linear-gradient(90deg, #0b1f5e 0%, #1553c7 55%, #3a9df8 100%)", borderRadius: 3, display: "flex", alignItems: "center", justifyContent: "flex-end", paddingRight: 10, minWidth: 36, transition: "width 0.4s ease" }}>
-        <span style={{ color: "#fff", fontSize: 13, fontWeight: 600, fontFamily: 'var(--font-heading)', whiteSpace: "nowrap" }}>{payout}%</span>
-      </div>
-    </div>
-  );
+function payoutColor(p: number) {
+  if (p >= 85) return '#16A34A';
+  if (p >= 60) return '#0099FA';
+  return '#F59E0B';
 }
 
-function Section({ title, assets, visible }: { title: string; assets: Asset[]; visible: boolean }) {
-  const [open, setOpen] = useState(true);
-  if (!visible) return null;
-  return (
-    <>
-      <div className="assets-category-header" onClick={() => setOpen(o => !o)}>
-        <span style={{ fontSize: 17, fontWeight: 600, color: "#0b1a35", fontFamily: 'var(--font-heading)' }}>{title}</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.25s", flexShrink: 0 }}>
-          <path d="M6 9l6 6 6-6" stroke="#7a8fa6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-      {open && assets.map((asset, i) => (
-        <div key={asset.name} className="assets-row" style={{ borderTop: i === 0 ? "none" : "1px solid #f0f2f7" }}>
-          <div className="live-dot" style={{ width: 8, height: 8, borderRadius: "50%", background: "#22c55e" }} />
-          <span className="assets-row-name">{asset.name}</span>
-          <PayoutBar payout={asset.payout} />
-        </div>
-      ))}
-    </>
-  );
-}
+export function AssetsPage({ lang = 'en' }: { lang?: string }) {
+  const t = getAssetsDictionary(lang);
+  const locale = isLocale(lang) ? lang : 'en';
+  const lp = (path: string) => getLocalePath(locale, path);
 
-export function AssetsPage({ lang = "en" }: { lang?: string }) {
-  const t = T[lang as Lang] ?? T.en;
-  const homeHref = lang === "en" ? "/" : `/${lang}`;
-
-  const [activeTab, setActiveTab] = useState<"CURRENT" | "GENERAL" | "OTC">("CURRENT");
-  const [filters, setFilters] = useState({ Currency: true, Commodities: true, Stocks: true, Cryptocurrencies: true, Indices: true });
-  const [timeLabel, setTimeLabel] = useState("");
+  const [filter, setFilter] = useState<Filter>('All');
+  const [otcOnly, setOtcOnly] = useState(false);
+  const [query, setQuery] = useState('');
+  const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
+  const [timeLabel, setTimeLabel] = useState('');
 
   useEffect(() => {
     const now = new Date();
-    const t2 = now.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
-    const d = now.toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" }).replace(/\//g, ".");
-    setTimeLabel(`${t2}, ${d}`);
+    const time = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    const date = now.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '.');
+    setTimeLabel(`${time}, ${date}`);
   }, []);
 
-  const toggleFilter = (key: string) => setFilters(f => ({ ...f, [key]: !f[key as keyof typeof f] }));
-
-  const categoryLabels: Record<string, string> = {
-    Currency: t.catCurrency,
-    Commodities: t.catCommodities,
-    Stocks: t.catStocks,
-    Cryptocurrencies: t.catCrypto,
-    Indices: t.catIndices,
-  };
-
-  const CATEGORY_ORDER = ["Currency", "Commodities", "Stocks", "Cryptocurrencies", "Indices"];
+  const q = query.trim().toLowerCase();
+  const visible = useMemo(() => {
+    const cats = filter === 'All' ? ASSET_CATEGORIES : [filter];
+    return cats
+      .map(cat => ({
+        cat,
+        assets: ASSETS[cat].filter(a => (!otcOnly || a.name.includes('OTC')) && (!q || a.name.toLowerCase().includes(q))),
+      }))
+      .filter(g => g.assets.length > 0);
+  }, [filter, otcOnly, q]);
+  const total = visible.reduce((n, g) => n + g.assets.length, 0);
 
   return (
-    <>
+    <div className="min-h-screen bg-[#080F20] flex flex-col font-sans">
       <BreadcrumbJsonLd lang={lang} slug="assets" homeName={t.home} pageName={t.breadcrumb} />
+      <FaqJsonLd items={t.faq.items} />
       <Header lang={lang} />
 
-      <section className="assets-hero" style={{ background: "linear-gradient(180deg, #080f20 0%, #0d1a38 100%)", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, opacity: 0.08, backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='200'%3E%3Cpolyline points='0,150 80,130 160,140 240,90 320,110 400,70 480,80 560,50 640,60 720,40 800,55 880,35 960,45 1040,30 1120,50 1200,25 1280,40 1360,20 1440,30' fill='none' stroke='%2322c55e' stroke-width='2'/%3E%3Cpolyline points='0,170 80,155 160,165 240,115 320,130 400,95 480,100 560,75 640,85 720,65 800,75 880,55 960,65 1040,50 1120,70 1200,45 1280,60 1360,40 1440,50' fill='none' stroke='%23ef4444' stroke-width='2'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center bottom" }} />
-
-        <div className="assets-hero-inner">
-          <nav style={{ display: "flex", gap: 6, alignItems: "center", fontSize: 13, color: "#7a8fa6", marginBottom: 20 }}>
-            <a href={homeHref} style={{ color: "#7a8fa6", textDecoration: "none" }}>{t.home}</a>
-            <span style={{ color: "#3a4a6a" }}>/</span>
-            <span style={{ color: "#c0cfe0" }}>{t.breadcrumb}</span>
+      {/* HERO */}
+      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
+        <div className="absolute pointer-events-none" style={{ top: '-20%', right: '-10%', width: '60%', height: '80%', background: 'radial-gradient(ellipse, rgba(0,153,250,0.18) 0%, transparent 65%)', borderRadius: '50%' }} />
+        <div className="absolute inset-0 grid-noise pointer-events-none" />
+        <div className="container-x relative z-10 pt-[110px] md:pt-[150px] pb-16 lg:pb-20">
+          <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-[13px] text-white/45">
+            <a href={lp('')} className="hover:text-white/80 transition-colors">{t.home}</a>
+            <ChevronRight className="h-3.5 w-3.5" />
+            <span className="text-white/80">{t.breadcrumb}</span>
           </nav>
-          <h1 style={{ fontFamily: 'var(--font-heading)', fontWeight: 600, color: "#fff", margin: "0 0 16px", lineHeight: 1.2 }}>
-            {t.heroTitle}
-          </h1>
-          <p style={{ fontFamily: 'var(--font-sans)', color: "#8fa3c0", margin: 0, maxWidth: 560, lineHeight: 1.6 }}>
-            {t.heroDesc}
-          </p>
+          <div className="grid lg:grid-cols-12 gap-12 items-end">
+            <div className="lg:col-span-8 text-white">
+              <span className="eyebrow eyebrow-dark mb-6">{t.hero.eyebrow}</span>
+              <h1 className="font-heading font-extrabold text-[34px] md:text-[48px] lg:text-[56px] leading-[1.08] mb-6">
+                {t.hero.title}{' '}
+                <span className="text-gradient-brand">{t.hero.titleAccent}</span>
+              </h1>
+              <p className="text-[16px] md:text-[17.5px] text-white/72 leading-relaxed max-w-[680px] mb-9">{t.hero.subtitle}</p>
+              <div className="flex flex-col sm:flex-row items-center sm:items-stretch gap-3.5">
+                <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} className="btn-brand w-full sm:w-auto h-[54px] px-9 text-[15px] font-bold tracking-[0.06em] uppercase">{t.hero.cta}<ChevronRight className="w-4 h-4" /></a>
+                <a href={lp('/free-demo')} className="btn-ghost-light w-full sm:w-auto h-[54px] px-8 text-[15px]">{t.hero.secondary}</a>
+              </div>
+            </div>
+            <div className="lg:col-span-4 grid grid-cols-2 gap-3">
+              {t.hero.facts.map(f => (
+                <div key={f.label} className="glass-dark rounded-2xl border border-white/10 px-5 py-5">
+                  <div className="font-heading font-extrabold text-[28px] leading-none text-white">{f.value}</div>
+                  <div className="mt-2 text-[11.5px] uppercase tracking-[0.1em] text-white/45">{f.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <div style={{ background: "#080f20", borderBottom: "1px solid #1a2740" }}>
-        <div className="assets-tabs-inner">
-          {([
-            { key: "CURRENT", label: t.tabCurrent },
-            { key: "GENERAL", label: t.tabGeneral },
-            { key: "OTC", label: t.tabOtc },
-          ] as const).map(({ key, label }) => (
-            <button key={key} onClick={() => setActiveTab(key)} style={{ padding: "14px 24px", background: activeTab === key ? "#0b1530" : "transparent", border: "none", borderBottom: activeTab === key ? "2px solid #2a6ff5" : "2px solid transparent", color: activeTab === key ? "#fff" : "#7a8fa6", fontFamily: 'var(--font-heading)', fontWeight: 600, fontSize: 13, cursor: "pointer", letterSpacing: "0.05em", transition: "all 0.15s", whiteSpace: "nowrap" }}>
-              {label}
-            </button>
-          ))}
+      {/* CATEGORIES */}
+      <section className="bg-white py-20 lg:py-24">
+        <div className="container-x">
+          <SectionHead eyebrow={t.categories.eyebrow} title={t.categories.title} subtitle={t.categories.subtitle} />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {ASSET_CATEGORIES.map(cat => {
+              const list = ASSETS[cat];
+              const top = Math.max(...list.map(a => a.payout));
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => { setFilter(cat); document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
+                  className="card-premium p-7 text-left flex flex-col hover:-translate-y-1 transition-transform"
+                >
+                  <IconBadge icon={CATEGORY_ICONS[cat]} size={56} />
+                  <h3 className="font-heading font-bold text-[17px] text-[#080F20] mt-5 mb-2">{t.categories.items[cat].name}</h3>
+                  <p className="text-[14px] leading-relaxed text-[#5A6A85] flex-1">{t.categories.items[cat].desc}</p>
+                  <div className="mt-5 pt-4 border-t border-[#EEF2F8] flex items-center justify-between text-[12.5px]">
+                    <span className="text-[#8A9BB5]"><b className="text-[#0D1B2A] font-heading">{list.length}</b> {t.categories.countLabel}</span>
+                    <span className="text-[#8A9BB5]"><b className="text-[#16A34A] font-heading">{top}%</b> {t.categories.topPayoutLabel}</span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      </section>
 
-      <main style={{ background: "#f0f3f8", minHeight: "60vh", padding: "48px 0 100px" }}>
-        <div className="assets-outer">
-          <div style={{ background: "#fff", borderRadius: 8, boxShadow: "0 2px 12px rgba(0,0,0,0.07)", overflow: "hidden" }}>
+      {/* SCHEDULE */}
+      <section id="schedule" className="bg-[#F7F9FD] py-20 lg:py-28 scroll-mt-24">
+        <div className="container-x">
+          <SectionHead eyebrow={t.table.eyebrow} title={t.table.title} subtitle={t.table.subtitle} />
 
-            <div className="assets-date-label" style={{ padding: "20px 24px 4px", fontSize: 13, color: "#7a8fa6", fontFamily: 'var(--font-sans)' }}>
-              {t.datePrefix} {timeLabel || "14:54, 14.03.2026"}*
-            </div>
-
-            <div className="assets-table-header">
-              <div className="assets-table-header-left">
-                <span style={{ fontSize: 13, fontWeight: 700, color: "#0b1a35", fontFamily: 'var(--font-heading)', textTransform: "uppercase", letterSpacing: "0.05em" }}>{t.assetsCol}</span>
-                <span style={{ fontSize: 11, color: "#7a8fa6", marginLeft: 4 }}>(UTC+2)</span>
+          <div className="card-premium overflow-hidden">
+            {/* toolbar */}
+            <div className="border-b border-[#EEF2F8] px-5 md:px-7 py-5 flex flex-col gap-4">
+              <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
+                <div className="relative flex-1">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#8A9BB5]" />
+                  <input
+                    value={query}
+                    onChange={e => setQuery(e.target.value)}
+                    placeholder={t.table.search}
+                    className="w-full h-11 rounded-full border border-[#E4EBF5] bg-white pl-11 pr-4 text-[14.5px] text-[#0D1B2A] outline-none focus:border-[#0099FA] transition-colors"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setOtcOnly(v => !v)}
+                  aria-pressed={otcOnly}
+                  className={`h-11 rounded-full px-5 text-[13.5px] font-bold uppercase tracking-[0.06em] border transition-colors ${otcOnly ? 'bg-[#0099FA] border-[#0099FA] text-white' : 'bg-white border-[#E4EBF5] text-[#5A6A85] hover:border-[#0099FA]'}`}
+                >
+                  {t.table.otcOnly}
+                </button>
               </div>
-              <div className="assets-table-header-payout">
-                <span style={{ fontSize: 13, fontWeight: 700, color: "#0b1a35", fontFamily: 'var(--font-heading)', textTransform: "uppercase", letterSpacing: "0.05em" }}>{t.payoutCol}</span>
-              </div>
-              <div className="assets-table-header-filters">
-                {CATEGORY_ORDER.map(key => (
-                  <label key={key} style={{ display: "flex", alignItems: "center", gap: 5, cursor: "pointer", fontSize: 13, color: "#0b1a35", fontFamily: 'var(--font-sans)', userSelect: "none" }}>
-                    <input type="checkbox" checked={filters[key as keyof typeof filters]} onChange={() => toggleFilter(key)} style={{ width: 15, height: 15, accentColor: "#2a6ff5", cursor: "pointer" }} />
-                    <span>{categoryLabels[key]}</span>
-                  </label>
+              <div className="flex gap-2 overflow-x-auto pb-1 -mb-1">
+                {(['All', ...ASSET_CATEGORIES] as Filter[]).map(f => (
+                  <button
+                    key={f}
+                    type="button"
+                    onClick={() => setFilter(f)}
+                    className={`shrink-0 h-9 rounded-full px-4 text-[13px] font-semibold border transition-colors ${filter === f ? 'bg-[#0D1B2A] border-[#0D1B2A] text-white' : 'bg-white border-[#E4EBF5] text-[#5A6A85] hover:border-[#0099FA] hover:text-[#0099FA]'}`}
+                  >
+                    {f === 'All' ? t.table.all : t.categories.items[f].name}
+                  </button>
                 ))}
               </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[13px] text-[#8A9BB5]">
+                <span className="flex items-center gap-2"><Clock className="h-3.5 w-3.5 text-[#0099FA]" />{t.table.updated} <span className="font-semibold text-[#0D1B2A]">{timeLabel || '—'}</span></span>
+                <span><b className="text-[#0D1B2A]">{total}</b> {t.table.showing}</span>
+              </div>
             </div>
 
-            {CATEGORY_ORDER.map(cat => (
-              <Section key={cat} title={categoryLabels[cat]} assets={ASSETS[cat] ?? []} visible={filters[cat as keyof typeof filters]} />
+            {/* groups */}
+            {visible.length === 0 && <p className="px-7 py-14 text-center text-[15px] text-[#8A9BB5]">{t.table.empty}</p>}
+            {visible.map(({ cat, assets }) => {
+              const Icon = CATEGORY_ICONS[cat];
+              const isCollapsed = !!collapsed[cat];
+              return (
+                <div key={cat} className="border-b border-[#EEF2F8] last:border-b-0">
+                  <button
+                    type="button"
+                    onClick={() => setCollapsed(c => ({ ...c, [cat]: !c[cat] }))}
+                    aria-expanded={!isCollapsed}
+                    className="w-full flex items-center justify-between gap-4 px-5 md:px-7 py-4 bg-white hover:bg-[#FAFBFE] transition-colors"
+                  >
+                    <span className="flex items-center gap-3">
+                      <IconBadge icon={Icon} size={36} />
+                      <span className="font-heading font-bold text-[15.5px] text-[#080F20]">{t.categories.items[cat].name}</span>
+                      <span className="rounded-full bg-[#EEF3FC] px-2.5 py-0.5 text-[11.5px] font-bold text-[#0099FA]">{assets.length}</span>
+                    </span>
+                    <ChevronDown className={`h-4.5 w-4.5 text-[#8A9BB5] transition-transform ${isCollapsed ? '' : 'rotate-180'}`} />
+                  </button>
+                  {!isCollapsed && (
+                    <div>
+                      <div className="hidden md:grid grid-cols-[1fr_260px_90px] gap-6 px-7 py-2 bg-[#F7F9FD] text-[11px] font-bold uppercase tracking-[0.12em] text-[#8A9BB5]">
+                        <span>{t.table.assetCol}</span><span /><span className="text-right">{t.table.payoutCol}</span>
+                      </div>
+                      <ul>
+                        {assets.map(a => {
+                          const color = payoutColor(a.payout);
+                          const otc = a.name.includes('OTC');
+                          return (
+                            <li key={a.name} className="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_260px_90px] items-center gap-x-4 md:gap-6 px-5 md:px-7 py-3.5 border-t border-[#F1F4F9] hover:bg-[#FAFBFE] transition-colors">
+                              <span className="flex items-center gap-2.5 min-w-0">
+                                <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: otc ? '#16A34A' : '#0099FA', boxShadow: `0 0 0 3px ${otc ? 'rgba(22,163,74,0.15)' : 'rgba(0,153,250,0.15)'}` }} />
+                                <span className="truncate text-[14.5px] font-semibold text-[#0D1B2A]">{a.name.replace(/\s*OTC$/, '')}</span>
+                                {otc && <span className="shrink-0 rounded-md bg-[#E8F7EE] px-1.5 py-0.5 text-[10px] font-bold tracking-[0.08em] text-[#16A34A]">OTC</span>}
+                              </span>
+                              <span className="hidden md:block h-1.5 rounded-full bg-[#EEF2F8] overflow-hidden">
+                                <span className="block h-full rounded-full" style={{ width: `${a.payout}%`, background: color }} />
+                              </span>
+                              <span className="text-right font-heading font-extrabold text-[15px]" style={{ color }}>{a.payout}%</span>
+                              <span className="md:hidden col-span-2 mt-2 h-1 rounded-full bg-[#EEF2F8] overflow-hidden">
+                                <span className="block h-full rounded-full" style={{ width: `${a.payout}%`, background: color }} />
+                              </span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-6 max-w-4xl text-[13px] leading-relaxed text-[#8A9BB5]">{t.table.note}</p>
+        </div>
+      </section>
+
+      {/* HOURS */}
+      <section className="relative overflow-hidden py-20 lg:py-28" style={{ background: 'linear-gradient(180deg, #071A33 0%, #0A2540 100%)' }}>
+        <div className="absolute inset-0 grid-noise pointer-events-none" />
+        <div className="container-x relative z-10">
+          <SectionHead eyebrow={t.hours.eyebrow} title={t.hours.title} subtitle={t.hours.subtitle} dark />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {t.hours.items.map((h, i) => {
+              const Icon = HOURS_ICONS[i];
+              return (
+                <div key={h.title} className="glass-dark rounded-2xl border border-white/10 p-7">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10"><Icon className="h-5 w-5 text-[#7CC4FF]" strokeWidth={1.75} /></span>
+                  <h3 className="font-heading font-bold text-[16.5px] text-white mt-5 mb-1.5">{h.title}</h3>
+                  <div className="text-[13px] font-semibold text-[#7CC4FF] mb-3">{h.time}</div>
+                  <p className="text-[14px] leading-relaxed text-white/60">{h.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-8 text-center text-[13px] text-white/40">{t.hours.note}</p>
+        </div>
+      </section>
+
+      {/* TIPS */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="container-x">
+          <SectionHead eyebrow={t.tips.eyebrow} title={t.tips.title} subtitle={t.tips.subtitle} />
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-12 max-w-5xl mx-auto">
+            {t.tips.items.map((item, i) => (
+              <div key={item.title} className="flex gap-5 items-start">
+                <IconBadge icon={TIP_ICONS[i]} size={56} />
+                <div>
+                  <h3 className="font-heading font-bold text-[17px] text-[#080F20] mb-2">{item.title}</h3>
+                  <p className="text-[15px] leading-relaxed text-[#5A6A85]">{item.desc}</p>
+                </div>
+              </div>
             ))}
           </div>
-
-          <p style={{ marginTop: 16, fontSize: 12, color: "#7a8fa6", fontFamily: 'var(--font-sans)', lineHeight: 1.6 }}>
-            {t.footerNote}
-          </p>
         </div>
-      </main>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#F7F9FD] py-20 lg:py-28">
+        <div className="container-x">
+          <SectionHead eyebrow={t.faq.eyebrow} title={t.faq.title} subtitle={t.faq.subtitle} />
+          <FaqAccordion items={t.faq.items} />
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="relative overflow-hidden py-20 lg:py-24" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 50%, #0C3260 100%)' }}>
+        <div className="absolute inset-0 grid-noise pointer-events-none" />
+        <div className="container-x relative z-10 text-center max-w-[760px] mx-auto text-white">
+          <h2 className="font-heading font-extrabold text-[30px] md:text-[42px] leading-[1.1] mb-5">{t.finalCta.title}</h2>
+          <p className="text-[16px] md:text-[17px] text-white/70 leading-relaxed mb-9">{t.finalCta.subtitle}</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-5">
+            <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} className="btn-brand w-full sm:w-auto h-[54px] px-10 text-[15px] font-bold tracking-[0.06em] uppercase">{t.finalCta.cta}<ChevronRight className="w-4 h-4" /></a>
+            <a href={lp('/quick-start')} className="btn-ghost-light w-full sm:w-auto h-[54px] px-8 text-[15px]">{t.finalCta.secondary}</a>
+          </div>
+          <p className="text-[13px] text-white/40">{t.finalCta.note}</p>
+        </div>
+      </section>
 
       <Footer lang={lang} />
-    </>
+    </div>
   );
 }

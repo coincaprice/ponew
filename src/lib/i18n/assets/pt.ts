@@ -1,0 +1,93 @@
+import type { AssetsDictionary } from './types';
+
+export const pt: AssetsDictionary = {
+  home: 'Início',
+  breadcrumb: 'Calendário de ativos',
+  hero: {
+    eyebrow: 'Ativos Pocket Option',
+    title: 'Ativos da Pocket Option',
+    titleAccent: 'e horários de negociação',
+    subtitle:
+      'Veja todos os ativos que você pode negociar na Pocket Option — mais de 100 pares de moedas, ações, criptomoedas, commodities e índices — com o payout atual de cada um e os horários em que estão abertos. Use o calendário para operar quando o payout da pocketoption está mais alto e o mercado que você conhece está ativo.',
+    cta: 'Começar a operar',
+    secondary: 'Praticar na demo',
+    facts: [
+      { value: '100+', label: 'Ativos negociáveis' },
+      { value: '92%', label: 'Payout máximo' },
+      { value: '24/7', label: 'Mercados OTC' },
+      { value: '5', label: 'Classes de ativos' },
+    ],
+  },
+  categories: {
+    eyebrow: 'Classes de ativos',
+    title: 'O que você pode negociar na Pocket Option',
+    subtitle: 'Cinco mercados em um terminal. Todas as classes estão na conta demo com os mesmos payouts da conta real.',
+    countLabel: 'ativos',
+    topPayoutLabel: 'payout máximo',
+    items: {
+      Currency: { name: 'Pares de moedas', desc: 'Majors como EUR/USD e GBP/USD e dezenas de pares exóticos, com cotações OTC disponíveis 24 horas.' },
+      Commodities: { name: 'Commodities', desc: 'Ouro, prata, petróleo Brent e WTI, gás natural, platina e paládio — favoritos dos fundos em um clique.' },
+      Stocks: { name: 'Ações', desc: 'Apple, NVIDIA, Tesla, Amazon, Microsoft e outras blue chips americanas como contratos de payout fixo de curto prazo.' },
+      Cryptocurrencies: { name: 'Criptomoedas', desc: 'Bitcoin, Ethereum, Solana, Toncoin, Dogecoin e mais — negocie o mercado cripto todos os dias da semana.' },
+      Indices: { name: 'Índices', desc: 'S&P 500, Dow Jones, Nasdaq 100, DAX, FTSE 100, Nikkei 225 e outros benchmarks globais.' },
+    },
+  },
+  table: {
+    eyebrow: 'Calendário ao vivo',
+    title: 'Payouts da Pocket Option por ativo',
+    subtitle: 'Lista atual de ativos disponíveis com o percentual de payout. Filtre por classe, busque pelo nome ou mostre só ativos OTC.',
+    search: 'Buscar ativo, ex.: EUR/USD',
+    all: 'Todos',
+    otcOnly: 'Somente OTC',
+    assetCol: 'Ativo',
+    payoutCol: 'Payout',
+    updated: 'Válido para',
+    showing: 'ativos exibidos',
+    empty: 'Nenhum ativo corresponde ao filtro.',
+    note: '* Os percentuais de payout mudam com as condições de mercado e podem ser diferentes no momento em que você abre uma operação. O payout exato é sempre exibido no terminal antes da confirmação. Ativos OTC (Over-The-Counter) são cotados pela plataforma e estão disponíveis 24/7, inclusive nos fins de semana.',
+  },
+  hours: {
+    eyebrow: 'Horários de negociação',
+    title: 'Quando os mercados da Pocket Option estão abertos',
+    subtitle: 'Ativos de bolsa seguem o mercado subjacente. Ativos OTC nunca fecham.',
+    items: [
+      { title: 'Forex (bolsa)', time: 'Seg 00:00 – Sex 23:59 (UTC+2)', desc: 'Pares de moedas são negociados continuamente da abertura de Sydney na segunda ao fechamento de Nova York na sexta.' },
+      { title: 'Ações e índices', time: 'Sessões de bolsa, seg–sex', desc: 'Ações e índices dos EUA seguem os horários da NYSE/Nasdaq; índices europeus e asiáticos seguem suas sessões locais.' },
+      { title: 'Commodities', time: 'Sessões de futuros, seg–sex', desc: 'Ouro, prata e petróleo seguem os calendários da COMEX e NYMEX com breves pausas diárias.' },
+      { title: 'Criptomoedas', time: '24/7', desc: 'Bitcoin, Ethereum e outros criptoativos são cotados 24 horas por dia, todos os dias.' },
+      { title: 'Ativos OTC', time: '24/7, incl. fins de semana', desc: 'Cotações OTC da Pocket Option para forex, ações, commodities e índices ficam disponíveis quando as bolsas estão fechadas.' },
+    ],
+    note: 'Os horários do calendário usam o fuso da plataforma (UTC+2). A negociação é pausada brevemente em alguns ativos durante grandes divulgações econômicas.',
+  },
+  tips: {
+    eyebrow: 'Como usar',
+    title: 'Como ler o calendário de ativos da Pocket Option',
+    subtitle: 'Quatro pontos para verificar antes de escolher um ativo.',
+    items: [
+      { title: 'Compare payouts, não só preços', desc: 'Um payout de 92% significa que uma operação de $10 retorna $19,20 se acertar. Ativos com o mesmo movimento e payout maior são simplesmente mais lucrativos.' },
+      { title: 'Escolha a sessão ativa', desc: 'A volatilidade é maior quando o mercado subjacente está aberto — sobreposição Londres/Nova York para forex, sessão americana para ações.' },
+      { title: 'Entenda as cotações OTC', desc: 'Ativos OTC são precificados pela plataforma e mantêm as mesmas regras e payouts, por isso são populares nos fins de semana.' },
+      { title: 'Teste na demo primeiro', desc: 'Todos os ativos desta lista estão na conta demo de $50.000 com payouts idênticos — experimente antes de operar no real.' },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Ativos da Pocket Option — perguntas frequentes',
+    subtitle: 'Respostas rápidas sobre mercados, payouts e horários.',
+    items: [
+      { q: 'Quantos ativos posso negociar na Pocket Option?', a: 'Mais de 100 ativos em cinco classes: pares de moedas, ações, criptomoedas, commodities e índices. O número exato muda conforme a plataforma adiciona novos instrumentos.' },
+      { q: 'Qual é o payout máximo na Pocket Option?', a: 'Ativos populares pagam até 92% por operação correta. O payout aparece ao lado de cada ativo no calendário e no terminal antes de abrir a posição.' },
+      { q: 'O que significa OTC na Pocket Option?', a: 'Ativos OTC (Over-The-Counter) são cotados pela própria plataforma, não por uma bolsa, e por isso podem ser negociados 24/7 — inclusive nos fins de semana — com as mesmas regras e payouts.' },
+      { q: 'Por que os payouts mudam?', a: 'Os payouts dependem da volatilidade, da liquidez e do horário. São maiores nas sessões ativas e podem cair perto de notícias ou quando o mercado está fraco.' },
+      { q: 'Posso negociar ativos da Pocket Option nos fins de semana?', a: 'Sim. Criptomoedas operam 24/7 e as versões OTC de forex, ações, commodities e índices estão disponíveis no sábado e no domingo.' },
+      { q: 'Os mesmos ativos estão disponíveis na conta demo?', a: 'Sim. A conta demo gratuita de $50.000 usa a mesma lista de ativos, cotações ao vivo e payouts de uma conta real.' },
+    ],
+  },
+  finalCta: {
+    title: 'Negocie 100+ ativos da Pocket Option a partir de $1',
+    subtitle: 'Abra uma conta grátis, escolha um ativo do calendário e faça sua primeira operação — na demo ou no real.',
+    cta: 'Abrir conta grátis',
+    secondary: 'Guia de início rápido',
+    note: 'O trading envolve risco. Opere apenas com fundos que pode perder.',
+  },
+};

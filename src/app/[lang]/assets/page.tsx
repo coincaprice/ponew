@@ -10,17 +10,17 @@ export async function generateStaticParams() {
 }
 
 const TITLES: Record<string, string> = {
-  pt: 'Ativos de Trading – Forex, Cripto, Ações e Commodities | Pocket Option',
-  es: 'Activos de Trading – Forex, Cripto, Acciones y Materias Primas | Pocket Option',
-  ru: 'Торговые активы – Форекс, Криптовалюты, Акции и Товары | Pocket Option',
-  id: 'Aset Trading – Forex, Kripto, Saham dan Komoditas | Pocket Option',
+  pt: 'Ativos da Pocket Option e horários: 100+ ativos, payouts até 92%',
+  es: 'Activos de Pocket Option y horarios: 100+ activos, pagos hasta 92%',
+  ru: 'Активы Pocket Option и расписание торгов: 100+ активов, выплаты до 92%',
+  id: 'Aset Pocket Option dan jadwal trading: 100+ aset, payout hingga 92%',
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  pt: 'Explore mais de 100 ativos disponíveis na Pocket Option: pares de forex, criptomoedas, índices, ações e commodities. Negocie com payouts de até 218% por operação.',
-  es: 'Explora más de 100 activos disponibles en Pocket Option: pares de forex, criptomonedas, índices, acciones y materias primas. Opera con pagos de hasta el 218% por operación.',
-  ru: 'Изучите более 100 активов на Pocket Option: форексные пары, криптовалюты, индексы, акции и товары. Торгуйте с доходностью до 218% за сделку.',
-  id: 'Jelajahi lebih dari 100 aset yang tersedia di Pocket Option: pasangan forex, kripto, indeks, saham, dan komoditas. Trading dengan payout hingga 218% per transaksi.',
+  pt: 'Lista completa de ativos da Pocket Option com payout atual e horários: pares forex, ações, criptomoedas, commodities e índices. Ativos OTC 24/7, payouts até 92%, disponível na demo de $50.000.',
+  es: 'Lista completa de activos de Pocket Option con pago actual y horarios: pares forex, acciones, criptomonedas, materias primas e índices. Activos OTC 24/7, pagos hasta 92%, disponibles en la demo de $50.000.',
+  ru: 'Полный список активов Pocket Option с текущими выплатами и часами торгов: валютные пары, акции, криптовалюты, сырьё и индексы. OTC-активы 24/7, выплаты до 92%, доступно на демо $50 000.',
+  id: 'Daftar lengkap aset Pocket Option dengan payout terkini dan jam trading: pasangan forex, saham, kripto, komoditas, dan indeks. Aset OTC 24/7, payout hingga 92%, tersedia di demo $50.000.',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {

@@ -1,0 +1,93 @@
+import type { AssetsDictionary } from './types';
+
+export const id: AssetsDictionary = {
+  home: 'Beranda',
+  breadcrumb: 'Jadwal aset trading',
+  hero: {
+    eyebrow: 'Aset Pocket Option',
+    title: 'Aset Pocket Option',
+    titleAccent: 'dan jadwal trading',
+    subtitle:
+      'Lihat semua aset yang bisa Anda tradingkan di Pocket Option — 100+ pasangan mata uang, saham, kripto, komoditas, dan indeks — beserta payout terkini masing-masing dan jam bukanya. Gunakan jadwal ini untuk trading saat payout pocketoption paling tinggi dan pasar yang Anda kuasai sedang aktif.',
+    cta: 'Mulai trading',
+    secondary: 'Latihan di demo',
+    facts: [
+      { value: '100+', label: 'Aset yang bisa ditradingkan' },
+      { value: '92%', label: 'Payout tertinggi' },
+      { value: '24/7', label: 'Pasar OTC' },
+      { value: '5', label: 'Kelas aset' },
+    ],
+  },
+  categories: {
+    eyebrow: 'Kelas aset',
+    title: 'Apa yang bisa ditradingkan di Pocket Option',
+    subtitle: 'Lima pasar dalam satu terminal. Semua kelas tersedia di akun demo dengan payout yang sama seperti akun riil.',
+    countLabel: 'aset',
+    topPayoutLabel: 'payout tertinggi',
+    items: {
+      Currency: { name: 'Pasangan mata uang', desc: 'Major seperti EUR/USD dan GBP/USD plus puluhan pasangan eksotis, dengan kuotasi OTC tersedia sepanjang waktu.' },
+      Commodities: { name: 'Komoditas', desc: 'Emas, perak, minyak Brent dan WTI, gas alam, platinum, dan paladium — favorit hedge fund dalam satu klik.' },
+      Stocks: { name: 'Saham', desc: 'Apple, NVIDIA, Tesla, Amazon, Microsoft, dan blue chip AS lain sebagai kontrak payout tetap jangka pendek.' },
+      Cryptocurrencies: { name: 'Kripto', desc: 'Bitcoin, Ethereum, Solana, Toncoin, Dogecoin, dan lainnya — tradingkan pasar kripto setiap hari.' },
+      Indices: { name: 'Indeks', desc: 'S&P 500, Dow Jones, Nasdaq 100, DAX, FTSE 100, Nikkei 225, dan benchmark global lainnya.' },
+    },
+  },
+  table: {
+    eyebrow: 'Jadwal langsung',
+    title: 'Payout Pocket Option per aset',
+    subtitle: 'Daftar aset yang tersedia saat ini dengan persentase payout. Filter per kelas, cari nama, atau tampilkan hanya aset OTC.',
+    search: 'Cari aset, mis. EUR/USD',
+    all: 'Semua',
+    otcOnly: 'Hanya OTC',
+    assetCol: 'Aset',
+    payoutCol: 'Payout',
+    updated: 'Berlaku untuk',
+    showing: 'aset ditampilkan',
+    empty: 'Tidak ada aset yang cocok dengan filter.',
+    note: '* Persentase payout berubah mengikuti kondisi pasar dan bisa berbeda saat Anda membuka trade. Payout pasti selalu ditampilkan di terminal sebelum konfirmasi. Aset OTC (Over-The-Counter) dikuotasi oleh platform dan tersedia 24/7, termasuk akhir pekan.',
+  },
+  hours: {
+    eyebrow: 'Jam trading',
+    title: 'Kapan pasar Pocket Option buka',
+    subtitle: 'Aset bursa mengikuti pasar dasarnya. Aset OTC tidak pernah tutup.',
+    items: [
+      { title: 'Forex (bursa)', time: 'Sen 00:00 – Jum 23:59 (UTC+2)', desc: 'Pasangan mata uang diperdagangkan terus-menerus dari pembukaan Sydney hari Senin hingga penutupan New York hari Jumat.' },
+      { title: 'Saham dan indeks', time: 'Sesi bursa, Sen–Jum', desc: 'Saham dan indeks AS mengikuti jam NYSE/Nasdaq; indeks Eropa dan Asia mengikuti sesi lokal masing-masing.' },
+      { title: 'Komoditas', time: 'Sesi futures, Sen–Jum', desc: 'Emas, perak, dan minyak mengikuti kalender COMEX dan NYMEX dengan jeda harian singkat.' },
+      { title: 'Kripto', time: '24/7', desc: 'Bitcoin, Ethereum, dan aset kripto lainnya dikuotasi sepanjang waktu, setiap hari.' },
+      { title: 'Aset OTC', time: '24/7, termasuk akhir pekan', desc: 'Kuotasi OTC Pocket Option untuk forex, saham, komoditas, dan indeks tersedia saat bursa tutup.' },
+    ],
+    note: 'Waktu pada jadwal menggunakan zona waktu platform (UTC+2). Trading dijeda sebentar pada beberapa aset saat rilis ekonomi penting.',
+  },
+  tips: {
+    eyebrow: 'Cara menggunakan',
+    title: 'Cara membaca jadwal aset Pocket Option',
+    subtitle: 'Empat hal yang perlu dicek sebelum memilih aset.',
+    items: [
+      { title: 'Bandingkan payout, bukan hanya harga', desc: 'Payout 92% berarti trade $10 mengembalikan $19,20 jika benar. Aset dengan pergerakan sama tetapi payout lebih tinggi jelas lebih menguntungkan.' },
+      { title: 'Pilih sesi yang aktif', desc: 'Volatilitas tertinggi saat pasar dasar buka — tumpang tindih London/New York untuk forex, sesi AS untuk saham.' },
+      { title: 'Pahami kuotasi OTC', desc: 'Aset OTC dihargai oleh platform dan mengikuti aturan serta payout yang sama, itulah sebabnya populer di akhir pekan.' },
+      { title: 'Uji di demo dulu', desc: 'Semua aset di daftar ini tersedia di akun demo $50.000 dengan payout identik — coba dulu sebelum trading riil.' },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Aset Pocket Option — pertanyaan umum',
+    subtitle: 'Jawaban cepat tentang pasar, payout, dan jam trading.',
+    items: [
+      { q: 'Berapa banyak aset yang bisa ditradingkan di Pocket Option?', a: 'Lebih dari 100 aset dalam lima kelas: pasangan mata uang, saham, kripto, komoditas, dan indeks. Jumlah pastinya berubah seiring platform menambah instrumen baru.' },
+      { q: 'Berapa payout maksimum di Pocket Option?', a: 'Aset populer membayar hingga 92% per trade yang benar. Payout ditampilkan di samping setiap aset pada jadwal dan di terminal sebelum Anda membuka posisi.' },
+      { q: 'Apa arti OTC di Pocket Option?', a: 'Aset OTC (Over-The-Counter) dikuotasi oleh platform sendiri, bukan oleh bursa, sehingga bisa ditradingkan 24/7 — termasuk akhir pekan — dengan aturan dan payout yang sama.' },
+      { q: 'Mengapa payout berubah?', a: 'Payout bergantung pada volatilitas, likuiditas, dan waktu. Lebih tinggi saat sesi aktif dan bisa turun menjelang rilis berita atau saat pasar tipis.' },
+      { q: 'Bisakah trading aset Pocket Option di akhir pekan?', a: 'Ya. Kripto trading 24/7 dan versi OTC dari forex, saham, komoditas, dan indeks tersedia pada Sabtu dan Minggu.' },
+      { q: 'Apakah aset yang sama tersedia di akun demo?', a: 'Ya. Akun demo gratis $50.000 menggunakan daftar aset, kuotasi langsung, dan payout yang sama dengan akun riil.' },
+    ],
+  },
+  finalCta: {
+    title: 'Tradingkan 100+ aset Pocket Option mulai $1',
+    subtitle: 'Buka akun gratis, pilih aset dari jadwal, dan lakukan trade pertama Anda — di demo atau riil.',
+    cta: 'Buka akun gratis',
+    secondary: 'Panduan mulai cepat',
+    note: 'Trading mengandung risiko. Trading hanya dengan dana yang siap Anda kehilangan.',
+  },
+};

@@ -1,0 +1,93 @@
+import type { AssetsDictionary } from './types';
+
+export const en: AssetsDictionary = {
+  home: 'Home',
+  breadcrumb: 'Assets trading schedule',
+  hero: {
+    eyebrow: 'Pocket Option assets',
+    title: 'Pocket Option assets',
+    titleAccent: 'and trading schedule',
+    subtitle:
+      'Browse every asset you can trade on Pocket Option — 100+ currency pairs, stocks, cryptocurrencies, commodities and indices — with the current payout for each one and the hours when it is open. Use the schedule to trade when the pocketoption payout is highest and the market you know is active.',
+    cta: 'Start trading',
+    secondary: 'Practise on demo',
+    facts: [
+      { value: '100+', label: 'Tradable assets' },
+      { value: '92%', label: 'Top payout' },
+      { value: '24/7', label: 'OTC markets' },
+      { value: '5', label: 'Asset classes' },
+    ],
+  },
+  categories: {
+    eyebrow: 'Asset classes',
+    title: 'What you can trade on Pocket Option',
+    subtitle: 'Five markets in one terminal. Every class is available on the demo account with the same payouts as live.',
+    countLabel: 'assets',
+    topPayoutLabel: 'top payout',
+    items: {
+      Currency: { name: 'Currency pairs', desc: 'Majors like EUR/USD and GBP/USD plus dozens of exotic pairs, with OTC quotes available around the clock.' },
+      Commodities: { name: 'Commodities', desc: 'Gold, silver, Brent and WTI oil, natural gas, platinum and palladium — hedge-fund favourites in one click.' },
+      Stocks: { name: 'Stocks', desc: 'Apple, NVIDIA, Tesla, Amazon, Microsoft and other US blue chips traded as short-term fixed-payout contracts.' },
+      Cryptocurrencies: { name: 'Cryptocurrencies', desc: 'Bitcoin, Ethereum, Solana, Toncoin, Dogecoin and more — trade the crypto market every day of the week.' },
+      Indices: { name: 'Indices', desc: 'S&P 500, Dow Jones, Nasdaq 100, DAX, FTSE 100, Nikkei 225 and other global benchmarks.' },
+    },
+  },
+  table: {
+    eyebrow: 'Live schedule',
+    title: 'Pocket Option payouts by asset',
+    subtitle: 'Current list of available assets with their payout percentage. Filter by class, search by name, or show OTC assets only.',
+    search: 'Search asset, e.g. EUR/USD',
+    all: 'All',
+    otcOnly: 'OTC only',
+    assetCol: 'Asset',
+    payoutCol: 'Payout',
+    updated: 'Relevant for',
+    showing: 'assets shown',
+    empty: 'No assets match your filter.',
+    note: '* Payout percentages change with market conditions and may differ at the moment you open a trade. The exact payout is always displayed in the terminal before you confirm. OTC (Over-The-Counter) assets are quoted by the platform and available 24/7, including weekends.',
+  },
+  hours: {
+    eyebrow: 'Trading hours',
+    title: 'When Pocket Option markets are open',
+    subtitle: 'Exchange assets follow the underlying market. OTC assets never close.',
+    items: [
+      { title: 'Forex (exchange)', time: 'Mon 00:00 – Fri 23:59 (UTC+2)', desc: 'Currency pairs trade continuously from the Sydney open on Monday to the New York close on Friday.' },
+      { title: 'Stocks and indices', time: 'Exchange sessions, Mon–Fri', desc: 'US stocks and indices follow NYSE/Nasdaq hours; European and Asian indices follow their local sessions.' },
+      { title: 'Commodities', time: 'Futures sessions, Mon–Fri', desc: 'Gold, silver and oil follow the COMEX and NYMEX trading calendars with short daily breaks.' },
+      { title: 'Cryptocurrencies', time: '24/7', desc: 'Bitcoin, Ethereum and other crypto assets are quoted around the clock, every day.' },
+      { title: 'OTC assets', time: '24/7, incl. weekends', desc: 'Pocket Option OTC quotes for forex, stocks, commodities and indices are available when exchanges are closed.' },
+    ],
+    note: 'Times shown in the schedule use the UTC+2 platform time zone. Trading is paused briefly around major economic releases on some assets.',
+  },
+  tips: {
+    eyebrow: 'How to use it',
+    title: 'How to read the Pocket Option asset schedule',
+    subtitle: 'Four things to check before you choose an asset.',
+    items: [
+      { title: 'Compare payouts, not just prices', desc: 'A 92% payout means a $10 trade returns $19.20 if correct. Assets with the same movement but higher payout are simply more profitable.' },
+      { title: 'Pick the active session', desc: 'Volatility is highest when the underlying market is open — London/New York overlap for forex, US session for stocks.' },
+      { title: 'Understand OTC quotes', desc: 'OTC assets are priced by the platform and keep the same rules and payouts, which is why they are popular on weekends.' },
+      { title: 'Test on demo first', desc: 'Every asset in this list is available on the $50,000 demo account with identical payouts — try it before going live.' },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Pocket Option assets — frequently asked questions',
+    subtitle: 'Quick answers about markets, payouts and trading hours.',
+    items: [
+      { q: 'How many assets can I trade on Pocket Option?', a: 'More than 100 assets across five classes: currency pairs, stocks, cryptocurrencies, commodities and indices. The exact number changes as the platform adds new instruments.' },
+      { q: 'What is the maximum payout on Pocket Option?', a: 'Popular assets pay up to 92% per correct trade. The payout is shown next to each asset in the schedule and in the terminal before you open a position.' },
+      { q: 'What does OTC mean on Pocket Option?', a: 'OTC (Over-The-Counter) assets are quoted by the platform itself rather than by an exchange, so they can be traded 24/7 — including weekends — with the same rules and payouts.' },
+      { q: 'Why do payouts change?', a: 'Payouts depend on market volatility, liquidity and the time of day. They are higher during active sessions and may drop around news releases or when a market is thin.' },
+      { q: 'Can I trade Pocket Option assets on weekends?', a: 'Yes. Cryptocurrencies trade 24/7 and OTC versions of forex, stocks, commodities and indices are available on Saturday and Sunday.' },
+      { q: 'Are the same assets available on the demo account?', a: 'Yes. The free $50,000 demo account uses the same asset list, live quotes and payouts as a real account.' },
+    ],
+  },
+  finalCta: {
+    title: 'Trade 100+ Pocket Option assets from $1',
+    subtitle: 'Open a free account, pick an asset from the schedule and place your first trade — on demo or live.',
+    cta: 'Open free account',
+    secondary: 'Quick start guide',
+    note: 'Trading involves risk. Only trade with funds you can afford to lose.',
+  },
+};

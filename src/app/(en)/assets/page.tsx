@@ -2,8 +2,8 @@ import { AssetsPage } from '@/components/pages/AssetsPage';
 import { buildSeoMeta } from '@/lib/i18n/seo';
 import type { Metadata } from 'next';
 
-const title = 'Trading Assets – 100+ Assets with Payouts Up to 92% | Pocket Option';
-const description = 'Trade 100+ assets on Pocket Option: forex pairs, cryptocurrencies, stocks, commodities, and indices. Payouts up to 92%. Start with a $5 minimum deposit.';
+const title = 'Pocket Option assets and trading schedule: 100+ assets, payouts up to 92%';
+const description = 'Full list of Pocket Option assets with current payouts and trading hours: forex pairs, stocks, cryptocurrencies, commodities and indices. OTC assets 24/7, payouts up to 92%, all available on the $50,000 demo.';
 
 export const metadata: Metadata = {
   title: { absolute: title },

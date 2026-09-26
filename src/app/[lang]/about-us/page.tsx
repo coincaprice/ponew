@@ -10,17 +10,17 @@ export async function generateStaticParams() {
 }
 
 const TITLES: Record<string, string> = {
-  pt: 'Sobre a Pocket Option – Plataforma de Trading Global',
-  es: 'Sobre Pocket Option – Plataforma de Trading Global',
-  ru: 'О Pocket Option – Глобальная торговая платформа',
-  id: 'Tentang Pocket Option – Platform Trading Global',
+  pt: 'O que é a Pocket Option? Sobre a plataforma, história e empresa',
+  es: '¿Qué es Pocket Option? Sobre la plataforma, historia y empresa',
+  ru: 'Что такое Pocket Option? О платформе, истории и компании',
+  id: 'Apa itu Pocket Option? Tentang platform, sejarah, dan perusahaan',
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  pt: 'Conheça a Pocket Option: plataforma de trading online fundada em 2017, com mais de 10 milhões de traders no mundo, mais de 100 ativos disponíveis e depósito mínimo de apenas $5.',
-  es: 'Conoce Pocket Option: plataforma de trading online fundada en 2017, con más de 10 millones de traders en el mundo, más de 100 activos disponibles y un depósito mínimo de solo $5.',
-  ru: 'Узнайте о Pocket Option: онлайн-торговая платформа, основанная в 2017 году, с более чем 10 миллионами трейдеров по всему миру, более 100 активами и минимальным депозитом от $5.',
-  id: 'Kenali Pocket Option: platform trading online yang didirikan pada 2017, dengan lebih dari 10 juta trader di seluruh dunia, 100+ aset tersedia dan deposit minimum hanya $5.',
+  pt: 'Pocket Option é uma plataforma de trading online lançada em 2017: 100+ ativos, depósito mínimo de $5, demo de $50.000 e 10M+ traders em 95+ países. Saiba quem opera a pocketoption e onde estão seus documentos legais.',
+  es: 'Pocket Option es una plataforma de trading online lanzada en 2017: 100+ activos, depósito mínimo de $5, demo de $50.000 y 10M+ traders en 95+ países. Descubre quién opera pocketoption y dónde están sus documentos legales.',
+  ru: 'Pocket Option — онлайн-платформа для трейдинга, запущенная в 2017: 100+ активов, депозит от $5, демо $50 000 и 10M+ трейдеров в 95+ странах. Кто управляет pocketoption и где юридические документы.',
+  id: 'Pocket Option adalah platform trading online yang diluncurkan 2017: 100+ aset, deposit minimum $5, demo $50.000, dan 10M+ trader di 95+ negara. Ketahui siapa operator pocketoption dan di mana dokumen legalnya.',
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
