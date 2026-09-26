@@ -286,7 +286,9 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
             {WHY.map((item, i) => (
               <div key={i} className="card-premium text-center md:text-left" style={{ padding: '28px 24px' }}>
-                <item.icon className="mx-auto md:mx-0" style={{ width: '44px', height: '44px', color: '#0099FA', marginBottom: '20px', display: 'block' }} strokeWidth={1.5} />
+                <div className="mx-auto md:mx-0" style={{ width: '64px', height: '64px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', background: '#EEF3FA' }}>
+                  <item.icon style={{ width: '32px', height: '32px', color: '#0099FA' }} strokeWidth={1.75} fill="#0099FA" fillOpacity={0.18} />
+                </div>
                 <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#0D1B2A', letterSpacing: '0.01em', marginBottom: '10px', lineHeight: '1.35' }}>{item.title}</h3>
                 <p style={{ fontSize: '15px', color: '#5A6A85', lineHeight: '1.7' }}>{item.desc}</p>
               </div>
