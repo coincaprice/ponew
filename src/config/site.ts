@@ -3,12 +3,6 @@ export const siteConfig = {
   url: 'https://pocketoption.dev',
   description:
     'Trade over 100 global assets including forex, cryptocurrencies, stocks, and commodities on Pocket Option. Start online trading with a fast and secure platform.',
-  ogImage: {
-    url: '/images/og-image.png',
-    width: 1200,
-    height: 669,
-    alt: 'Trade smarter with Pocket Option – access global financial markets in seconds',
-  },
   twitterHandle: '@pocketbrokergl',
   foundingDate: '2017',
   social: [

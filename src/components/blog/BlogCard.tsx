@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ArrowRight, Clock } from 'lucide-react';
 import type { Locale } from '@/lib/i18n/config';
 import { getLocalePath } from '@/lib/i18n/config';
@@ -9,12 +10,12 @@ export function BlogCard({ post, locale, t }: { post: BlogPost; locale: Locale; 
   return (
     <a href={getLocalePath(locale, `blog/${post.slug}`)} className="card-premium group flex flex-col overflow-hidden no-underline">
       <div className="overflow-hidden">
-        <img
+        <Image
           src={post.cover}
           alt={c.coverAlt}
           width={1840}
           height={700}
-          loading="lazy"
+          sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"
           className="w-full h-auto aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-[1.04]"
         />
       </div>

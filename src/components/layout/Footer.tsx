@@ -1,4 +1,4 @@
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Info } from 'lucide-react';
 import { Logo } from '@/components/layout/Logo';
 import { getDictionary } from '@/lib/i18n/dictionaries';
 import { getLocalePath } from '@/lib/i18n/config';
@@ -66,6 +66,14 @@ export function Footer({ lang = 'en' }: Props) {
           <a href={lp('risk-disclosure')} className="mt-3 inline-block text-[13px] font-semibold text-[#5fb8ff] underline-offset-4 hover:underline">
             {t.footer.riskDisclosure}
           </a>
+        </div>
+
+        <div className="mt-5 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 md:p-8">
+          <div className="mb-3 flex items-center gap-2.5 font-heading text-[13px] font-bold uppercase tracking-[0.08em] text-white">
+            <Info className="h-4 w-4 text-[#5fb8ff]" />
+            {t.footer.affiliateTitle}
+          </div>
+          <p className="text-[13px] leading-[1.75] text-white/55">{t.footer.affiliateText}</p>
         </div>
 
         <div className="mt-10 space-y-2.5 text-[12.5px] leading-[1.75] text-white/45">

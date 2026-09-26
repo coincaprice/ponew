@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -71,7 +72,7 @@ export function FreeDemoPage({ lang = 'en', guides }: { lang?: string; guides?: 
             <div className="lg:col-span-5 relative flex justify-center">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.25)' }} />
               <div className="relative w-[220px] sm:w-[280px] lg:w-[300px] translate-x-10 sm:translate-x-14 lg:translate-x-10 mt-4 lg:mt-0">
-                <img src="/images/iphone.webp" alt="Pocket Option demo account on mobile" width={270} height={540} className="relative w-full h-auto animate-float-slow rotate-[-6deg] drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]" />
+                <Image src="/images/iphone.webp" alt="Pocket Option demo account on mobile" width={272} height={558} priority sizes="(min-width: 1024px) 300px, 60vw" className="relative w-full h-auto animate-float-slow rotate-[-6deg] drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]" />
                 <div className="absolute -left-20 sm:-left-36 bottom-10 rounded-2xl bg-white p-4 shadow-[0_30px_70px_rgba(0,0,0,0.45)]">
                   <div className="flex items-center justify-between gap-6 mb-2">
                     <span className="text-[11px] uppercase tracking-[0.12em] text-[#8A9BB5]">{t.hero.balanceLabel}</span>
@@ -119,7 +120,7 @@ export function FreeDemoPage({ lang = 'en', guides }: { lang?: string; guides?: 
           </div>
           <div className="lg:col-span-6 relative">
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.16)' }} />
-            <img src="/images/monitor.webp" alt="Pocket Option demo trading terminal" loading="lazy" className="relative w-full h-auto lg:scale-[1.12] lg:translate-x-8 drop-shadow-[0_40px_80px_rgba(8,15,32,0.25)]" />
+            <Image src="/images/monitor.webp" alt="Pocket Option demo trading terminal" width={935} height={790} sizes="(min-width: 1024px) 50vw, 100vw" className="relative w-full h-auto lg:scale-[1.12] lg:translate-x-8 drop-shadow-[0_40px_80px_rgba(8,15,32,0.25)]" />
           </div>
         </div>
       </section>

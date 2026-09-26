@@ -48,6 +48,7 @@ const dictionaries: Record<Locale, BlogDictionary> = {
     ctaSecondary: 'Quick start guide',
     categories: { tutorial: 'Tutorial', payments: 'Deposits & withdrawals', platform: 'Platform', strategy: 'Strategy' },
     disclaimer: 'This is an independent Pocket Option affiliate website. Articles are for information only and are not investment advice. Trading involves risk.',
+    affiliateNotice: 'Affiliate disclosure: this is an independent site. If you sign up via our links we may earn a commission from Pocket Option at no extra cost to you.',
   },
   pt: {
     home: 'Início',
@@ -74,6 +75,7 @@ const dictionaries: Record<Locale, BlogDictionary> = {
     ctaSecondary: 'Guia de início rápido',
     categories: { tutorial: 'Tutorial', payments: 'Depósitos e saques', platform: 'Plataforma', strategy: 'Estratégia' },
     disclaimer: 'Este é um site afiliado independente da Pocket Option. Os artigos são apenas informativos e não constituem recomendação de investimento. Operar envolve risco.',
+    affiliateNotice: 'Divulgação de afiliado: este é um site independente. Se você se cadastrar pelos nossos links, podemos receber uma comissão da Pocket Option sem custo adicional para você.',
   },
   es: {
     home: 'Inicio',
@@ -100,6 +102,7 @@ const dictionaries: Record<Locale, BlogDictionary> = {
     ctaSecondary: 'Guía de inicio rápido',
     categories: { tutorial: 'Tutorial', payments: 'Depósitos y retiros', platform: 'Plataforma', strategy: 'Estrategia' },
     disclaimer: 'Este es un sitio afiliado independiente de Pocket Option. Los artículos son solo informativos y no constituyen asesoramiento de inversión. Operar implica riesgo.',
+    affiliateNotice: 'Divulgación de afiliado: este es un sitio independiente. Si te registras a través de nuestros enlaces, podemos recibir una comisión de Pocket Option sin coste adicional para ti.',
   },
   ru: {
     home: 'Главная',
@@ -126,6 +129,7 @@ const dictionaries: Record<Locale, BlogDictionary> = {
     ctaSecondary: 'Быстрый старт',
     categories: { tutorial: 'Обучение', payments: 'Депозиты и выводы', platform: 'Платформа', strategy: 'Стратегии' },
     disclaimer: 'Это независимый партнёрский сайт Pocket Option. Статьи носят информационный характер и не являются инвестиционной рекомендацией. Торговля связана с риском.',
+    affiliateNotice: 'Раскрытие партнёрства: это независимый сайт. Если вы зарегистрируетесь по нашим ссылкам, мы можем получить комиссию от Pocket Option без дополнительных расходов для вас.',
   },
   id: {
     home: 'Beranda',
@@ -152,6 +156,7 @@ const dictionaries: Record<Locale, BlogDictionary> = {
     ctaSecondary: 'Panduan mulai cepat',
     categories: { tutorial: 'Tutorial', payments: 'Deposit & penarikan', platform: 'Platform', strategy: 'Strategi' },
     disclaimer: 'Ini adalah situs afiliasi Pocket Option independen. Artikel bersifat informatif dan bukan saran investasi. Trading melibatkan risiko.',
+    affiliateNotice: 'Pengungkapan afiliasi: ini situs independen. Jika Anda mendaftar melalui tautan kami, kami dapat menerima komisi dari Pocket Option tanpa biaya tambahan bagi Anda.',
   },
 };
 

@@ -19,8 +19,6 @@ function getOgAlternates(lang: string): string[] {
   return locales.filter(l => l !== lang).map(l => ogLocaleMap[l]);
 }
 
-const OG_IMAGE = [{ ...siteConfig.ogImage, url: `${BASE_URL}${siteConfig.ogImage.url}` }];
-
 /** Metadata shared by every root layout (icons, robots, verification, twitter defaults). */
 export function buildBaseMetadata(lang: string, title: string, description: string): Metadata {
   return {
@@ -46,13 +44,11 @@ export function buildBaseMetadata(lang: string, title: string, description: stri
       siteName: siteConfig.name,
       title,
       description,
-      images: OG_IMAGE,
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: OG_IMAGE.map(i => i.url),
       site: siteConfig.twitterHandle,
       creator: siteConfig.twitterHandle,
     },
@@ -61,11 +57,10 @@ export function buildBaseMetadata(lang: string, title: string, description: stri
         { url: '/favicon.ico', sizes: '48x48 32x32 16x16', type: 'image/x-icon' },
         { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
         { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-        { url: '/favicon.png', sizes: '350x350', type: 'image/png' },
+        { url: '/favicon.png', sizes: '200x200', type: 'image/png' },
       ],
       apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
     },
-    manifest: '/site.webmanifest',
     verification: {
       google: siteConfig.verification.google,
       other: { 'msvalidate.01': siteConfig.verification.bing },
@@ -101,7 +96,6 @@ export function buildSeoMeta(
     openGraph: {
       type: 'website',
       siteName: siteConfig.name,
-      images: OG_IMAGE,
       url: canonical,
       locale: getOgLocale(lang),
       alternateLocale: getOgAlternates(lang),
@@ -110,7 +104,6 @@ export function buildSeoMeta(
     },
     twitter: {
       card: 'summary_large_image',
-      images: OG_IMAGE.map(i => i.url),
       site: siteConfig.twitterHandle,
       ...(page.title && { title: page.title }),
       ...(page.description && { description: page.description }),

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -105,8 +106,8 @@ export function HomePage({ lang = 'en', guides }: { lang?: string; guides?: Reac
       <section className="relative w-full overflow-hidden min-h-[720px] flex items-center" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
         <div className="absolute pointer-events-none" style={{ top: '-15%', left: '-8%', width: '65%', height: '65%', background: 'radial-gradient(ellipse, rgba(0,153,250,0.13) 0%, transparent 68%)', borderRadius: '50%' }} />
         <div className="absolute pointer-events-none" style={{ bottom: '5%', right: '-5%', width: '55%', height: '55%', background: 'radial-gradient(ellipse, rgba(0,82,204,0.11) 0%, transparent 65%)', borderRadius: '50%' }} />
-        <img src="/images/header-bg.webp" alt="Pocket Option trading terminal" width={1537} height={1439} fetchPriority="high" className="hidden md:block absolute top-1/2 -translate-y-1/2 right-[-2%] w-[58%] pointer-events-none select-none animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]" />
-        <img src="/images/header-bg.webp" alt="" width={1537} height={1439} className="md:hidden absolute top-[40px] pointer-events-none select-none" style={{ right: '-50%', width: '120%', opacity: 0.92, maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)' }} />
+        <Image src="/images/header-bg.webp" alt="Pocket Option trading terminal" width={1537} height={1439} priority sizes="(min-width: 768px) 58vw, 0px" className="hidden md:block absolute top-1/2 -translate-y-1/2 right-[-2%] w-[58%] pointer-events-none select-none animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]" />
+        <Image src="/images/header-bg.webp" alt="" width={1537} height={1439} priority sizes="(max-width: 767px) 120vw, 0px" className="md:hidden absolute top-[40px] pointer-events-none select-none" style={{ right: '-50%', width: '120%', opacity: 0.92, maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)' }} />
         <div className="hidden md:block absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, #0A2540 0%, #0A2540cc 35%, #0A254055 65%, transparent 100%)' }} />
         <div className="md:hidden absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(5,15,30,0.93) 0%, rgba(5,15,30,0.90) 28%, rgba(5,15,30,0.55) 52%, rgba(5,15,30,0.15) 100%)' }} />
         <div className="absolute inset-0 grid-noise pointer-events-none" />
@@ -212,7 +213,7 @@ export function HomePage({ lang = 'en', guides }: { lang?: string; guides?: Reac
             </div>
             <div className="hidden md:flex w-full lg:w-[52%] self-stretch items-center justify-center lg:justify-start relative">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-[60%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
-              <img src="/images/monitor.webp" alt="Pocket Option web trading platform" width={935} height={790} loading="lazy" className="relative w-full max-w-[720px] lg:max-w-none lg:w-[118%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
+              <Image src="/images/monitor.webp" alt="Pocket Option web trading platform" width={935} height={790} sizes="(min-width: 1024px) 60vw, 100vw" className="relative w-full max-w-[720px] lg:max-w-none lg:w-[118%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
             </div>
           </div>
         </div>
@@ -363,8 +364,8 @@ export function HomePage({ lang = 'en', guides }: { lang?: string; guides?: Reac
             </div>
             <div className="hidden md:block relative flex-1 min-h-[460px]">
               <div className="pointer-events-none absolute left-1/2 bottom-0 h-[80%] w-[80%] -translate-x-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.14)' }} />
-              <img src="/images/iphone.webp" alt="Pocket Option app for iOS" loading="lazy" className="absolute right-0 bottom-0 w-[210px] z-[1] drop-shadow-[0_8px_20px_rgba(0,0,0,0.10)]" />
-              <img src="/images/android.webp" alt="Pocket Option app for Android" loading="lazy" className="absolute right-[140px] bottom-0 w-[240px] z-[2] drop-shadow-[0_12px_32px_rgba(0,0,0,0.18)]" />
+              <Image src="/images/iphone.webp" alt="Pocket Option app for iOS" width={272} height={558} sizes="210px" className="absolute right-0 bottom-0 w-[210px] z-[1] drop-shadow-[0_8px_20px_rgba(0,0,0,0.10)]" />
+              <Image src="/images/android.webp" alt="Pocket Option app for Android" width={276} height={576} sizes="240px" className="absolute right-[140px] bottom-0 w-[240px] z-[2] drop-shadow-[0_12px_32px_rgba(0,0,0,0.18)]" />
             </div>
           </div>
         </div>

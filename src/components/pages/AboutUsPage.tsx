@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
@@ -44,7 +45,7 @@ export function AboutUsPage({ lang = 'en' }: { lang?: string }) {
 
       {/* HERO */}
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
-        <img src="/images/about/about-bg.webp" alt="" aria-hidden width={1600} height={900} className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.16] mix-blend-luminosity" />
+        <Image src="/images/about/about-bg.webp" alt="" aria-hidden width={1408} height={685} priority sizes="100vw" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.16] mix-blend-luminosity" />
         <div className="absolute pointer-events-none" style={{ top: '-20%', right: '-10%', width: '60%', height: '80%', background: 'radial-gradient(ellipse, rgba(0,153,250,0.18) 0%, transparent 65%)', borderRadius: '50%' }} />
         <div className="absolute inset-0 grid-noise pointer-events-none" />
         <div className="container-x relative z-10 pt-[110px] md:pt-[150px] pb-16 lg:pb-24">
@@ -228,7 +229,7 @@ export function AboutUsPage({ lang = 'en' }: { lang?: string }) {
 
       {/* FINAL CTA */}
       <section className="relative overflow-hidden py-20 lg:py-24" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 50%, #0C3260 100%)' }}>
-        <img src="/images/about/join-bg.webp" alt="" aria-hidden width={1600} height={700} className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.14] mix-blend-luminosity" />
+        <Image src="/images/about/join-bg.webp" alt="" aria-hidden width={1920} height={599} sizes="100vw" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.14] mix-blend-luminosity" />
         <div className="absolute inset-0 grid-noise pointer-events-none" />
         <div className="container-x relative z-10 text-center max-w-[760px] mx-auto text-white">
           <h2 className="font-heading font-extrabold text-[30px] md:text-[42px] leading-[1.1] mb-5">{t.finalCta.title}</h2>

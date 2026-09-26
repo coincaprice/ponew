@@ -21,6 +21,8 @@ export type Dictionary = {
     brokerage: string;
     minInvestNote: string;
     riskDisclosure: string;
+    affiliateTitle: string;
+    affiliateText: string;
     copyright1: string;
     copyright2: string;
     copyright3: string;
@@ -48,6 +50,8 @@ const en: Dictionary = {
     brokerage: 'All brokerage activity on this website provided by FX Trading LLC.',
     minInvestNote: '* The minimum investment amount varies by region and payment method.',
     riskDisclosure: 'Risk Disclosure',
+    affiliateTitle: 'Affiliate disclosure',
+    affiliateText: 'pocketoption.dev is an independent affiliate website and is not the official Pocket Option site. When you register or deposit via links on this site, we may earn a commission from Pocket Option at no extra cost to you. This does not influence our editorial content, which is based on our own use of the platform and publicly available information.',
     copyright1: 'All materials and services provided on this site are subject to copyright and belong to "FX Trading LLC". Any use of materials of this website must be approved by an official representative of "FX Trading LLC", and contain a link to the original resource. Any third-party companies of "Online broker" or "Online trading" type, do not have the right to use materials of this website as well as any distorted writing of "FX Trading LLC". In case of violation, they will be prosecuted in accordance with legislation of intellectual property protection.',
     copyright2: 'FX Trading LLC does not provide service to residents of the EEA countries, USA, Israel, UK, Philippines, Japan and Brazil.',
     copyright3: 'FX Trading LLC is registered at Republic of Costa Rica, San Jose-San Jose. Diagonal to La Salle High School, Las Vegas neighborhood, Mata Redonda with the registration number 4062001339764.',
@@ -75,6 +79,8 @@ const pt: Dictionary = {
     brokerage: 'Toda a atividade de corretagem neste site é fornecida pela FX Trading LLC.',
     minInvestNote: '* O valor mínimo de investimento varia conforme a região e o método de pagamento.',
     riskDisclosure: 'Divulgação de Riscos',
+    affiliateTitle: 'Divulgação de afiliado',
+    affiliateText: 'pocketoption.dev é um site afiliado independente e não é o site oficial da Pocket Option. Ao registrar-se ou depositar através dos links deste site, podemos receber uma comissão da Pocket Option sem custo adicional para você. Isso não influencia nosso conteúdo editorial, baseado no uso da plataforma e em informações públicas.',
     copyright1: 'Todos os materiais e serviços fornecidos neste site estão sujeitos a direitos autorais e pertencem à "FX Trading LLC". Qualquer uso dos materiais deste site deve ser aprovado por um representante oficial da "FX Trading LLC".',
     copyright2: 'A FX Trading LLC não presta serviços a residentes dos países da EEE, EUA, Israel, Reino Unido, Filipinas, Japão e Brasil.',
     copyright3: 'A FX Trading LLC está registrada na República da Costa Rica, San Jose. Diagonal à La Salle High School, bairro Las Vegas, Mata Redonda com o número de registro 4062001339764.',
@@ -102,6 +108,8 @@ const es: Dictionary = {
     brokerage: 'Toda la actividad de corretaje en este sitio web es proporcionada por FX Trading LLC.',
     minInvestNote: '* El monto mínimo de inversión varía según la región y el método de pago.',
     riskDisclosure: 'Divulgación de Riesgos',
+    affiliateTitle: 'Divulgación de afiliado',
+    affiliateText: 'pocketoption.dev es un sitio afiliado independiente y no es el sitio oficial de Pocket Option. Si te registras o depositas a través de los enlaces de este sitio, podemos recibir una comisión de Pocket Option sin coste adicional para ti. Esto no influye en nuestro contenido editorial, basado en el uso de la plataforma y en información pública.',
     copyright1: 'Todos los materiales y servicios proporcionados en este sitio están sujetos a derechos de autor y pertenecen a "FX Trading LLC". Cualquier uso de los materiales de este sitio debe ser aprobado por un representante oficial de "FX Trading LLC".',
     copyright2: 'FX Trading LLC no presta servicios a residentes de los países de la EEA, EE.UU., Israel, Reino Unido, Filipinas, Japón y Brasil.',
     copyright3: 'FX Trading LLC está registrada en la República de Costa Rica, San José. Diagonal a La Salle High School, barrio Las Vegas, Mata Redonda con el número de registro 4062001339764.',
@@ -129,6 +137,8 @@ const ru: Dictionary = {
     brokerage: 'Вся брокерская деятельность на этом сайте осуществляется FX Trading LLC.',
     minInvestNote: '* Минимальная сумма инвестиций зависит от региона и способа оплаты.',
     riskDisclosure: 'Раскрытие рисков',
+    affiliateTitle: 'Раскрытие партнёрства',
+    affiliateText: 'pocketoption.dev — независимый партнёрский сайт, не являющийся официальным сайтом Pocket Option. При регистрации или пополнении счёта по ссылкам с этого сайта мы можем получить комиссию от Pocket Option без дополнительных расходов для вас. Это не влияет на наши материалы, основанные на использовании платформы и общедоступной информации.',
     copyright1: 'Все материалы и услуги, предоставленные на этом сайте, защищены авторским правом и принадлежат "FX Trading LLC".',
     copyright2: 'FX Trading LLC не предоставляет услуги резидентам стран ЕЭЗ, США, Израиля, Великобритании, Филиппин, Японии и Бразилии.',
     copyright3: 'FX Trading LLC зарегистрирована в Республике Коста-Рика, Сан-Хосе с регистрационным номером 4062001339764.',
@@ -156,6 +166,8 @@ const id: Dictionary = {
     brokerage: 'Seluruh aktivitas perantara (brokerage) di situs web ini disediakan oleh FX Trading LLC.',
     minInvestNote: '* Jumlah investasi minimum bervariasi tergantung wilayah dan metode pembayaran.',
     riskDisclosure: 'Pengungkapan Risiko',
+    affiliateTitle: 'Pengungkapan afiliasi',
+    affiliateText: 'pocketoption.dev adalah situs afiliasi independen dan bukan situs resmi Pocket Option. Jika Anda mendaftar atau deposit melalui tautan di situs ini, kami dapat menerima komisi dari Pocket Option tanpa biaya tambahan bagi Anda. Hal ini tidak memengaruhi konten editorial kami, yang didasarkan pada penggunaan platform dan informasi publik.',
     copyright1: 'Semua materi dan layanan yang tersedia di situs ini tunduk pada hak cipta dan milik "FX Trading LLC".',
     copyright2: 'FX Trading LLC tidak memberikan layanan kepada penduduk negara-negara EEA, AS, Israel, Inggris, Filipina, Jepang, dan Brasil.',
     copyright3: 'FX Trading LLC terdaftar di Republik Kosta Rika, San Jose dengan nomor registrasi 4062001339764.',

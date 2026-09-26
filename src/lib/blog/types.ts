@@ -61,4 +61,5 @@ export type BlogDictionary = {
   ctaSecondary: string;
   categories: Record<BlogCategory, string>;
   disclaimer: string;
+  affiliateNotice: string;
 };

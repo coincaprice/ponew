@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -69,7 +70,7 @@ export function QuickStartPage({ lang = 'en', guides }: { lang?: string; guides?
             </div>
             <div className="hidden lg:block lg:col-span-5 relative">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
-              <img src="/images/quick-start/header-bg-3.webp" alt="Pocket Option trading platform on a laptop" className="relative w-full max-w-[520px] mx-auto animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]" />
+              <Image src="/images/quick-start/header-bg-3.webp" alt="Pocket Option trading platform on a laptop" width={1537} height={1439} priority sizes="(min-width: 768px) 520px, 90vw" className="relative w-full max-w-[520px] mx-auto animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]" />
             </div>
           </div>
         </div>
@@ -91,7 +92,7 @@ export function QuickStartPage({ lang = 'en', guides }: { lang?: string; guides?
                 <div className={`md:col-span-11 card-premium overflow-hidden grid md:grid-cols-12 ${i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''}`}>
                   <div className="md:col-span-4 relative flex items-center justify-center bg-gradient-to-br from-[#F2F6FC] to-[#E6EEF9] p-8 min-h-[220px]">
                     <div className="absolute pointer-events-none h-[180px] w-[180px] rounded-full blur-2xl" style={{ background: 'rgba(0,153,250,0.16)' }} />
-                    <img src={`/images/quick-start/${STEP_IMAGES[i]}.webp`} alt={`${step.title} — Pocket Option`} loading="lazy" width={300} height={225} className="relative w-[240px] md:w-[260px] h-auto animate-float-slow" style={{ animationDelay: `${i * 0.4}s` }} />
+                    <Image src={`/images/quick-start/${STEP_IMAGES[i]}.webp`} alt={`${step.title} — Pocket Option`} width={360} height={270} sizes="260px" className="relative w-[240px] md:w-[260px] h-auto animate-float-slow" style={{ animationDelay: `${i * 0.4}s` }} />
                   </div>
                   <div className="md:col-span-8 p-7 md:p-9 lg:p-10">
                     <div className="flex items-center gap-3 mb-3">
@@ -184,7 +185,7 @@ export function QuickStartPage({ lang = 'en', guides }: { lang?: string; guides?
                 </div>
                 <div className="text-[13px] uppercase tracking-[0.12em] text-[#8A9BB5] mb-1">Balance</div>
                 <div className="font-heading text-[40px] font-extrabold leading-none text-[#080F20] mb-6">$50,000<span className="text-[18px] text-[#8A9BB5]">.00</span></div>
-                <img src="/images/quick-start/5_1.webp" alt="Pocket Option demo account chart" loading="lazy" width={300} height={225} className="w-[220px] h-auto mx-auto animate-float-slow" />
+                <Image src="/images/quick-start/5_1.webp" alt="Pocket Option demo account chart" width={360} height={270} sizes="220px" className="w-[220px] h-auto mx-auto animate-float-slow" />
               </div>
             </div>
             <div className="lg:col-span-7 order-1 lg:order-2">

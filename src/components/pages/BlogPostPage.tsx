@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
@@ -7,7 +8,7 @@ import { FaqAccordion } from '@/components/ui/FaqAccordion';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogCta } from '@/components/blog/BlogCta';
 import { formatBlogDate } from '@/components/blog/format';
-import { ChevronRight, Clock, CalendarDays, RefreshCw, Lightbulb, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { ChevronRight, Clock, CalendarDays, RefreshCw, Lightbulb, AlertTriangle, CheckCircle2, Info } from 'lucide-react';
 import { REGISTER_URL, AFFILIATE_REL } from '@/config/links';
 import { getLocalePath, isLocale } from '@/lib/i18n/config';
 import { blogPosts, getBlogDictionary } from '@/lib/blog';
@@ -66,7 +67,7 @@ function Block({ block }: { block: BlogBlock }) {
     case 'image':
       return (
         <figure className="overflow-hidden rounded-[22px] border border-[#E4EBF5] bg-[#F7F9FD]">
-          <img src={block.src} alt={block.alt} loading="lazy" className="mx-auto max-h-[420px] w-auto max-w-full object-contain p-6 md:p-8" />
+          <Image src={block.src} alt={block.alt} width={360} height={270} sizes="(min-width: 768px) 420px, 90vw" className="mx-auto max-h-[420px] w-auto max-w-full object-contain p-6 md:p-8" />
           {block.caption && <figcaption className="border-t border-[#E4EBF5] px-6 py-3 text-center text-[13.5px] text-[#8A9BBE]">{block.caption}</figcaption>}
         </figure>
       );
@@ -143,8 +144,9 @@ export function BlogPostPage({ lang = 'en', post }: { lang?: string; post: BlogP
       <section className="bg-white pb-20 lg:pb-28">
         <div className="container-x">
           <div className="-mt-[90px] md:-mt-[160px] relative z-10 overflow-hidden rounded-[24px] md:rounded-[28px] border border-white/10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
-            <img src={post.cover} alt={c.coverAlt} width={1840} height={700} className="w-full h-auto aspect-[1840/700] object-cover" />
+            <Image src={post.cover} alt={c.coverAlt} width={1840} height={700} priority sizes="(min-width: 1280px) 1200px, 100vw" className="w-full h-auto aspect-[1840/700] object-cover" />
           </div>
+          <p className="mt-5 flex items-start gap-2 text-[13px] leading-relaxed text-[#66748A]"><Info className="mt-0.5 h-4 w-4 shrink-0 text-[#0077cc]" />{t.affiliateNotice}</p>
 
           <div className="mt-12 lg:mt-16 grid lg:grid-cols-12 gap-10 lg:gap-14">
             <aside className="lg:col-span-4 order-2 lg:order-1 min-w-0">

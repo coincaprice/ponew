@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
@@ -47,11 +48,13 @@ export function BlogIndexPage({ lang = 'en' }: { lang?: string }) {
         <div className="container-x">
           <a href={lp(`blog/${featured.slug}`)} className="group grid lg:grid-cols-12 gap-8 lg:gap-12 items-center no-underline rounded-[28px] border border-[#E4EBF5] bg-[#F7F9FD] p-5 md:p-7 lg:p-8 transition-shadow hover:shadow-[0_24px_60px_-30px_rgba(8,15,32,0.35)]">
             <div className="lg:col-span-7 overflow-hidden rounded-[20px]">
-              <img
+              <Image
                 src={featured.cover}
                 alt={fc.coverAlt}
                 width={1840}
                 height={700}
+                priority
+                sizes="(min-width: 1024px) 700px, 100vw"
                 className="w-full h-auto aspect-[1840/700] object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               />
             </div>
