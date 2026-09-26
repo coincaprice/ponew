@@ -7,7 +7,7 @@ export const howToTradeOnPocketOption: BlogPost = {
   slug: 'how-to-trade-on-pocket-option',
   category: 'tutorial',
   cover: '/images/blog/pocket-option-trading-terminal-guide.webp',
-  publishedAt: '2026-09-20',
+  publishedAt: '2026-09-18',
   updatedAt: '2026-09-26',
   readingMinutes: 9,
   author: 'Pocket Option Guide Team',

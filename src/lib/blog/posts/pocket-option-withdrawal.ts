@@ -7,7 +7,7 @@ export const pocketOptionWithdrawal: BlogPost = {
   slug: 'pocket-option-withdrawal',
   category: 'payments',
   cover: '/images/blog/pocket-option-withdrawal-guide.webp',
-  publishedAt: '2026-09-23',
+  publishedAt: '2026-09-20',
   updatedAt: '2026-09-26',
   readingMinutes: 8,
   author: 'Pocket Option Guide Team',

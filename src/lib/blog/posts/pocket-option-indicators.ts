@@ -7,8 +7,8 @@ export const pocketOptionIndicators: BlogPost = {
   slug: 'pocket-option-indicators',
   category: 'strategy',
   cover: '/images/blog/pocket-option-indicators.webp',
-  publishedAt: '2026-09-29',
-  updatedAt: '2026-09-29',
+  publishedAt: '2026-09-24',
+  updatedAt: '2026-09-24',
   readingMinutes: 9,
   author: 'Pocket Option Guide Team',
   content: {

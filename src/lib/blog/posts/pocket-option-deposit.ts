@@ -7,8 +7,8 @@ export const pocketOptionDeposit: BlogPost = {
   slug: 'pocket-option-deposit',
   category: 'payments',
   cover: '/images/blog/pocket-option-deposit-guide.webp',
-  publishedAt: '2026-09-27',
-  updatedAt: '2026-09-27',
+  publishedAt: '2026-09-22',
+  updatedAt: '2026-09-22',
   readingMinutes: 7,
   author: 'Pocket Option Guide Team',
   content: {

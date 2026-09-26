@@ -7,8 +7,8 @@ export const pocketOptionMobileApp: BlogPost = {
   slug: 'pocket-option-mobile-app',
   category: 'platform',
   cover: '/images/blog/pocket-option-mobile-app.webp',
-  publishedAt: '2026-10-01',
-  updatedAt: '2026-10-01',
+  publishedAt: '2026-09-26',
+  updatedAt: '2026-09-26',
   readingMinutes: 7,
   author: 'Pocket Option Guide Team',
   content: {

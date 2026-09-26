@@ -7,8 +7,8 @@ export const pocketOptionDemoAccount: BlogPost = {
   slug: 'pocket-option-demo-account',
   category: 'tutorial',
   cover: '/images/blog/pocket-option-demo-account.webp',
-  publishedAt: '2026-09-28',
-  updatedAt: '2026-09-28',
+  publishedAt: '2026-09-23',
+  updatedAt: '2026-09-23',
   readingMinutes: 7,
   author: 'Pocket Option Guide Team',
   content: {

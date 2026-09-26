@@ -7,8 +7,8 @@ export const pocketOptionRiskManagement: BlogPost = {
   slug: 'pocket-option-risk-management',
   category: 'strategy',
   cover: '/images/blog/pocket-option-risk-management.webp',
-  publishedAt: '2026-09-30',
-  updatedAt: '2026-09-30',
+  publishedAt: '2026-09-25',
+  updatedAt: '2026-09-25',
   readingMinutes: 8,
   author: 'Pocket Option Guide Team',
   content: {
