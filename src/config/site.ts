@@ -14,8 +14,4 @@ export const siteConfig = {
     'https://discord.gg/pocketbroker',
     'https://tiktok.com/@pocketbrokerglobal',
   ],
-  verification: {
-    google: 'B160svh70O099eiiqW3VQGfZv9XO1KEKdLI2WFMnm7M',
-    bing: '4F37DBE036B13EABA7F7C7625B77C3A7',
-  },
 } as const;

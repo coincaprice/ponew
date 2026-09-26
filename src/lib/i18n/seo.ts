@@ -19,7 +19,7 @@ function getOgAlternates(lang: string): string[] {
   return locales.filter(l => l !== lang).map(l => ogLocaleMap[l]);
 }
 
-/** Metadata shared by every root layout (icons, robots, verification, twitter defaults). */
+/** Metadata shared by every root layout (icons, robots, twitter defaults). */
 export function buildBaseMetadata(lang: string, title: string, description: string): Metadata {
   return {
     metadataBase: new URL(BASE_URL),
@@ -60,10 +60,6 @@ export function buildBaseMetadata(lang: string, title: string, description: stri
         { url: '/favicon.png', sizes: '200x200', type: 'image/png' },
       ],
       apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
-    },
-    verification: {
-      google: siteConfig.verification.google,
-      other: { 'msvalidate.01': siteConfig.verification.bing },
     },
   };
 }
