@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://pocketoption.dev/</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/about-us</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/about-us"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/about-us"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/about-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/about-us"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/quick-start</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/quick-start"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/free-demo</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/free-demo"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/assets</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/assets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/assets"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/assets"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/assets"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/contacts</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/contacts"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/contacts"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/contacts"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/contacts"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/privacy-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/privacy-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/payment-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/payment-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/terms-and-conditions</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/terms-and-conditions"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/aml-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/aml-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/risk-disclosure</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/risk-disclosure"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/about-us</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/about-us"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/about-us"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/about-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/about-us"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/quick-start</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/quick-start"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/free-demo</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/free-demo"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/assets</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/assets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/assets"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/assets"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/assets"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/contacts</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/contacts"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/contacts"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/contacts"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/contacts"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/about-us</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/about-us"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/about-us"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/about-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/about-us"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/quick-start</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/quick-start"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/free-demo</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/free-demo"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/assets</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/assets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/assets"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/assets"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/assets"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/contacts</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/contacts"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/contacts"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/contacts"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/contacts"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/about-us</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/about-us"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/about-us"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/about-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/about-us"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/quick-start</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/quick-start"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/free-demo</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/free-demo"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/assets</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/assets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/assets"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/assets"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/assets"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/contacts</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/contacts"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/contacts"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/contacts"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/contacts"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/about-us</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/about-us"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/about-us"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/about-us"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/about-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/about-us"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/quick-start</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/quick-start"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/quick-start"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/free-demo</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/free-demo"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/free-demo"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/assets</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/assets"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/assets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/assets"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/assets"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/assets"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/contacts</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/contacts"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/contacts"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/contacts"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/contacts"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/contacts"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/privacy-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/privacy-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/payment-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/payment-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/terms-and-conditions</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/terms-and-conditions"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/aml-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/aml-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/pt/risk-disclosure</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/risk-disclosure"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/privacy-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/privacy-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/payment-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/payment-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/terms-and-conditions</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/terms-and-conditions"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/aml-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/aml-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/es/risk-disclosure</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/risk-disclosure"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/privacy-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/privacy-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/payment-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/payment-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/terms-and-conditions</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/terms-and-conditions"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/aml-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/aml-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/ru/risk-disclosure</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/risk-disclosure"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/privacy-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/privacy-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/payment-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/payment-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/payment-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/terms-and-conditions</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/terms-and-conditions"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/aml-policy</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/aml-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/aml-policy"/>
+  </url>
+
+  <url>
+    <loc>https://pocketoption.dev/id/risk-disclosure</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pocketoption.dev/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pocketoption.dev/pt/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pocketoption.dev/es/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pocketoption.dev/ru/risk-disclosure"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pocketoption.dev/id/risk-disclosure"/>
+  </url>
+
+</urlset>
