@@ -1,9 +1,5 @@
 import type { NextConfig } from "next";
 
-const devOrigins = process.env.REPLIT_DEV_DOMAIN
-  ? [process.env.REPLIT_DEV_DOMAIN]
-  : [];
-
 const securityHeaders = [
   {
     key: "X-Frame-Options",
@@ -56,8 +52,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: devOrigins,
+  output: 'standalone',
   poweredByHeader: false,
+  reactStrictMode: true,
   async redirects() {
     return [
       { source: '/en', destination: '/', permanent: true },
