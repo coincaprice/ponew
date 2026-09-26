@@ -273,25 +273,26 @@ export function Header({ lang = 'en' }: Props) {
           </nav>
 
           <div className="relative shrink-0 border-t border-white/[0.07] bg-[#050b18]/80 px-5 pt-4 pb-[calc(env(safe-area-inset-bottom)+18px)] backdrop-blur-sm">
-            <p className="mb-3.5 text-[12.5px] leading-snug text-white/45">{t.drawer.tagline}</p>
-            <a
-              href={REGISTER_URL}
-              target="_blank"
-              rel={AFFILIATE_REL}
-              onClick={() => setMobileOpen(false)}
-              className="btn-brand h-12 w-full text-[15px]"
-            >
-              {t.nav.registration}
-            </a>
-            <a
-              href={LOGIN_URL}
-              target="_blank"
-              rel={AFFILIATE_REL}
-              onClick={() => setMobileOpen(false)}
-              className="btn-ghost-light mt-2.5 h-12 w-full text-[15px]"
-            >
-              {t.nav.logIn}
-            </a>
+            <div className="grid grid-cols-2 gap-2.5">
+              <a
+                href={LOGIN_URL}
+                target="_blank"
+                rel={AFFILIATE_REL}
+                onClick={() => setMobileOpen(false)}
+                className="btn-ghost-light h-12 text-[15px]"
+              >
+                {t.nav.logIn}
+              </a>
+              <a
+                href={REGISTER_URL}
+                target="_blank"
+                rel={AFFILIATE_REL}
+                onClick={() => setMobileOpen(false)}
+                className="btn-brand h-12 text-[15px]"
+              >
+                {t.drawer.signUp}
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ export type Dictionary = {
   drawer: {
     menu: string;
     language: string;
-    tagline: string;
+    signUp: string;
   };
   hero: {
     title: string;
@@ -47,7 +47,7 @@ const en: Dictionary = {
   drawer: {
     menu: 'Menu',
     language: 'Language',
-    tagline: 'Trade 100+ assets on Pocket Option from just $5.',
+    signUp: 'Sign up',
   },
   hero: {
     title: 'The Most User-Friendly Trading Interface',
@@ -81,7 +81,7 @@ const pt: Dictionary = {
   drawer: {
     menu: 'Menu',
     language: 'Idioma',
-    tagline: 'Negocie 100+ ativos na Pocket Option a partir de $5.',
+    signUp: 'Cadastrar',
   },
   hero: {
     title: 'A Interface de Trading Mais Fácil de Usar',
@@ -115,7 +115,7 @@ const es: Dictionary = {
   drawer: {
     menu: 'Menú',
     language: 'Idioma',
-    tagline: 'Opera 100+ activos en Pocket Option desde solo $5.',
+    signUp: 'Registrarse',
   },
   hero: {
     title: 'La Interfaz de Trading Más Fácil de Usar',
@@ -149,7 +149,7 @@ const ru: Dictionary = {
   drawer: {
     menu: 'Меню',
     language: 'Язык',
-    tagline: 'Торгуйте 100+ активами на Pocket Option от $5.',
+    signUp: 'Регистрация',
   },
   hero: {
     title: 'Самый удобный торговый интерфейс',
@@ -183,7 +183,7 @@ const id: Dictionary = {
   drawer: {
     menu: 'Menu',
     language: 'Bahasa',
-    tagline: 'Trading 100+ aset di Pocket Option mulai dari $5.',
+    signUp: 'Daftar',
   },
   hero: {
     title: 'Antarmuka Trading yang Paling Mudah Digunakan',
