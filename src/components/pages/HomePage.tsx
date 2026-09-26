@@ -99,7 +99,20 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
     { icon: Layers,         target: 100,   prefix: '',  suffix: '+' },
   ];
 
-  const PAYMENT_LOGOS = ['Visa', 'Mastercard', 'Pix', 'UPI', 'M-Pesa', 'bKash', 'Mercado Pago', 'Jeton', 'Perfect Money', 'USDT', 'Bitcoin', 'Ethereum'];
+  const PAYMENT_LOGOS: { name: string; file: string; h: number }[] = [
+    { name: 'Visa', file: 'visa', h: 44 },
+    { name: 'Mastercard', file: 'mastercard', h: 34 },
+    { name: 'Pix', file: 'pix', h: 34 },
+    { name: 'UPI', file: 'upi', h: 30 },
+    { name: 'Mercado Pago', file: 'mercadopago', h: 40 },
+    { name: 'Google Pay', file: 'googlepay', h: 40 },
+    { name: 'Apple Pay', file: 'applepay', h: 40 },
+    { name: 'Binance Pay', file: 'binance', h: 34 },
+    { name: 'Bitcoin', file: 'bitcoin', h: 34 },
+    { name: 'Ethereum', file: 'ethereum', h: 34 },
+    { name: 'Tether (USDT)', file: 'tether', h: 34 },
+    { name: 'Litecoin', file: 'litecoin', h: 34 },
+  ];
 
   const review = t.reviews.items[reviewIdx];
 
@@ -332,8 +345,13 @@ export function HomePage({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="lg:col-span-7">
               <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                {PAYMENT_LOGOS.map(name => (
-                  <div key={name} className="glass-dark flex h-[68px] items-center justify-center rounded-xl border border-white/10 px-3 text-center font-heading text-[14px] font-bold tracking-tight text-white/85">{name}</div>
+                {PAYMENT_LOGOS.map(logo => (
+                  <div key={logo.file} title={logo.name} className="flex flex-col items-center justify-center gap-2 rounded-xl bg-white px-4 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:-translate-y-0.5">
+                    <div className="flex h-[44px] items-center justify-center">
+                      <img src={`/images/payments/${logo.file}.svg`} alt={`${logo.name} — Pocket Option payment method`} loading="lazy" style={{ height: logo.h }} className="w-auto max-w-[120px] object-contain" />
+                    </div>
+                    <span className="text-[11.5px] font-semibold tracking-wide text-[#5A6A85]">{logo.name}</span>
+                  </div>
                 ))}
               </div>
             </div>
