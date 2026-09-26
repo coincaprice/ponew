@@ -24,8 +24,4 @@ export const siteConfig = {
     google: 'B160svh70O099eiiqW3VQGfZv9XO1KEKdLI2WFMnm7M',
     bing: '4F37DBE036B13EABA7F7C7625B77C3A7',
   },
-  analytics: {
-    gaId: 'G-C017JPRFX1',
-    statcounter: { project: 13211220, security: '826a071c' },
-  },
 } as const;

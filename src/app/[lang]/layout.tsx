@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Analytics } from '@/components/layout/Analytics';
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 import { fontVariables } from '@/styles/fonts';
 import { locales, isNonEnLocale, localeHreflang } from '@/lib/i18n/config';
@@ -34,7 +33,6 @@ export default async function LangLayout({ children, params }: Props) {
       <body>
         {children}
         <OrganizationJsonLd />
-        <Analytics />
       </body>
     </html>
   );

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Analytics } from '@/components/layout/Analytics';
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 import { fontVariables } from '@/styles/fonts';
 import { siteConfig } from '@/config/site';
@@ -17,7 +16,6 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
       <body>
         {children}
         <OrganizationJsonLd />
-        <Analytics />
       </body>
     </html>
   );

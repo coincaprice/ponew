@@ -103,7 +103,7 @@ const CONTENT: Record<string, LangContent> = {
       {
         num: '7', title: 'Análise & Publicidade',
         paragraphs: [
-          'Utilizamos o Google Analytics para compreender melhor como os utilizadores interagem com os nossos Serviços. O Google Analytics recolhe dados anonimizados, como a frequência com que os utilizadores visitam o nosso site e quais as páginas acedidas. Esta ferramenta recolhe o seu endereço IP na data da visita, mas não o seu nome nem qualquer informação de identificação pessoal. Não combinamos os dados do Google Analytics com informações que possam identificá-lo pessoalmente.',
+          'Não utilizamos scripts de análise ou rastreamento de terceiros neste site. O nosso servidor web pode manter registos técnicos padrão (como endereço IP, tipo de navegador e páginas solicitadas) apenas para manter os Serviços seguros e operacionais; esses registos não são combinados com informações que possam identificá-lo pessoalmente.',
           'Podemos utilizar tecnologias de publicidade para exibir anúncios — incluindo anúncios baseados em interesses e segmentados — quando acede ou utiliza os nossos Serviços. Podemos também envolver parceiros publicitários de terceiros e partilhar com eles informações não pessoais para medir o desempenho de campanhas publicitárias.',
           'Tem a opção de se recusar a participar em muitas redes de publicidade de terceiros. Note que a recusa não significa que deixará de ver anúncios — mas os anúncios que vir poderão ser menos relevantes para os seus interesses.',
         ],
@@ -196,7 +196,7 @@ const CONTENT: Record<string, LangContent> = {
       {
         num: '7', title: 'Análisis & Publicidad',
         paragraphs: [
-          'Usamos Google Analytics para entender mejor cómo los usuarios interactúan con nuestros Servicios. Google Analytics recopila datos anonimizados, como la frecuencia con la que los usuarios visitan nuestro sitio y qué páginas acceden. Esta herramienta recopila su dirección IP en la fecha de su visita, pero no su nombre ni ninguna información de identificación personal. No combinamos los datos de Google Analytics con información que pueda identificarle personalmente.',
+          'No utilizamos scripts de análisis ni de seguimiento de terceros en este sitio web. Nuestro servidor web puede conservar registros técnicos estándar (como dirección IP, tipo de navegador y páginas solicitadas) únicamente para mantener los Servicios seguros y operativos; estos registros no se combinan con información que pueda identificarle personalmente.',
           'Podemos emplear tecnologías de publicidad para mostrar anuncios — incluidos anuncios basados en intereses y dirigidos — cuando accede o usa nuestros Servicios. También podemos involucrar a socios publicitarios de terceros y compartir con ellos información no personal para medir el rendimiento de las campañas publicitarias.',
           'Tiene la opción de optar por no participar en muchas redes de publicidad de terceros. Tenga en cuenta que optar por no participar no significa que dejará de ver anuncios — pero los anuncios que vea pueden ser menos relevantes para sus intereses.',
         ],
@@ -289,7 +289,7 @@ const CONTENT: Record<string, LangContent> = {
       {
         num: '7', title: 'Аналитика и реклама',
         paragraphs: [
-          'Мы используем Google Analytics для лучшего понимания того, как пользователи взаимодействуют с нашими Услугами. Google Analytics собирает анонимизированные данные — например, как часто пользователи посещают наш сайт и какие страницы просматривают. Этот инструмент фиксирует ваш IP-адрес в дату посещения, но не ваше имя и не какие-либо персональные идентификаторы. Мы не совмещаем данные Google Analytics с информацией, позволяющей идентифицировать вас лично.',
+          'Мы не используем сторонние скрипты аналитики или отслеживания на этом сайте. Наш веб-сервер может хранить стандартные технические журналы (IP-адрес, тип браузера, запрошенные страницы) исключительно для обеспечения безопасности и работоспособности Услуг; эти журналы не совмещаются с информацией, позволяющей идентифицировать вас лично.',
           'Мы можем использовать рекламные технологии для показа объявлений — в том числе основанных на интересах и таргетированных — при использовании наших Услуг. Мы также можем привлекать сторонних рекламных партнёров и передавать им неличную информацию для оценки эффективности рекламных кампаний.',
           'Вы можете отказаться от участия во многих сторонних рекламных сетях. Обратите внимание: отказ не означает полного прекращения показа рекламы — объявления просто могут быть менее релевантными для вас.',
         ],
@@ -382,7 +382,7 @@ const CONTENT: Record<string, LangContent> = {
       {
         num: '7', title: 'Analitik & Periklanan',
         paragraphs: [
-          'Kami menggunakan Google Analytics untuk lebih memahami cara pengguna berinteraksi dengan Layanan kami. Google Analytics mengumpulkan data anonim seperti seberapa sering pengguna mengunjungi situs kami dan halaman mana yang mereka akses. Alat ini mengumpulkan alamat IP Anda pada tanggal kunjungan, tetapi bukan nama atau informasi yang dapat mengidentifikasi Anda secara pribadi.',
+          'Kami tidak menggunakan skrip analitik atau pelacakan pihak ketiga di situs ini. Server web kami dapat menyimpan log teknis standar (seperti alamat IP, jenis browser, dan halaman yang diminta) semata-mata untuk menjaga keamanan dan operasional Layanan; log ini tidak digabungkan dengan informasi yang dapat mengidentifikasi Anda secara pribadi.',
           'Kami dapat menggunakan teknologi periklanan untuk menayangkan iklan — termasuk iklan berbasis minat dan bertarget — saat Anda mengakses atau menggunakan Layanan kami. Kami juga dapat melibatkan mitra periklanan pihak ketiga dan berbagi informasi non-pribadi dengan mereka untuk membantu mengukur kinerja kampanye iklan.',
           'Anda memiliki opsi untuk memilih keluar dari banyak jaringan periklanan pihak ketiga. Perlu diperhatikan bahwa memilih keluar tidak berarti Anda tidak akan melihat iklan sama sekali — tetapi iklan yang Anda lihat mungkin kurang relevan dengan minat Anda.',
         ],

@@ -68,9 +68,9 @@ const sections = [
   },
   {
     num: '7',
-    title: 'Analytics & Advertising',
+    title: 'Analytics & Tracking',
     paragraphs: [
-      'We use Google Analytics to better understand how users interact with our Services. Google Analytics collects anonymized data such as how often users visit our site, which pages they access, and other aggregated usage metrics. This tool collects your IP address on the date of your visit, but not your name or any personally identifiable information. We do not combine Google Analytics data with any information that could identify you personally.',
+      'We do not use third-party analytics or tracking scripts on this website. Our web server may keep standard technical logs (such as IP address, browser type and pages requested) solely to keep the Services secure and operational; these logs are not combined with any information that could identify you personally.',
       'We may employ advertising technologies to deliver ads — including interest-based and targeted advertisements — when you access or use our Services. These technologies help tailor ad content to better align with your preferences and online behavior. We may also engage third-party advertising partners and share with them non-personal information to assist in measuring ad campaign performance and retargeting users.',
       'You have the option to opt out of many third-party advertising networks. Please note that opting out does not mean you will stop seeing ads altogether — but the ads you see may be less relevant to your interests.',
     ],
