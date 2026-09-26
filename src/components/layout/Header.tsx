@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { X, ChevronDown, Zap, PlayCircle, Info, BarChart2, Newspaper, ChevronRight, Globe } from 'lucide-react';
+import { X, ChevronDown, Zap, PlayCircle, Info, BarChart2, Newspaper, ChevronRight } from 'lucide-react';
 import { Logo } from '@/components/layout/Logo';
 import { REGISTER_URL, LOGIN_URL, AFFILIATE_REL } from '@/config/links';
 import { getDictionary } from '@/lib/i18n/dictionaries';
@@ -38,7 +38,6 @@ export function Header({ lang = 'en' }: Props) {
   const locale = lang as Locale;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [mobileLangOpen, setMobileLangOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
@@ -182,107 +181,105 @@ export function Header({ lang = 'en' }: Props) {
         </div>
       </div>
 
-      {/* Mobile Drawer — full-screen overlay + slide panel */}
+      {/* Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-[200] overflow-hidden lg:hidden transition-all duration-300 ${mobileOpen ? 'visible' : 'invisible pointer-events-none'}`}
+        className={`fixed inset-0 z-[200] lg:hidden ${mobileOpen ? 'visible' : 'invisible pointer-events-none'}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label={t.drawer.menu}
       >
-        {/* Backdrop */}
         <div
-          className={`absolute inset-0 transition-opacity duration-300 ${mobileOpen ? 'opacity-100' : 'opacity-0'}`}
-          style={{ background: 'rgba(2,8,20,0.75)', backdropFilter: 'blur(6px)' }}
+          className={`absolute inset-0 bg-[#020814]/70 backdrop-blur-md transition-opacity duration-300 ${mobileOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={() => setMobileOpen(false)}
         />
 
-        {/* Panel */}
         <div
-          className={`absolute top-0 right-0 bottom-0 w-[300px] flex flex-col transition-transform duration-300 ease-in-out ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}
-          style={{ background: 'linear-gradient(160deg, #0b1628 0%, #071020 100%)', borderLeft: '1px solid rgba(255,255,255,0.07)', boxShadow: '-20px 0 60px rgba(0,0,0,0.6)' }}
+          className={`absolute inset-y-0 right-0 flex w-[min(88vw,380px)] flex-col overflow-hidden border-l border-white/[0.08] bg-[#070f1f] shadow-[-30px_0_80px_rgba(0,0,0,0.65)] transition-transform duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)] ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
-          {/* Panel Header */}
-          <div style={{ padding: '20px 20px 18px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+          <div aria-hidden className="pointer-events-none absolute -top-32 -right-24 h-72 w-72 rounded-full bg-[#0099FA]/25 blur-[90px]" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-40 -left-24 h-80 w-80 rounded-full bg-[#002ED9]/25 blur-[100px]" />
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
+
+          <div className="relative flex shrink-0 items-center justify-between px-5 pt-[calc(env(safe-area-inset-top)+18px)] pb-4">
             <Logo href={lp('')} size="sm" onClick={() => setMobileOpen(false)} />
             <button
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
-              style={{ width: '34px', height: '34px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.6)', flexShrink: 0 }}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-white/70 transition-colors hover:bg-white/10 hover:text-white"
             >
-              <X className="w-4 h-4" />
+              <X className="h-[18px] w-[18px]" />
             </button>
           </div>
 
-          {/* Nav Links */}
-          <nav style={{ padding: '8px 12px', flex: 1, overflowY: 'auto' }}>
-            {NAV_LINKS.map(({ label, href, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                onClick={() => setMobileOpen(false)}
-                style={{ display: 'flex', alignItems: 'center', gap: '14px', padding: '13px 12px', borderRadius: '10px', textDecoration: 'none', transition: 'background 0.15s', marginBottom: '2px' }}
-                className="group hover:bg-white/[0.06]"
-              >
-                <span style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(0,153,250,0.12)', border: '1px solid rgba(0,153,250,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Icon className="w-4 h-4" style={{ color: '#0099FA' }} />
-                </span>
-                <span style={{ flex: 1, fontSize: '15px', fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>{label}</span>
-                <ChevronRight className="w-4 h-4" style={{ color: 'rgba(255,255,255,0.25)' }} />
-              </a>
-            ))}
-
-            {/* Divider */}
-            <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)', margin: '10px 0' }} />
-
-            {/* Language Switcher */}
-            <div style={{ marginBottom: '2px' }}>
-              <button
-                onClick={() => setMobileLangOpen(o => !o)}
-                style={{ display: 'flex', alignItems: 'center', gap: '14px', width: '100%', padding: '13px 12px', borderRadius: '10px', background: 'transparent', border: 'none', cursor: 'pointer', transition: 'background 0.15s' }}
-                className="hover:bg-white/[0.06]"
-              >
-                <span style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Globe className="w-4 h-4" style={{ color: 'rgba(255,255,255,0.5)' }} />
-                </span>
-                <span style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <FlagImg country={currentLocaleInfo.country} size={20} />
-                  <span style={{ fontSize: '15px', fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>{localeNames[locale as Locale]}</span>
-                </span>
-                <ChevronDown className="w-4 h-4" style={{ color: 'rgba(255,255,255,0.3)', transform: mobileLangOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} />
-              </button>
-
-              {/* Lang dropdown */}
-              <div
-                style={{ overflow: 'hidden', transition: 'max-height 0.25s ease, opacity 0.2s', maxHeight: mobileLangOpen ? '300px' : '0', opacity: mobileLangOpen ? 1 : 0 }}
-              >
-                <div style={{ padding: '4px 8px 8px', display: 'flex', flexDirection: 'column', gap: '1px' }}>
-                  {LOCALES.map(({ code, country }) => (
-                    <a
-                      key={code}
-                      href={buildLangUrl(code)}
-                      onClick={() => { setMobileLangOpen(false); setMobileOpen(false); }}
-                      style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 12px', borderRadius: '8px', textDecoration: 'none', background: code === locale ? 'rgba(0,153,250,0.1)' : 'transparent', border: code === locale ? '1px solid rgba(0,153,250,0.2)' : '1px solid transparent' }}
-                      className={code !== locale ? 'hover:bg-white/[0.05]' : ''}
-                    >
-                      <FlagImg country={country} size={20} />
-                      <span style={{ flex: 1, fontSize: '14px', fontWeight: 600, color: code === locale ? '#fff' : 'rgba(255,255,255,0.6)' }}>{localeNames[code]}</span>
-                      {code === locale && (
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                          <path d="M3 8l3.5 3.5L13 4.5" stroke="#0099FA" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
-                    </a>
-                  ))}
-                </div>
+          <div className="relative mx-5 grid shrink-0 grid-cols-3 divide-x divide-white/[0.08] rounded-2xl border border-white/[0.08] bg-white/[0.04]">
+            {[
+              { v: '$5', l: t.drawer.minDeposit },
+              { v: '92%', l: t.drawer.payout },
+              { v: '$50k', l: t.drawer.demo },
+            ].map(({ v, l }) => (
+              <div key={l} className="px-2 py-3 text-center">
+                <div className="font-heading text-[17px] font-extrabold leading-none tracking-tight text-white">{v}</div>
+                <div className="mt-1.5 text-[10.5px] font-semibold uppercase tracking-[0.06em] leading-tight text-white/45">{l}</div>
               </div>
+            ))}
+          </div>
+
+          <nav className="relative flex-1 overflow-y-auto px-3 pt-4 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="mb-2 px-3 font-heading text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/35">{t.drawer.menu}</div>
+            <ul className="space-y-0.5">
+              {NAV_LINKS.map(({ label, href, Icon }, i) => {
+                const active = pathname === href || (href !== lp('') && pathname?.startsWith(`${href}/`));
+                return (
+                  <li
+                    key={label}
+                    className={`transition-all duration-500 ${mobileOpen ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'}`}
+                    style={{ transitionDelay: mobileOpen ? `${80 + i * 45}ms` : '0ms' }}
+                  >
+                    <a
+                      href={href}
+                      onClick={() => setMobileOpen(false)}
+                      className={`group flex items-center gap-3.5 rounded-xl px-3 py-2.5 transition-colors ${active ? 'bg-white/[0.07]' : 'hover:bg-white/[0.05]'}`}
+                    >
+                      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors ${active ? 'border-[#0099FA]/50 bg-[#0099FA]/20' : 'border-white/[0.08] bg-white/[0.04] group-hover:border-[#0099FA]/30 group-hover:bg-[#0099FA]/10'}`}>
+                        <Icon className="h-[18px] w-[18px] text-[#5fb8ff]" strokeWidth={1.8} />
+                      </span>
+                      <span className="flex-1 font-heading text-[15.5px] font-semibold tracking-tight text-white/90">{label}</span>
+                      <ChevronRight className="h-4 w-4 text-white/25 transition-transform group-hover:translate-x-0.5 group-hover:text-white/50" />
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="mt-5 mb-2 px-3 font-heading text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/35">{t.drawer.language}</div>
+            <div className="grid grid-cols-2 gap-1.5 px-1">
+              {LOCALES.map(({ code, country }) => {
+                const active = code === locale;
+                return (
+                  <a
+                    key={code}
+                    href={buildLangUrl(code)}
+                    onClick={() => setMobileOpen(false)}
+                    aria-current={active ? 'true' : undefined}
+                    className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 text-[13.5px] font-semibold transition-colors ${active ? 'border-[#0099FA]/50 bg-[#0099FA]/15 text-white' : 'border-white/[0.07] bg-white/[0.03] text-white/65 hover:bg-white/[0.07] hover:text-white'}`}
+                  >
+                    <FlagImg country={country} size={18} />
+                    <span className="truncate">{localeNames[code]}</span>
+                    {active && <span className="ml-auto h-1.5 w-1.5 shrink-0 rounded-full bg-[#0099FA] shadow-[0_0_8px_#0099FA]" />}
+                  </a>
+                );
+              })}
             </div>
           </nav>
 
-          {/* Bottom CTAs */}
-          <div style={{ padding: '16px', borderTop: '1px solid rgba(255,255,255,0.06)', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div className="relative shrink-0 border-t border-white/[0.07] bg-[#050b18]/80 px-5 pt-4 pb-[calc(env(safe-area-inset-bottom)+18px)] backdrop-blur-sm">
+            <p className="mb-3.5 text-[12.5px] leading-snug text-white/45">{t.drawer.tagline}</p>
             <a
               href={REGISTER_URL}
               target="_blank"
               rel={AFFILIATE_REL}
               onClick={() => setMobileOpen(false)}
-              style={{ display: 'block', textAlign: 'center', padding: '13px 16px', borderRadius: '6px', background: 'linear-gradient(90deg, #0099FA, #002ED9)', color: '#fff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', letterSpacing: '0.02em', boxShadow: '0 4px 20px rgba(0,153,250,0.3)', fontFamily: 'var(--font-heading)' }}
+              className="btn-brand h-12 w-full text-[15px]"
             >
               {t.nav.registration}
             </a>
@@ -291,7 +288,7 @@ export function Header({ lang = 'en' }: Props) {
               target="_blank"
               rel={AFFILIATE_REL}
               onClick={() => setMobileOpen(false)}
-              style={{ display: 'block', textAlign: 'center', padding: '12px 16px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.15)', color: '#000000', fontSize: '15px', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-heading)', background: '#ffffff' }}
+              className="btn-ghost-light mt-2.5 h-12 w-full text-[15px]"
             >
               {t.nav.logIn}
             </a>

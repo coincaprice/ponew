@@ -10,6 +10,14 @@ export type Dictionary = {
     logIn: string;
     registration: string;
   };
+  drawer: {
+    menu: string;
+    language: string;
+    minDeposit: string;
+    payout: string;
+    demo: string;
+    tagline: string;
+  };
   hero: {
     title: string;
     subtitle: string;
@@ -38,6 +46,14 @@ const en: Dictionary = {
     blog: 'Blog',
     logIn: 'Log In',
     registration: 'Registration',
+  },
+  drawer: {
+    menu: 'Menu',
+    language: 'Language',
+    minDeposit: 'Min. deposit',
+    payout: 'Payout up to',
+    demo: 'Free demo',
+    tagline: 'Trade 100+ assets on Pocket Option from just $5.',
   },
   hero: {
     title: 'The Most User-Friendly Trading Interface',
@@ -68,6 +84,14 @@ const pt: Dictionary = {
     logIn: 'Entrar',
     registration: 'Cadastro',
   },
+  drawer: {
+    menu: 'Menu',
+    language: 'Idioma',
+    minDeposit: 'Depósito mín.',
+    payout: 'Payout até',
+    demo: 'Demo grátis',
+    tagline: 'Negocie 100+ ativos na Pocket Option a partir de $5.',
+  },
   hero: {
     title: 'A Interface de Trading Mais Fácil de Usar',
     subtitle: 'Negocie mais de 100 ativos globais, incluindo forex, criptomoedas, ações e commodities no Pocket Option. Comece a negociar online com uma plataforma rápida, segura e fácil de usar.',
@@ -96,6 +120,14 @@ const es: Dictionary = {
     blog: 'Blog',
     logIn: 'Iniciar sesión',
     registration: 'Registro',
+  },
+  drawer: {
+    menu: 'Menú',
+    language: 'Idioma',
+    minDeposit: 'Depósito mín.',
+    payout: 'Pago hasta',
+    demo: 'Demo gratis',
+    tagline: 'Opera 100+ activos en Pocket Option desde solo $5.',
   },
   hero: {
     title: 'La Interfaz de Trading Más Fácil de Usar',
@@ -126,6 +158,14 @@ const ru: Dictionary = {
     logIn: 'Войти',
     registration: 'Регистрация',
   },
+  drawer: {
+    menu: 'Меню',
+    language: 'Язык',
+    minDeposit: 'Мин. депозит',
+    payout: 'Выплата до',
+    demo: 'Бесплатное демо',
+    tagline: 'Торгуйте 100+ активами на Pocket Option от $5.',
+  },
   hero: {
     title: 'Самый удобный торговый интерфейс',
     subtitle: 'Торгуйте более чем 100 глобальными активами, включая форекс, криптовалюту, акции и сырьё на Pocket Option. Начните торговать онлайн на быстрой, безопасной и простой платформе.',
@@ -154,6 +194,14 @@ const id: Dictionary = {
     blog: 'Blog',
     logIn: 'Masuk',
     registration: 'Daftar',
+  },
+  drawer: {
+    menu: 'Menu',
+    language: 'Bahasa',
+    minDeposit: 'Deposit min.',
+    payout: 'Payout hingga',
+    demo: 'Demo gratis',
+    tagline: 'Trading 100+ aset di Pocket Option mulai dari $5.',
   },
   hero: {
     title: 'Antarmuka Trading yang Paling Mudah Digunakan',
