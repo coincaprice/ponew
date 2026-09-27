@@ -12,12 +12,26 @@ import { pocketOptionPromoCode } from './posts/pocket-option-promo-code';
 import { pocketOptionLoginRegistration } from './posts/pocket-option-login-registration';
 import { pocketOptionStrategies } from './posts/pocket-option-strategies';
 import { pocketOptionAccountVerification } from './posts/pocket-option-account-verification';
+import { pocketOptionSocialTrading } from './posts/pocket-option-social-trading';
+import { pocketOptionTournaments } from './posts/pocket-option-tournaments';
+import { pocketOptionVsQuotex } from './posts/pocket-option-vs-quotex';
+import { pocketOptionVsIqOption } from './posts/pocket-option-vs-iq-option';
+import { pocketOptionPayoutAndAssets } from './posts/pocket-option-payout-and-assets';
+import { pocketOptionSignals } from './posts/pocket-option-signals';
+import { pocketOptionOtcTrading } from './posts/pocket-option-otc-trading';
 
 export const blogPosts: BlogPost[] = [
   pocketOptionReview,
   pocketOptionPromoCode,
   pocketOptionLoginRegistration,
   pocketOptionAccountVerification,
+  pocketOptionSocialTrading,
+  pocketOptionTournaments,
+  pocketOptionVsQuotex,
+  pocketOptionVsIqOption,
+  pocketOptionPayoutAndAssets,
+  pocketOptionSignals,
+  pocketOptionOtcTrading,
   pocketOptionStrategies,
   pocketOptionMobileApp,
   pocketOptionRiskManagement,
