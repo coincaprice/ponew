@@ -116,7 +116,7 @@ export function BlogPostPage({ lang = 'en', post }: { lang?: string; post: BlogP
       <main className="flex-1 flex flex-col">
 
       {/* HERO */}
-      <section className="relative overflow-hidden pt-[110px] md:pt-[150px] pb-[120px] md:pb-[200px] text-white" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
+      <section className="relative overflow-hidden pt-[110px] md:pt-[150px] pb-[100px] md:pb-[200px] text-white" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
         <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-[#0099FA]/20 blur-[140px]" />
         <div className="absolute inset-0 grid-noise pointer-events-none" />
         <div className="container-x relative">
@@ -143,8 +143,8 @@ export function BlogPostPage({ lang = 'en', post }: { lang?: string; post: BlogP
       {/* BODY */}
       <section className="bg-white pb-20 lg:pb-28">
         <div className="container-x">
-          <div className="-mt-[90px] md:-mt-[160px] relative z-10 overflow-hidden rounded-[24px] md:rounded-[28px] border border-white/10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
-            <Image src={post.cover} alt={c.coverAlt} width={1840} height={700} priority sizes="(min-width: 1280px) 1200px, 100vw" className="w-full h-auto aspect-[1840/700] object-cover" />
+          <div className="-mt-[70px] md:-mt-[160px] relative z-10 overflow-hidden rounded-[20px] md:rounded-[28px] border border-white/10 bg-[#0A2540] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
+            <Image src={post.cover} alt={c.coverAlt} width={1840} height={700} priority sizes="(min-width: 1280px) 1200px, 100vw" className="w-full h-auto aspect-[16/10] sm:aspect-[16/8] md:aspect-[1840/700] object-cover" />
           </div>
           <p className="mt-5 flex items-start gap-2 text-[13px] leading-relaxed text-[#66748A]"><Info className="mt-0.5 h-4 w-4 shrink-0 text-[#0077cc]" />{t.affiliateNotice}</p>
 
