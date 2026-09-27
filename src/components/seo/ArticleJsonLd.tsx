@@ -11,13 +11,20 @@ interface Props {
   datePublished: string;
   dateModified: string;
   author: string;
+  rating?: { value: number; best: number };
 }
 
-export function ArticleJsonLd({ lang, slug, headline, description, image, datePublished, dateModified, author }: Props) {
+export function ArticleJsonLd({ lang, slug, headline, description, image, datePublished, dateModified, author, rating }: Props) {
   const url = `${BASE_URL}${getLocalePath(lang as Locale, slug)}`;
   const schema = {
+    ...(rating
+      ? {
+          itemReviewed: { '@type': 'FinancialService', name: 'Pocket Option', url: 'https://pocketoption.com' },
+          reviewRating: { '@type': 'Rating', ratingValue: rating.value, bestRating: rating.best, worstRating: 1 },
+        }
+      : {}),
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': rating ? 'Review' : 'Article',
     headline,
     description,
     image: [`${BASE_URL}${image}`],

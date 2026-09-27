@@ -33,6 +33,7 @@ export type BlogPost = {
   updatedAt: string;
   readingMinutes: number;
   author: string;
+  rating?: { value: number; best: number };
   content: Record<Locale, BlogPostContent>;
 };
 

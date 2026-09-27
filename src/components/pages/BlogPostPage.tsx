@@ -110,7 +110,7 @@ export function BlogPostPage({ lang = 'en', post }: { lang?: string; post: BlogP
   return (
     <div className="min-h-screen bg-[#080F20] flex flex-col font-sans">
       <BreadcrumbJsonLd lang={locale} slug={slug} homeName={t.home} pageName={c.title} parent={{ slug: 'blog', name: t.breadcrumb }} />
-      <ArticleJsonLd lang={locale} slug={slug} headline={c.title} description={c.metaDescription} image={post.cover} datePublished={post.publishedAt} dateModified={post.updatedAt} author={post.author} />
+      <ArticleJsonLd lang={locale} slug={slug} headline={c.title} description={c.metaDescription} image={post.cover} datePublished={post.publishedAt} dateModified={post.updatedAt} author={post.author} rating={post.rating} />
       <FaqJsonLd items={c.faq} />
       <Header lang={locale} />
       <main className="flex-1 flex flex-col">

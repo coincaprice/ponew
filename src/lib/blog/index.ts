@@ -7,8 +7,18 @@ import { pocketOptionDemoAccount } from './posts/pocket-option-demo-account';
 import { pocketOptionIndicators } from './posts/pocket-option-indicators';
 import { pocketOptionRiskManagement } from './posts/pocket-option-risk-management';
 import { pocketOptionMobileApp } from './posts/pocket-option-mobile-app';
+import { pocketOptionReview } from './posts/pocket-option-review';
+import { pocketOptionPromoCode } from './posts/pocket-option-promo-code';
+import { pocketOptionLoginRegistration } from './posts/pocket-option-login-registration';
+import { pocketOptionStrategies } from './posts/pocket-option-strategies';
+import { pocketOptionAccountVerification } from './posts/pocket-option-account-verification';
 
 export const blogPosts: BlogPost[] = [
+  pocketOptionReview,
+  pocketOptionPromoCode,
+  pocketOptionLoginRegistration,
+  pocketOptionAccountVerification,
+  pocketOptionStrategies,
   pocketOptionMobileApp,
   pocketOptionRiskManagement,
   pocketOptionIndicators,
