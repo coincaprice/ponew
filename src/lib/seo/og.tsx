@@ -53,6 +53,13 @@ export const OG_COPY: Record<string, Record<Locale, OgCopy>> = {
     ru: { eyebrow: 'Активы и расписание', title: 'Активы и расписание торгов Pocket Option', subtitle: 'Форекс, акции, крипто, сырьё, индексы — выплаты до 92%' },
     id: { eyebrow: 'Aset & jadwal', title: 'Aset dan jadwal trading Pocket Option', subtitle: 'Forex, saham, kripto, komoditas, indeks — payout hingga 92%' },
   },
+  'payment-methods': {
+    en: { eyebrow: 'Payment methods', title: 'Pocket Option payment methods: deposit & withdrawal', subtitle: 'Cards, bank transfers, e-wallets, crypto and local methods — from $5' },
+    pt: { eyebrow: 'Métodos de pagamento', title: 'Métodos de pagamento Pocket Option: depósito e saque', subtitle: 'Cartões, transferências, carteiras digitais, cripto e PIX — a partir de $5' },
+    es: { eyebrow: 'Métodos de pago', title: 'Métodos de pago Pocket Option: depósito y retiro', subtitle: 'Tarjetas, transferencias, billeteras, cripto y métodos locales — desde $5' },
+    ru: { eyebrow: 'Способы оплаты', title: 'Способы оплаты Pocket Option: пополнение и вывод', subtitle: 'Карты, переводы, кошельки, криптовалюта и локальные методы — от $5' },
+    id: { eyebrow: 'Metode pembayaran', title: 'Metode pembayaran Pocket Option: deposit & penarikan', subtitle: 'Kartu, transfer bank, e-wallet, kripto, QRIS & OVO — mulai $5' },
+  },
   contacts: {
     en: { eyebrow: 'Support', title: 'Pocket Option support: help desk, chat and social', subtitle: 'Get help with deposits, withdrawals and verification 24/7' },
     pt: { eyebrow: 'Suporte', title: 'Suporte Pocket Option: central de ajuda, chat e redes', subtitle: 'Ajuda com depósitos, saques e verificação 24/7' },

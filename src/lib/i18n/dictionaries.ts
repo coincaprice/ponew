@@ -6,6 +6,7 @@ export type Dictionary = {
     freeDemo: string;
     aboutUs: string;
     tradingAssets: string;
+    paymentMethods: string;
     blog: string;
     logIn: string;
     registration: string;
@@ -40,6 +41,7 @@ const en: Dictionary = {
     freeDemo: 'Free demo',
     aboutUs: 'About us',
     tradingAssets: 'Trading assets',
+    paymentMethods: 'Payment methods',
     blog: 'Blog',
     logIn: 'Log In',
     registration: 'Registration',
@@ -74,6 +76,7 @@ const pt: Dictionary = {
     freeDemo: 'Demo grátis',
     aboutUs: 'Sobre nós',
     tradingAssets: 'Ativos para negociar',
+    paymentMethods: 'Métodos de pagamento',
     blog: 'Blog',
     logIn: 'Entrar',
     registration: 'Cadastro',
@@ -108,6 +111,7 @@ const es: Dictionary = {
     freeDemo: 'Demo gratis',
     aboutUs: 'Sobre nosotros',
     tradingAssets: 'Activos de trading',
+    paymentMethods: 'Métodos de pago',
     blog: 'Blog',
     logIn: 'Iniciar sesión',
     registration: 'Registro',
@@ -142,6 +146,7 @@ const ru: Dictionary = {
     freeDemo: 'Демо счёт',
     aboutUs: 'О нас',
     tradingAssets: 'Торговые активы',
+    paymentMethods: 'Способы оплаты',
     blog: 'Блог',
     logIn: 'Войти',
     registration: 'Регистрация',
@@ -176,6 +181,7 @@ const id: Dictionary = {
     freeDemo: 'Demo gratis',
     aboutUs: 'Tentang kami',
     tradingAssets: 'Aset trading',
+    paymentMethods: 'Metode pembayaran',
     blog: 'Blog',
     logIn: 'Masuk',
     registration: 'Daftar',
