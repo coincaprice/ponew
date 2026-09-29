@@ -22,6 +22,7 @@ export type Dictionary = {
   };
   footer: {
     tagline: string;
+    social: string;
     riskWarning: string;
     riskText: string;
     brokerage: string;
@@ -57,6 +58,7 @@ const en: Dictionary = {
   },
   footer: {
     tagline: 'The most user-friendly trading platform',
+    social: 'Pocket Option on social media',
     riskWarning: 'RISK WARNING:',
     riskText: 'Investing in financial products involves risks. Past performance does not guarantee future returns, and values may fluctuate due to market conditions and changes in underlying assets. Any forecasts or illustrations are for reference only and are not guarantees. This website does not constitute an invitation or recommendation to invest. Before investing, seek advice from financial, legal, and tax professionals, and assess whether the product suits your goals, risk tolerance, and circumstances.',
     brokerage: 'All brokerage activity on this website provided by FX Trading LLC.',
@@ -92,6 +94,7 @@ const pt: Dictionary = {
   },
   footer: {
     tagline: 'A plataforma de trading mais fácil de usar',
+    social: 'Pocket Option nas redes sociais',
     riskWarning: 'AVISO DE RISCO:',
     riskText: 'Investir em produtos financeiros envolve riscos. O desempenho passado não garante retornos futuros, e os valores podem oscilar devido às condições de mercado e a mudanças nos ativos subjacentes. Quaisquer previsões ou ilustrações são apenas para referência e não constituem garantias. Este site não constitui um convite ou recomendação para investir. Antes de investir, procure orientação de profissionais financeiros, jurídicos e fiscais e avalie se o produto é adequado aos seus objetivos, tolerância ao risco e circunstâncias.',
     brokerage: 'Toda a atividade de corretagem neste site é fornecida pela FX Trading LLC.',
@@ -127,6 +130,7 @@ const es: Dictionary = {
   },
   footer: {
     tagline: 'La plataforma de trading más fácil de usar',
+    social: 'Pocket Option en redes sociales',
     riskWarning: 'ADVERTENCIA DE RIESGO:',
     riskText: 'Invertir en productos financieros implica riesgos. El rendimiento pasado no garantiza resultados futuros, y los valores pueden fluctuar debido a las condiciones del mercado y a cambios en los activos subyacentes. Cualquier pronóstico o ilustración es solo de referencia y no constituye una garantía. Este sitio web no constituye una invitación ni una recomendación para invertir. Antes de invertir, busque asesoramiento de profesionales financieros, legales y fiscales, y evalúe si el producto se ajusta a sus objetivos, tolerancia al riesgo y circunstancias.',
     brokerage: 'Toda la actividad de corretaje en este sitio web es proporcionada por FX Trading LLC.',
@@ -162,6 +166,7 @@ const ru: Dictionary = {
   },
   footer: {
     tagline: 'Самая удобная торговая платформа',
+    social: 'Pocket Option в соцсетях',
     riskWarning: 'ПРЕДУПРЕЖДЕНИЕ О РИСКАХ:',
     riskText: 'Инвестирование в финансовые продукты связано с рисками. Прошлые результаты не гарантируют будущую доходность, а стоимость может колебаться из‑за рыночных условий и изменений базовых активов. Любые прогнозы или иллюстрации приведены только для справки и не являются гарантией. Этот сайт не является приглашением или рекомендацией инвестировать. Перед инвестированием проконсультируйтесь с финансовыми, юридическими и налоговыми специалистами и оцените, соответствует ли продукт вашим целям, толерантности к риску и обстоятельствам.',
     brokerage: 'Вся брокерская деятельность на этом сайте осуществляется FX Trading LLC.',
@@ -197,6 +202,7 @@ const id: Dictionary = {
   },
   footer: {
     tagline: 'Platform trading paling mudah digunakan',
+    social: 'Pocket Option di media sosial',
     riskWarning: 'PERINGATAN RISIKO:',
     riskText: 'Berinvestasi pada produk keuangan mengandung risiko. Kinerja masa lalu tidak menjamin hasil di masa depan, dan nilai dapat berfluktuasi karena kondisi pasar serta perubahan aset dasar. Prakiraan atau ilustrasi apa pun hanya sebagai referensi dan bukan jaminan. Situs web ini bukan merupakan ajakan atau rekomendasi untuk berinvestasi. Sebelum berinvestasi, mintalah saran dari profesional keuangan, hukum, dan pajak, serta nilai apakah produk ini sesuai dengan tujuan, toleransi risiko, dan kondisi Anda.',
     brokerage: 'Seluruh aktivitas perantara (brokerage) di situs web ini disediakan oleh FX Trading LLC.',

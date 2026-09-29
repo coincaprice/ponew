@@ -1,5 +1,6 @@
 import { AlertTriangle, Info } from 'lucide-react';
 import { Logo } from '@/components/layout/Logo';
+import { SocialLinks } from '@/components/layout/SocialLinks';
 import { getDictionary } from '@/lib/i18n/dictionaries';
 import { getLocalePath } from '@/lib/i18n/config';
 import type { Locale } from '@/lib/i18n/config';
@@ -44,6 +45,7 @@ export function Footer({ lang = 'en' }: Props) {
           <div>
             <Logo href={lp('')} />
             <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/60">{t.footer.tagline}</p>
+            <SocialLinks label={t.footer.social} />
           </div>
 
           <nav aria-label="Legal" className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
