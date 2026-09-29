@@ -19,8 +19,18 @@ import { pocketOptionVsIqOption } from './posts/pocket-option-vs-iq-option';
 import { pocketOptionPayoutAndAssets } from './posts/pocket-option-payout-and-assets';
 import { pocketOptionSignals } from './posts/pocket-option-signals';
 import { pocketOptionOtcTrading } from './posts/pocket-option-otc-trading';
+import { isPocketOptionLegit } from './posts/is-pocket-option-legit';
+import { pocketOptionMinimumDeposit } from './posts/pocket-option-minimum-deposit';
+import { pocketOptionApkDownload } from './posts/pocket-option-apk-download';
+import { pocketOptionCountries } from './posts/pocket-option-countries';
+import { pocketOptionFees } from './posts/pocket-option-fees';
 
 export const blogPosts: BlogPost[] = [
+  isPocketOptionLegit,
+  pocketOptionMinimumDeposit,
+  pocketOptionApkDownload,
+  pocketOptionCountries,
+  pocketOptionFees,
   pocketOptionReview,
   pocketOptionPromoCode,
   pocketOptionLoginRegistration,
