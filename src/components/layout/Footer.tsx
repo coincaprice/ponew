@@ -10,6 +10,7 @@ type Props = { lang?: string };
 const FOOTER_LABELS: Record<string, Record<Locale, string>> = {
   blog: { en: 'Blog', pt: 'Blog', es: 'Blog', ru: 'Блог', id: 'Blog' },
   paymentMethods: { en: 'Payment methods', pt: 'Métodos de pagamento', es: 'Métodos de pago', ru: 'Способы оплаты', id: 'Metode pembayaran' },
+  socialTrading: { en: 'Social trading', pt: 'Social trading', es: 'Social trading', ru: 'Социальный трейдинг', id: 'Social trading' },
   contacts: { en: 'Contacts', pt: 'Contatos', es: 'Contactos', ru: 'Контакты', id: 'Kontak' },
   terms: { en: 'Terms and Conditions', pt: 'Termos e Condições', es: 'Términos y Condiciones', ru: 'Условия использования', id: 'Syarat dan Ketentuan' },
   aml: { en: 'AML and KYC policy', pt: 'Política AML e KYC', es: 'Política AML y KYC', ru: 'Политика ПОД/ФТ и KYC', id: 'Kebijakan AML dan KYC' },
@@ -27,6 +28,7 @@ export function Footer({ lang = 'en' }: Props) {
   const NAV_LINKS = [
     { label: label('blog'), href: lp('blog') },
     { label: label('paymentMethods'), href: lp('payment-methods') },
+    { label: label('socialTrading'), href: lp('social-trading') },
     { label: label('contacts'), href: lp('contacts') },
     { label: label('terms'), href: lp('terms-and-conditions') },
     { label: label('aml'), href: lp('aml-policy') },

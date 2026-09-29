@@ -60,6 +60,13 @@ export const OG_COPY: Record<string, Record<Locale, OgCopy>> = {
     ru: { eyebrow: 'Способы оплаты', title: 'Способы оплаты Pocket Option: пополнение и вывод', subtitle: 'Карты, переводы, кошельки, криптовалюта и локальные методы — от $5' },
     id: { eyebrow: 'Metode pembayaran', title: 'Metode pembayaran Pocket Option: deposit & penarikan', subtitle: 'Kartu, transfer bank, e-wallet, kripto, QRIS & OVO — mulai $5' },
   },
+  'social-trading': {
+    en: { eyebrow: 'Social trading', title: 'Pocket Option Social Trading: copy top traders', subtitle: 'One-click and automatic copy trading — from $1, free demo' },
+    pt: { eyebrow: 'Social trading', title: 'Social Trading Pocket Option: copie os melhores traders', subtitle: 'Cópia com um clique ou automática — a partir de $1, demo grátis' },
+    es: { eyebrow: 'Social trading', title: 'Social Trading Pocket Option: copia a los mejores traders', subtitle: 'Copia con un clic o automática — desde $1, demo gratis' },
+    ru: { eyebrow: 'Социальный трейдинг', title: 'Social Trading Pocket Option: копируйте лучших трейдеров', subtitle: 'Копирование в один клик и автоматически — от $1, бесплатное демо' },
+    id: { eyebrow: 'Social trading', title: 'Social Trading Pocket Option: salin trader terbaik', subtitle: 'Penyalinan satu klik dan otomatis — mulai $1, demo gratis' },
+  },
   contacts: {
     en: { eyebrow: 'Support', title: 'Pocket Option support: help desk, chat and social', subtitle: 'Get help with deposits, withdrawals and verification 24/7' },
     pt: { eyebrow: 'Suporte', title: 'Suporte Pocket Option: central de ajuda, chat e redes', subtitle: 'Ajuda com depósitos, saques e verificação 24/7' },

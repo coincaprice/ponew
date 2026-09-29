@@ -7,6 +7,7 @@ export type Dictionary = {
     aboutUs: string;
     tradingAssets: string;
     paymentMethods: string;
+    socialTrading: string;
     blog: string;
     logIn: string;
     registration: string;
@@ -43,6 +44,7 @@ const en: Dictionary = {
     aboutUs: 'About us',
     tradingAssets: 'Trading assets',
     paymentMethods: 'Payment methods',
+    socialTrading: 'Social trading',
     blog: 'Blog',
     logIn: 'Log In',
     registration: 'Registration',
@@ -79,6 +81,7 @@ const pt: Dictionary = {
     aboutUs: 'Sobre nós',
     tradingAssets: 'Ativos para negociar',
     paymentMethods: 'Métodos de pagamento',
+    socialTrading: 'Social trading',
     blog: 'Blog',
     logIn: 'Entrar',
     registration: 'Cadastro',
@@ -115,6 +118,7 @@ const es: Dictionary = {
     aboutUs: 'Sobre nosotros',
     tradingAssets: 'Activos de trading',
     paymentMethods: 'Métodos de pago',
+    socialTrading: 'Social trading',
     blog: 'Blog',
     logIn: 'Iniciar sesión',
     registration: 'Registro',
@@ -151,6 +155,7 @@ const ru: Dictionary = {
     aboutUs: 'О нас',
     tradingAssets: 'Торговые активы',
     paymentMethods: 'Способы оплаты',
+    socialTrading: 'Соцтрейдинг',
     blog: 'Блог',
     logIn: 'Войти',
     registration: 'Регистрация',
@@ -187,6 +192,7 @@ const id: Dictionary = {
     aboutUs: 'Tentang kami',
     tradingAssets: 'Aset trading',
     paymentMethods: 'Metode pembayaran',
+    socialTrading: 'Social trading',
     blog: 'Blog',
     logIn: 'Masuk',
     registration: 'Daftar',
