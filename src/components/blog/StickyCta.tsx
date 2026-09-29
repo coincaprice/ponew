@@ -8,16 +8,11 @@ import { getLocalePath } from '@/lib/i18n/config';
 import type { Locale } from '@/lib/i18n/config';
 import type { BlogDictionary } from '@/lib/blog';
 
-const STORAGE_KEY = 'po-sticky-cta-dismissed';
 const SHOW_AFTER_PX = 600;
 
 export function StickyCta({ locale, t, endSelector }: { locale: Locale; t: BlogDictionary; endSelector: string }) {
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(true);
-
-  useEffect(() => {
-    setDismissed(sessionStorage.getItem(STORAGE_KEY) === '1');
-  }, []);
+  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
     if (dismissed) return;
@@ -44,10 +39,7 @@ export function StickyCta({ locale, t, endSelector }: { locale: Locale; t: BlogD
 
   if (dismissed) return null;
 
-  const close = () => {
-    sessionStorage.setItem(STORAGE_KEY, '1');
-    setDismissed(true);
-  };
+  const close = () => setDismissed(true);
 
   return (
     <div
