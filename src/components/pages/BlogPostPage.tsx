@@ -7,6 +7,7 @@ import { FaqJsonLd } from '@/components/seo/FaqJsonLd';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogCta } from '@/components/blog/BlogCta';
+import { StickyCta } from '@/components/blog/StickyCta';
 import { formatBlogDate } from '@/components/blog/format';
 import { ChevronRight, Clock, CalendarDays, RefreshCw, Lightbulb, AlertTriangle, CheckCircle2, Info } from 'lucide-react';
 import { REGISTER_URL, AFFILIATE_REL } from '@/config/links';
@@ -214,6 +215,7 @@ export function BlogPostPage({ lang = 'en', post }: { lang?: string; post: BlogP
 
       <BlogCta locale={locale} t={t} />
       </main>
+      <StickyCta locale={locale} t={t} endSelector="#blog-cta" />
       <Footer lang={locale} />
     </div>
   );

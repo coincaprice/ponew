@@ -6,7 +6,7 @@ import type { BlogDictionary } from '@/lib/blog';
 
 export function BlogCta({ locale, t }: { locale: Locale; t: BlogDictionary }) {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-24" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 50%, #0C3260 100%)' }}>
+    <section id="blog-cta" className="relative overflow-hidden py-20 lg:py-24" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 50%, #0C3260 100%)' }}>
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-[#0099FA]/15 blur-[140px]" />
       <div className="absolute inset-0 grid-noise pointer-events-none" />
       <div className="container-x relative z-10 text-center max-w-[760px] mx-auto text-white">

@@ -60,6 +60,9 @@ export type BlogDictionary = {
   ctaText: string;
   ctaButton: string;
   ctaSecondary: string;
+  stickyText: string;
+  stickyButton: string;
+  stickyClose: string;
   categories: Record<BlogCategory, string>;
   disclaimer: string;
   affiliateNotice: string;
