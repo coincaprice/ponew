@@ -95,17 +95,17 @@ export function Header({ lang = 'en' }: Props) {
         scrolled ? 'glass-dark shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]' : 'bg-transparent border-b border-white/[0.06]'
       }`}
     >
-      <div className={`container-x flex items-center justify-between transition-[height] duration-300 ${scrolled ? 'h-[64px]' : 'h-[76px]'}`}>
+      <div className={`w-full px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between transition-[height] duration-300 ${scrolled ? 'h-[64px]' : 'h-[76px]'}`}>
         {/* Logo & Desktop Nav */}
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-5 2xl:gap-10">
           <Logo href={lp('')} />
 
-          <nav className="hidden lg:flex items-center gap-1 rounded-full border border-white/[0.08] bg-white/[0.04] p-1 text-[14px] font-semibold text-white/70">
+          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1 rounded-full border border-white/[0.08] bg-white/[0.04] p-1 text-[13.5px] 2xl:text-[14px] font-semibold text-white/70">
             {NAV_LINKS.map(link => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-4 py-2 transition-colors hover:bg-white/[0.08] hover:text-white"
+                className="whitespace-nowrap rounded-full px-3 2xl:px-4 py-2 transition-colors hover:bg-white/[0.08] hover:text-white"
               >
                 {link.label}
               </a>
@@ -150,7 +150,7 @@ export function Header({ lang = 'en' }: Props) {
           </div>
 
           <div className="hidden sm:flex items-center gap-2.5">
-            <a href={LOGIN_URL} target="_blank" rel={AFFILIATE_REL} className="btn-ghost-light h-10 px-5 text-[14px]">
+            <a href={LOGIN_URL} target="_blank" rel={AFFILIATE_REL} className="btn-ghost-light h-10 px-5 text-[14px] xl:hidden 2xl:inline-flex">
               {t.nav.logIn}
             </a>
             <a href={REGISTER_URL} target="_blank" rel={AFFILIATE_REL} className="btn-brand h-10 px-6 text-[14px]">
@@ -162,7 +162,7 @@ export function Header({ lang = 'en' }: Props) {
             {t.nav.registration}
           </a>
           <button
-            className="lg:hidden flex items-center justify-center"
+            className="xl:hidden flex items-center justify-center"
             onClick={() => setMobileOpen(o => !o)}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
@@ -185,7 +185,7 @@ export function Header({ lang = 'en' }: Props) {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-[200] lg:hidden ${mobileOpen ? 'visible' : 'invisible pointer-events-none'}`}
+        className={`fixed inset-0 z-[200] xl:hidden ${mobileOpen ? 'visible' : 'invisible pointer-events-none'}`}
         role="dialog"
         aria-modal="true"
         aria-label={t.drawer.menu}
