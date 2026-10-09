@@ -103,24 +103,21 @@ export function HomePage({ lang = 'en', guides }: { lang?: string; guides?: Reac
       <FaqJsonLd items={t.faq.items} />
 
       {/* HERO */}
-      <section className="relative w-full overflow-hidden min-h-[720px] flex items-center" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
+      <section className="relative w-full overflow-hidden flex items-center" style={{ background: 'linear-gradient(145deg, #050F1E 0%, #0A2540 45%, #0C3260 75%, #0A2540 100%)' }}>
         <div className="absolute pointer-events-none" style={{ top: '-15%', left: '-8%', width: '65%', height: '65%', background: 'radial-gradient(ellipse, rgba(0,153,250,0.13) 0%, transparent 68%)', borderRadius: '50%' }} />
         <div className="absolute pointer-events-none" style={{ bottom: '5%', right: '-5%', width: '55%', height: '55%', background: 'radial-gradient(ellipse, rgba(0,82,204,0.11) 0%, transparent 65%)', borderRadius: '50%' }} />
-        <Image src="/images/header-bg.webp" alt="Pocket Option trading terminal" width={1537} height={1439} priority sizes="(min-width: 768px) 58vw, 0px" className="hidden md:block absolute top-1/2 -translate-y-1/2 right-[-2%] w-[58%] pointer-events-none select-none animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]" />
-        <Image src="/images/header-bg.webp" alt="" width={1537} height={1439} priority sizes="(max-width: 767px) 120vw, 0px" className="md:hidden absolute top-[40px] pointer-events-none select-none" style={{ right: '-50%', width: '120%', opacity: 0.92, maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)' }} />
-        <div className="hidden md:block absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, #0A2540 0%, #0A2540cc 35%, #0A254055 65%, transparent 100%)' }} />
-        <div className="md:hidden absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(5,15,30,0.93) 0%, rgba(5,15,30,0.90) 28%, rgba(5,15,30,0.55) 52%, rgba(5,15,30,0.15) 100%)' }} />
         <div className="absolute inset-0 grid-noise pointer-events-none" />
 
-        <div className="container-x relative z-10 pt-[120px] md:pt-[170px] lg:pt-[190px] pb-16 lg:pb-28">
-          <div className="w-full lg:w-[56%] text-white">
+        <div className="container-x relative z-10 pt-[120px] md:pt-[150px] lg:pt-[170px] pb-16 lg:pb-24">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-8">
+          <div className="w-full lg:w-[50%] text-white">
             <div className="animate-fade-up flex justify-center md:justify-start mb-6">
               <span className="eyebrow eyebrow-dark">
                 <span className="live-dot w-2 h-2 rounded-full bg-[#22c55e]" />
                 {t.hero.eyebrow}
               </span>
             </div>
-            <h1 className="animate-fade-up delay-100 text-[34px] md:text-[50px] lg:text-[60px] font-heading font-extrabold leading-[1.08] mb-6 text-center md:text-left">
+            <h1 className="animate-fade-up delay-100 text-[34px] md:text-[50px] lg:text-[56px] font-heading font-extrabold leading-[1.08] mb-6 text-center md:text-left">
               {t.hero.title}{' '}
               <span className="text-gradient-brand">{t.hero.titleAccent}</span>
             </h1>
@@ -137,6 +134,11 @@ export function HomePage({ lang = 'en', guides }: { lang?: string; guides?: Reac
               ))}
             </div>
             <p className="mt-6 text-[12px] text-white/40 text-center md:text-left">{t.hero.riskNote}</p>
+          </div>
+          <div className="w-full lg:w-[50%] relative">
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
+            <Image src="/images/hero-devices.webp" alt="Pocket Option trading platform on laptop and smartphone" width={2600} height={1800} priority sizes="(min-width: 1024px) 50vw, 100vw" className="relative w-full h-auto max-w-[560px] md:max-w-[680px] lg:max-w-none mx-auto lg:ml-auto lg:scale-[1.15] lg:origin-left lg:translate-x-[2%] animate-float-slow select-none" />
+          </div>
           </div>
         </div>
       </section>
