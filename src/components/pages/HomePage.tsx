@@ -366,8 +366,7 @@ export function HomePage({ lang = 'en', guides }: { lang?: string; guides?: Reac
             </div>
             <div className="hidden md:block relative flex-1 min-h-[460px]">
               <div className="pointer-events-none absolute left-1/2 bottom-0 h-[80%] w-[80%] -translate-x-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.14)' }} />
-              <Image src="/images/iphone.webp" alt="Pocket Option app for iOS" width={272} height={558} sizes="210px" className="absolute right-0 bottom-0 w-[210px] z-[1] drop-shadow-[0_8px_20px_rgba(0,0,0,0.10)]" />
-              <Image src="/images/android.webp" alt="Pocket Option app for Android" width={276} height={576} sizes="240px" className="absolute right-[140px] bottom-0 w-[240px] z-[2] drop-shadow-[0_12px_32px_rgba(0,0,0,0.18)]" />
+              <Image src="/images/app-phones.webp" alt="Pocket Option mobile app on two smartphones" width={1438} height={1584} sizes="(min-width: 1024px) 420px, 360px" className="absolute right-[-40px] bottom-[-40px] w-[440px] lg:w-[520px] max-w-none h-auto z-[1]" />
             </div>
           </div>
         </div>
