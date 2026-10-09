@@ -70,7 +70,7 @@ export function QuickStartPage({ lang = 'en', guides }: { lang?: string; guides?
             </div>
             <div className="hidden lg:block lg:col-span-5 relative">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
-              <Image src="/images/quick-start/header-bg-3.webp" alt="Pocket Option trading platform on a laptop" width={1537} height={1439} priority sizes="(min-width: 768px) 520px, 90vw" className="relative w-full max-w-[520px] mx-auto animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]" />
+              <Image src="/images/hero-devices.webp" alt="Pocket Option trading platform on laptop and smartphone" width={2600} height={1800} priority sizes="(min-width: 1024px) 45vw, 90vw" className="relative w-full max-w-[600px] mx-auto lg:scale-[1.12] lg:translate-x-[4%] animate-float-slow drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]" />
             </div>
           </div>
         </div>
