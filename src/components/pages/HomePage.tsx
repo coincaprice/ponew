@@ -215,7 +215,7 @@ export function HomePage({ lang = 'en', guides }: { lang?: string; guides?: Reac
             </div>
             <div className="hidden md:flex w-full lg:w-[52%] self-stretch items-center justify-center lg:justify-start relative">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-[60%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: 'rgba(0,153,250,0.22)' }} />
-              <Image src="/images/monitor.webp" alt="Pocket Option web trading platform" width={935} height={790} sizes="(min-width: 1024px) 60vw, 100vw" className="relative w-full max-w-[720px] lg:max-w-none lg:w-[118%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
+              <Image src="/images/platform-monitor.webp" alt="Pocket Option web trading platform" width={2480} height={1720} sizes="(min-width: 1024px) 60vw, 100vw" className="relative w-full max-w-[720px] lg:max-w-none lg:w-[118%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(8,15,32,0.28)]" />
             </div>
           </div>
         </div>
